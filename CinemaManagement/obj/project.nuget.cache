@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "1J6m41X65MPQZcWQNSZg2R7Yu8WCLC4BEgsWc2inhCb6BRbCnj8UWhF3lRcCb90RuutpTbq35rc0zaBqKis7jg==",
+  "success": true,
+  "projectFilePath": "D:\\UIT\\C#\\HelloWorld\\CinemaManagement\\CinemaManagement\\CinemaManagement.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\vantr\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
+    "C:\\Users\\vantr\\.nuget\\packages\\materialdesignthemes\\5.1.0\\materialdesignthemes.5.1.0.nupkg.sha512",
+    "C:\\Users\\vantr\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512"
+  ],
+  "logs": []
+}
