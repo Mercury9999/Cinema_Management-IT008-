@@ -1,45 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\",
+  "WorkspaceRootPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\cinemamanagementcontext.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\view\\loginwindow\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\view\\loginwindow\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagementcontext.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagementcontext.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\cinemamanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\cinemamanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\cinemamanagement.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\cinemamanagementmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagementmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagementmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\cinemamanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\cinemamanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\cinemamanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
@@ -49,7 +53,7 @@
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -60,15 +64,27 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
+              "Title": "LoginWindow.xaml",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
+              "RelativeDocumentMoniker": "CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
+              "RelativeToolTip": "CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-11-05T03:54:33.644Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "CinemaManagement.edmx.diagram",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
               "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
@@ -76,24 +92,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CinemaManagementContext.tt",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagementContext.tt",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementContext.tt",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagementContext.tt",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementContext.tt",
               "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-11-05T03:21:52.63Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T03:21:52.63Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "CinemaManagement.Designer.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.Designer.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
               "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.Designer.cs",
               "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -101,22 +116,22 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "CinemaManagement.edmx",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.edmx",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.edmx",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagement.edmx",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx",
               "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.edmx",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
               "WhenOpened": "2024-11-05T03:14:22.054Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "CinemaManagementModel.Context.tt",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
               "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
               "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
               "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
@@ -124,22 +139,23 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "MainResource.xaml",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
               "RelativeDocumentMoniker": "CinemaManagement\\ResourceXAML\\MainResource.xaml",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
               "RelativeToolTip": "CinemaManagement\\ResourceXAML\\MainResource.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-05T02:54:22.751Z"
+              "WhenOpened": "2024-11-05T02:54:22.751Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\AssemblyInfo.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\AssemblyInfo.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\AssemblyInfo.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\AssemblyInfo.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\AssemblyInfo.cs",
               "RelativeToolTip": "CinemaManagement\\AssemblyInfo.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -147,11 +163,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CinemaManagement.csproj",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
               "RelativeDocumentMoniker": "CinemaManagement\\CinemaManagement.csproj",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
               "RelativeToolTip": "CinemaManagement\\CinemaManagement.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -159,11 +175,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "App.Config",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\App.Config",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.Config",
               "RelativeDocumentMoniker": "CinemaManagement\\App.Config",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\App.Config",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.Config",
               "RelativeToolTip": "CinemaManagement\\App.Config",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
@@ -171,18 +187,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "App.xaml",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\App.xaml",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.xaml",
               "RelativeDocumentMoniker": "CinemaManagement\\App.xaml",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\App.xaml",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.xaml",
               "RelativeToolTip": "CinemaManagement\\App.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T10:18:55.163Z"
+              "WhenOpened": "2024-11-04T10:18:55.163Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 11,
               "Title": "Microsoft.NET.TargetFrameworkInference.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
@@ -192,7 +209,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 12,
               "Title": "Microsoft.PackageDependencyResolution.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
               "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
@@ -202,11 +219,11 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
               "RelativeDocumentMoniker": "CinemaManagement\\ViewModel\\BaseViewModel.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
               "RelativeToolTip": "CinemaManagement\\ViewModel\\BaseViewModel.cs",
               "ViewState": "AgIAABoAAAAAAAAAAAAAwBsAAAAlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
