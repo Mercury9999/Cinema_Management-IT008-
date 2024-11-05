@@ -2,18 +2,68 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net8.0-windows</TargetFramework>
+	<LangVersion>10.0</LangVersion>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
+    <EnforceCodeStyleInBuild>False</EnforceCodeStyleInBuild>
+    <TargetFrameworks>net48</TargetFrameworks>
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Models\" />
+    <None Remove="CinemaManagement.edmx" />
+    <None Remove="Models\CinemaManagement.edmx" />
   </ItemGroup>
 
   <ItemGroup>
+    <EntityDeploy Include="Models\CinemaManagement.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CinemaManagement.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="EntityFramework" Version="6.5.1" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Security" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Models\CinemaManagement.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagement.edmx</DependentUpon>
+    </Compile>
+    <Compile Update="Models\CinemaManagementModel.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagementModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Models\CinemaManagementContext.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagementContext.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Models\CinemaManagementModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CinemaManagementModel.Context.cs</LastGenOutput>
+    </None>
+    <None Update="Models\CinemaManagementContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>CinemaManagementContext.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
 </Project>
