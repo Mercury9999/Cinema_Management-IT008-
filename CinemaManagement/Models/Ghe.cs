@@ -17,8 +17,9 @@ namespace CinemaManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Ghe()
         {
-            this.BANVEs = new HashSet<BANVE>();
-            this.VEs = new HashSet<VE>();
+            this.BanVes = new HashSet<BanVe>();
+            this.Ves = new HashSet<Ve>();
+            this.Ves1 = new HashSet<Ve>();
         }
     
         public int MaGhe { get; set; }
@@ -26,9 +27,11 @@ namespace CinemaManagement.Models
         public int SoPhong { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<BANVE> BANVEs { get; set; }
-        public virtual PHONGCHIEU PHONGCHIEU { get; set; }
+        public virtual ICollection<BanVe> BanVes { get; set; }
+        public virtual PhongChieu PhongChieu { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VE> VEs { get; set; }
+        public virtual ICollection<Ve> Ves { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ve> Ves1 { get; set; }
     }
 }

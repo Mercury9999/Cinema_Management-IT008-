@@ -12,13 +12,15 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SANPHAM
+    public partial class SanPham
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public SANPHAM()
+        public SanPham()
         {
-            this.CT_HDNHAP = new HashSet<CT_HDNHAP>();
-            this.CTHD_SP = new HashSet<CTHD_SP>();
+            this.CTHDNhaps = new HashSet<CTHDNhap>();
+            this.CTHDSanPhams = new HashSet<CTHDSanPham>();
+            this.CTHDSanPhams1 = new HashSet<CTHDSanPham>();
+            this.CTHDSanPhams2 = new HashSet<CTHDSanPham>();
         }
     
         public int MaSP { get; set; }
@@ -30,8 +32,12 @@ namespace CinemaManagement.Models
         public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CT_HDNHAP> CT_HDNHAP { get; set; }
+        public virtual ICollection<CTHDNhap> CTHDNhaps { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHD_SP> CTHD_SP { get; set; }
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams2 { get; set; }
     }
 }

@@ -12,13 +12,14 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HDNHAPHANG
+    public partial class HDNhapHang
     {
         public int SoHDNhap { get; set; }
         public System.DateTime NgayNhap { get; set; }
         public decimal ThanhTien { get; set; }
         public int MaNVNhap { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien1 { get; set; }
     }
 }

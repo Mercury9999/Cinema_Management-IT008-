@@ -12,13 +12,13 @@
 
   <ItemGroup>
     <None Remove="CinemaManagement.edmx" />
-    <None Remove="Models\CinemaManagement.edmx" />
+    <None Remove="Models\CinemaManagementModel1.edmx" />
   </ItemGroup>
 
   <ItemGroup>
-    <EntityDeploy Include="Models\CinemaManagement.edmx">
+    <EntityDeploy Include="Models\CinemaManagementModel1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CinemaManagement.Designer.cs</LastGenOutput>
+      <LastGenOutput>CinemaManagementModel1.Designer.cs</LastGenOutput>
     </EntityDeploy>
   </ItemGroup>
 
@@ -34,35 +34,35 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Models\CinemaManagement.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagement.edmx</DependentUpon>
-    </Compile>
-    <Compile Update="Models\CinemaManagementModel.Context.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagementModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Models\CinemaManagementContext.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagementContext.tt</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Models\CinemaManagementModel.Context.tt">
+    <Compile Update="Models\CinemaManagementModel1.Context.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagementModel1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Models\CinemaManagementModel1.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagementModel1.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Models\CinemaManagementModel1.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>CinemaManagementModel1.edmx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Models\CinemaManagementModel1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CinemaManagementModel.Context.cs</LastGenOutput>
+      <LastGenOutput>CinemaManagementModel1.Context.cs</LastGenOutput>
     </None>
-    <None Update="Models\CinemaManagementContext.tt">
+    <None Update="Models\CinemaManagementModel1.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CinemaManagementContext.cs</LastGenOutput>
+      <LastGenOutput>CinemaManagementModel1.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

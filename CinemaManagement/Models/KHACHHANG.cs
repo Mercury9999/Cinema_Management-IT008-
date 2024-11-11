@@ -12,12 +12,14 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class KHACHHANG
+    public partial class KhachHang
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public KHACHHANG()
+        public KhachHang()
         {
-            this.HOADONs = new HashSet<HOADON>();
+            this.HoaDons = new HashSet<HoaDon>();
+            this.HoaDons1 = new HashSet<HoaDon>();
+            this.HoaDons2 = new HashSet<HoaDon>();
         }
     
         public int MaKH { get; set; }
@@ -26,10 +28,14 @@ namespace CinemaManagement.Models
         public string SDT_KH { get; set; }
         public string email_KH { get; set; }
         public System.DateTime NgaySinh { get; set; }
-        public Nullable<decimal> HDTichLuy { get; set; }
+        public decimal HDTichLuy { get; set; }
         public System.DateTime NgayDK { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons2 { get; set; }
     }
 }

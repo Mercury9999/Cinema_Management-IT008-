@@ -12,12 +12,12 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PHIM
+    public partial class Phim
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PHIM()
+        public Phim()
         {
-            this.SUATCHIEUx = new HashSet<SUATCHIEU>();
+            this.SuatChieux = new HashSet<SuatChieu>();
         }
     
         public int MaPhim { get; set; }
@@ -29,9 +29,9 @@ namespace CinemaManagement.Models
         public string NoiDung { get; set; }
         public byte GioiHanTuoi { get; set; }
         public byte[] Poster { get; set; }
+        public string TenPhim { get; set; }
     
-        public virtual THELOAI THELOAI1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUATCHIEU> SUATCHIEUx { get; set; }
+        public virtual ICollection<SuatChieu> SuatChieux { get; set; }
     }
 }

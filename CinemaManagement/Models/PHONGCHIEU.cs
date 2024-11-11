@@ -12,13 +12,13 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class PHONGCHIEU
+    public partial class PhongChieu
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PHONGCHIEU()
+        public PhongChieu()
         {
             this.Ghes = new HashSet<Ghe>();
-            this.SUATCHIEUx = new HashSet<SUATCHIEU>();
+            this.SuatChieux = new HashSet<SuatChieu>();
         }
     
         public int SoPhong { get; set; }
@@ -27,6 +27,6 @@ namespace CinemaManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Ghe> Ghes { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUATCHIEU> SUATCHIEUx { get; set; }
+        public virtual ICollection<SuatChieu> SuatChieux { get; set; }
     }
 }
