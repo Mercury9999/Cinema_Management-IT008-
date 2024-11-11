@@ -12,27 +12,42 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class HOADON
+    public partial class HoaDon
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HOADON()
+        public HoaDon()
         {
-            this.CTHD_SP = new HashSet<CTHD_SP>();
-            this.VEs = new HashSet<VE>();
+            this.CTHDSanPhams = new HashSet<CTHDSanPham>();
+            this.CTHDSanPhams1 = new HashSet<CTHDSanPham>();
+            this.CTHDSanPhams2 = new HashSet<CTHDSanPham>();
+            this.Ves = new HashSet<Ve>();
+            this.Ves1 = new HashSet<Ve>();
         }
     
         public int SoHD { get; set; }
         public int MaKH { get; set; }
         public int MaNV { get; set; }
         public System.DateTime NgayHD { get; set; }
-        public Nullable<int> ChietKhau { get; set; }
+        public int ChietKhau { get; set; }
         public decimal GiaTriHD { get; set; }
+        public decimal ThanhTien { get; set; }
+        public decimal GiamGia { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHD_SP> CTHD_SP { get; set; }
-        public virtual KHACHHANG KHACHHANG { get; set; }
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<VE> VEs { get; set; }
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CTHDSanPham> CTHDSanPhams2 { get; set; }
+        public virtual KhachHang KhachHang { get; set; }
+        public virtual KhachHang KhachHang1 { get; set; }
+        public virtual KhachHang KhachHang2 { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
+        public virtual NhanVien NhanVien1 { get; set; }
+        public virtual NhanVien NhanVien2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ve> Ves { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Ve> Ves1 { get; set; }
     }
 }

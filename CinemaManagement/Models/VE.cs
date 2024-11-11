@@ -12,7 +12,7 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class VE
+    public partial class Ve
     {
         public int SoHD { get; set; }
         public int MaVe { get; set; }
@@ -22,7 +22,10 @@ namespace CinemaManagement.Models
         public decimal GiaVe { get; set; }
     
         public virtual Ghe Ghe { get; set; }
-        public virtual HOADON HOADON { get; set; }
-        public virtual SUATCHIEU SUATCHIEU { get; set; }
+        public virtual Ghe Ghe1 { get; set; }
+        public virtual HoaDon HoaDon { get; set; }
+        public virtual HoaDon HoaDon1 { get; set; }
+        public virtual SuatChieu SuatChieu { get; set; }
+        public virtual SuatChieu SuatChieu1 { get; set; }
     }
 }

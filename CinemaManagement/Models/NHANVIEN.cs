@@ -12,14 +12,17 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class NHANVIEN
+    public partial class NhanVien
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public NHANVIEN()
+        public NhanVien()
         {
-            this.HDNHAPHANGs = new HashSet<HDNHAPHANG>();
-            this.HOADONs = new HashSet<HOADON>();
-            this.SUCOes = new HashSet<SUCO>();
+            this.HDNhapHangs = new HashSet<HDNhapHang>();
+            this.HDNhapHangs1 = new HashSet<HDNhapHang>();
+            this.HoaDons = new HashSet<HoaDon>();
+            this.HoaDons1 = new HashSet<HoaDon>();
+            this.HoaDons2 = new HashSet<HoaDon>();
+            this.SuCoes = new HashSet<SuCo>();
         }
     
         public int MaNV { get; set; }
@@ -36,10 +39,16 @@ namespace CinemaManagement.Models
         public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HDNHAPHANG> HDNHAPHANGs { get; set; }
+        public virtual ICollection<HDNhapHang> HDNhapHangs { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<HOADON> HOADONs { get; set; }
+        public virtual ICollection<HDNhapHang> HDNhapHangs1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<SUCO> SUCOes { get; set; }
+        public virtual ICollection<HoaDon> HoaDons { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HoaDon> HoaDons2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SuCo> SuCoes { get; set; }
     }
 }

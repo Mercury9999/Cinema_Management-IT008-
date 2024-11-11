@@ -12,13 +12,13 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class BANVE
+    public partial class BanVe
     {
         public int MaSC { get; set; }
         public int MaGhe { get; set; }
-        public Nullable<bool> TinhTrang { get; set; }
+        public bool DaBan { get; set; }
     
         public virtual Ghe Ghe { get; set; }
-        public virtual SUATCHIEU SUATCHIEU { get; set; }
+        public virtual SuatChieu SuatChieu { get; set; }
     }
 }

@@ -12,14 +12,15 @@ namespace CinemaManagement.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class SUCO
+    public partial class SuCo
     {
         public int MaSuCo { get; set; }
         public int MaNVBao { get; set; }
         public string DiaDiem { get; set; }
         public string CTSuCo { get; set; }
-        public Nullable<bool> TinhTrang { get; set; }
+        public bool TinhTrang { get; set; }
+        public decimal PhiSuaChua { get; set; }
     
-        public virtual NHANVIEN NHANVIEN { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }
