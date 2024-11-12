@@ -43,7 +43,6 @@ namespace CinemaManagement.Models.DAL
                         }
                     }
                     await context.SaveChangesAsync();
-                    return (true, "Nhập hàng thành công");
                 }
             }
             catch (Exception ex)
@@ -51,6 +50,7 @@ namespace CinemaManagement.Models.DAL
                 Console.WriteLine(ex.ToString());
                 return (false, "Lỗi hệ thống");
             }
+            return (true, "Nhập hàng thành công");
         }
 
         public async Task<string> AddNewProductReceiptInfo(CinemaManagementEntities context, List<CTHDNhap> dsSanPham, int newReceiptId)

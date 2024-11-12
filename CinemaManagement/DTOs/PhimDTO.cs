@@ -3,6 +3,7 @@ using System.Collections.Generic;
 
 using System;
 using System.Collections.Generic;
+using CinemaManagement.Ultis;
 
 namespace CinemaManagement.DTOs
 {
@@ -25,6 +26,7 @@ namespace CinemaManagement.DTOs
         public string NoiDung { get; set; }
         public byte GioiHanTuoi { get; set; }
         public byte[] Poster { get; set; }
+        public decimal DoanhThu { get; set; }   
     
         public IList<SuatChieuDTO> SuatChieu { get; set; }
 
@@ -33,6 +35,13 @@ namespace CinemaManagement.DTOs
             get
             {
                 return $"P{MaPhim:D4}";
+            }
+        }
+        public string DoanhThuStr
+        {
+            get
+            {
+                return MoneyFormat.FormatToVND(DoanhThu);
             }
         }
     }

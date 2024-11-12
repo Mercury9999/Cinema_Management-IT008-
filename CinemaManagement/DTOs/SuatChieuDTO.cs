@@ -8,11 +8,6 @@ namespace CinemaManagement.DTOs
 {
     public class SuatChieuDTO
     { 
-        public SuatChieuDTO()
-        {
-
-        }
-    
         public int MaSC { get; set; }
         public int MaPhim { get; set; }
         public int SoPhongChieu { get; set; }

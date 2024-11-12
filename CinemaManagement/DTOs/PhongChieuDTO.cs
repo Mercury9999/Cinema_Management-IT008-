@@ -11,12 +11,19 @@ namespace CinemaManagement.DTOs
        
         public PhongChieuDTO()
         {
-            this.Ghes = new List<GheDTO>();
+            this.Ghe = new List<GheDTO>();
         }
     
         public int SoPhong { get; set; }
         public int SLGhe { get; set; }
-        public IList<GheDTO> Ghes { get; set; }
+        public List<GheDTO> Ghe { get; set; }
+        public string SoPhongStr
+        {
+            get
+            {
+                return $"P{SoPhong}";
+            }
+        }
        
     }
 }

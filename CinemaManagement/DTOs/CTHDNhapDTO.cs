@@ -11,6 +11,7 @@ namespace CinemaManagement.DTOs
         public CTHDNhapDTO() { }
         public int SoHDNhap { get; set; }
         public int MaSPNhap { get; set; }
+        public string TenSPNhap { get; set; }
         public decimal DonGiaNhap { get; set; }
         public int SoLuong { get; set; }
         public decimal TongTien
