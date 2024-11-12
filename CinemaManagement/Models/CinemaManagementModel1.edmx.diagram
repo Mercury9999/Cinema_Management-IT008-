@@ -46,6 +46,7 @@
         <AssociationConnector Association="CinemaManagementModel1.FK__SUATCHIEU__SoPho__5CD6CB2B" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaManagementModel1.FK__Ve__MaSC__0D7A0286" ManuallyRouted="false" />
         <AssociationConnector Association="CinemaManagementModel1.FK__VE__MaSC__571DF1D5" ManuallyRouted="false" />
+        <AssociationConnector Association="CinemaManagementModel1.FK_CTHDNhap_CTHD" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

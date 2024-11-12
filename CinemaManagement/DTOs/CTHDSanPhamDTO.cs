@@ -5,10 +5,11 @@ using System.Collections.Generic;
 
 namespace CinemaManagement.DTOs
 {
-    public partial class CTHDSanPham
+    public class CTHDSanPhamDTO
     {
         public int SoHD { get; set; }
         public int MaSP { get; set; }
+        public string TenSP { get; set; }   
         public decimal DonGia { get; set; }
         public int SoLuong { get; set; }
         public decimal ThanhTien

@@ -11,6 +11,7 @@ namespace CinemaManagement.DTOs
         public System.DateTime NgayNhap { get; set; }
         public decimal ThanhTien { get; set; }
         public int MaNVNhap { get; set; }
+        public string TenNVNhap { get; set; }
         public string SoHDNhapStr
         {
             get
@@ -26,5 +27,6 @@ namespace CinemaManagement.DTOs
                 return ConvertDateTime.Full(NgayNhap);
             }
         }
+        public List<CTHDNhapDTO> CTHDNhap {  get; set; }    
     }
 }

@@ -27,7 +27,7 @@ namespace CinemaManagement.Models.DAL
             }
             private set => _instance = value;
         }
-        public async Task<(bool TrangThai, string message)> CreateBooking(HoaDonDTO hoadon, List<VeDTO> dsVe, List<CTHDSanPham> dsSanPham)
+        public async Task<(bool, string)> CreateBooking(HoaDonDTO hoadon, List<VeDTO> dsVe, List<CTHDSanPham> dsSanPham)
         {
             try
             {
@@ -62,7 +62,6 @@ namespace CinemaManagement.Models.DAL
                         }
                     }
                     await context.SaveChangesAsync();
-                    return (true, "Giao dịch thành công");
                 }
             }
             catch (Exception ex)
@@ -70,6 +69,7 @@ namespace CinemaManagement.Models.DAL
                 Console.WriteLine(ex.ToString());
                 return (false, "Lỗi hệ thống");
             }
+            return (true, "Giao dịch thành công");
         }
         public async Task<int> CreateNewBill(CinemaManagementEntities context, HoaDonDTO hoadon)
         {
@@ -86,6 +86,9 @@ namespace CinemaManagement.Models.DAL
                 GiaTriHD = hoadon.GiaTriHD,
                 ThanhTien = hoadon.ThanhTien
             };
+
+            context.HoaDons.Add(newBill);
+
             return newBillId;
         }
         public async Task<string> AddNewTicket(CinemaManagementEntities context, List<VeDTO> dsVe, int newBillId)
@@ -99,8 +102,8 @@ namespace CinemaManagement.Models.DAL
                     DsVe.Add(
                     new Ve
                     {
-                        SoHD = ++TicketId,
-                        MaVe = dsVe[i].MaVe,
+                        SoHD = newBillId,
+                        MaVe = ++TicketId,
                         MaSC = dsVe[i].MaSC,
                         MaGhe = dsVe[i].MaGhe,
                         SoGhe = dsVe[i].SoGhe,
@@ -108,6 +111,7 @@ namespace CinemaManagement.Models.DAL
                     });
                 }
                 context.Ves.AddRange(DsVe);
+                await context.SaveChangesAsync();
                 return null;
             }
             catch (Exception ex)
@@ -134,6 +138,10 @@ namespace CinemaManagement.Models.DAL
                          SoLuong = dsSanPham[i].SoLuong,
                      });
                     var SanPham = await context.SanPhams.FindAsync(dsSanPham[i].MaSP);
+                    if(SanPham == null)
+                    {
+                        return ("Sản phẩm " + dsSanPham[i].MaSP + " không tồn tại, vui lòng thêm sản phẩm");
+                    }
                     if (SanPham.SoLuong < dsSanPham[i].SoLuong)
                     {
                         return "Không đủ sản phẩm còn trong kho";
@@ -141,6 +149,7 @@ namespace CinemaManagement.Models.DAL
                     SanPham.SoLuong -= dsSanPham[i].SoLuong;
                 }
                 context.CTHDSanPhams.AddRange(dsCTHDSP);
+                await context.SaveChangesAsync();
                 return null;
             }
             catch (Exception ex)

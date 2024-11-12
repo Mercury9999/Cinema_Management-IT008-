@@ -100,6 +100,7 @@
     <EntitySetMapping Name="Phims">
       <EntityTypeMapping TypeName="CinemaManagementModel1.Phim">
         <MappingFragment StoreEntitySet="Phim">
+          <ScalarProperty Name="DoanhThu" ColumnName="DoanhThu" />
           <ScalarProperty Name="MaPhim" ColumnName="MaPhim" />
           <ScalarProperty Name="TheLoai" ColumnName="TheLoai" />
           <ScalarProperty Name="ThoiLuong" ColumnName="ThoiLuong" />

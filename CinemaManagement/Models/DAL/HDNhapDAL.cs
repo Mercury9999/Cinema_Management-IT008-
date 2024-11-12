@@ -38,5 +38,38 @@ namespace CinemaManagement.Models.DAL
                 return await dshdnhap;
             }
         }
+        public async Task<HDNhapHangDTO> GetReceiptDetail(int soHDNhap)
+        {
+            try
+            {
+                using (var context = new CinemaManagementEntities())
+                {
+                    var hdnhap = await context.HDNhapHangs.FindAsync(soHDNhap);
+
+                    HDNhapHangDTO CTNHAP = new HDNhapHangDTO
+                    {
+                        SoHDNhap = hdnhap.SoHDNhap,
+                        MaNVNhap = hdnhap.MaNVNhap,
+                        TenNVNhap = hdnhap.NhanVien.TenNV,
+                        NgayNhap = hdnhap.NgayNhap,
+                        ThanhTien = hdnhap.ThanhTien,
+                        CTHDNhap = (from ct in hdnhap.CTHDNhaps
+                                select new CTHDNhapDTO
+                                {
+                                    SoHDNhap = ct.SoHDNhap,
+                                    MaSPNhap = ct.MaSPNhap,
+                                    TenSPNhap = ct.SanPham.TenSP,
+                                    DonGiaNhap = ct.DonGiaNhap, 
+                                    SoLuong = ct.SoLuong,
+                                }).ToList(),
+                    };
+                    return CTNHAP;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

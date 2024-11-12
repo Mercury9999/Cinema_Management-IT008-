@@ -1,4 +1,4 @@
-using CinemaManagement.Ultis;
+﻿using CinemaManagement.Ultis;
 using System;
 using System.Collections.Generic;
 
@@ -21,6 +21,14 @@ namespace CinemaManagement.DTOs
             get
             {
                 return MoneyFormat.FormatToVND(PhiSuaChua);
+            }
+        }
+        public string TinhTrangStr
+        {
+            get
+            {
+                if (TinhTrang == false) return "Chưa khắc phục";
+                else return "Đã khắc phục";
             }
         }
     }

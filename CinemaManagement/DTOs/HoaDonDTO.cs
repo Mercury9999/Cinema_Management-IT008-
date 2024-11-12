@@ -6,7 +6,6 @@ namespace CinemaManagement.DTOs
 {
     public class HoaDonDTO
     {
-
         public HoaDonDTO()
         {
             MaKH = 0;
@@ -29,6 +28,7 @@ namespace CinemaManagement.DTOs
             }
         }
         public int MaNV { get; set; }
+        public string TenNV { get; set; }
         public System.DateTime NgayHD { get; set; }
         public int ChietKhau { get; set; }
         public decimal GiamGia { get; set; }
@@ -98,5 +98,8 @@ namespace CinemaManagement.DTOs
                 return ConvertDateTime.Full(NgayHD);
             }
         }
+
+        public List<CTHDSanPhamDTO> CTSP { get; set; }
+        public List<VeDTO> CTVe { get; set; }
     }
 }
