@@ -15,6 +15,7 @@ namespace CinemaManagement.DTOs
         public string DiaDiem { get; set; }
         public string CTSuCo { get; set; }
         public bool TinhTrang { get; set; }
+        public DateTime NgayBaoSC { get; set; } 
         public decimal PhiSuaChua { get; set; }
         public string PhiSuaChuaStr
         {
@@ -29,6 +30,13 @@ namespace CinemaManagement.DTOs
             {
                 if (TinhTrang == false) return "Chưa khắc phục";
                 else return "Đã khắc phục";
+            }
+        }
+        public string NgayBaoSCStr
+        {
+            get
+            {
+                return ConvertDateTime.Full(NgayBaoSC);
             }
         }
     }

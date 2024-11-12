@@ -20,6 +20,7 @@ namespace CinemaManagement.Models
         public string CTSuCo { get; set; }
         public bool TinhTrang { get; set; }
         public decimal PhiSuaChua { get; set; }
+        public System.DateTime NgayBaoSC { get; set; }
     
         public virtual NhanVien NhanVien { get; set; }
     }

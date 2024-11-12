@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="CinemaManagementModel1.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+<Schema Namespace="CinemaManagementModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
   <EntityType Name="BanVe">
     <Key>
       <PropertyRef Name="MaSC" />
@@ -147,6 +147,7 @@
     <Property Name="CTSuCo" Type="nvarchar(max)" Nullable="false" />
     <Property Name="TinhTrang" Type="bit" Nullable="false" />
     <Property Name="PhiSuaChua" Type="money" Nullable="false" />
+    <Property Name="NgayBaoSC" Type="datetime" Nullable="false" />
   </EntityType>
   <EntityType Name="Ve">
     <Key>
@@ -208,43 +209,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__CTHD_SP__SoHD__5441852A">
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-    <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HoaDon">
-        <PropertyRef Name="SoHD" />
-      </Principal>
-      <Dependent Role="CTHDSanPham">
-        <PropertyRef Name="SoHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHDSanPha__MaSP__0B91BA14">
-    <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-    <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="SanPham">
-        <PropertyRef Name="MaSP" />
-      </Principal>
-      <Dependent Role="CTHDSanPham">
-        <PropertyRef Name="MaSP" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__CTHDSanPha__SoHD__06CD04F7">
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
-    <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HoaDon">
-        <PropertyRef Name="SoHD" />
-      </Principal>
-      <Dependent Role="CTHDSanPham">
-        <PropertyRef Name="SoHD" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__CTHDSanPha__SoHD__0A9D95DB">
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="1" />
     <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
     <ReferentialConstraint>
@@ -265,18 +230,6 @@
       </Principal>
       <Dependent Role="Ghe">
         <PropertyRef Name="SoPhong" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__HDNhapHan__MaNVN__0F624AF8">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
-    <End Role="HDNhapHang" Type="Self.HDNhapHang" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="HDNhapHang">
-        <PropertyRef Name="MaNVNhap" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -304,55 +257,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__HoaDon__MaKH__08B54D69">
-    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KhachHang">
-        <PropertyRef Name="MaKH" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaKH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__HOADON__MaKH__52593CB8">
-    <End Role="KhachHang" Type="Self.KhachHang" Multiplicity="1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="KhachHang">
-        <PropertyRef Name="MaKH" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaKH" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK__HoaDon__MaNV__04E4BC85">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__HoaDon__MaNV__09A971A2">
-    <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
-    <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="NhanVien">
-        <PropertyRef Name="MaNV" />
-      </Principal>
-      <Dependent Role="HoaDon">
-        <PropertyRef Name="MaNV" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__HOADON__MaNV__534D60F1">
     <End Role="NhanVien" Type="Self.NhanVien" Multiplicity="1" />
     <End Role="HoaDon" Type="Self.HoaDon" Multiplicity="*" />
     <ReferentialConstraint>
@@ -448,7 +353,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="CinemaManagementModel1StoreContainer">
+  <EntityContainer Name="CinemaManagementModelStoreContainer">
     <EntitySet Name="BanVe" EntityType="Self.BanVe" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDNhap" EntityType="Self.CTHDNhap" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CTHDSanPham" EntityType="Self.CTHDSanPham" Schema="dbo" store:Type="Tables" />
@@ -479,29 +384,13 @@
       <End Role="SanPham" EntitySet="SanPham" />
       <End Role="CTHDSanPham" EntitySet="CTHDSanPham" />
     </AssociationSet>
-    <AssociationSet Name="FK__CTHD_SP__SoHD__5441852A" Association="Self.FK__CTHD_SP__SoHD__5441852A">
-      <End Role="HoaDon" EntitySet="HoaDon" />
-      <End Role="CTHDSanPham" EntitySet="CTHDSanPham" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CTHDSanPha__MaSP__0B91BA14" Association="Self.FK__CTHDSanPha__MaSP__0B91BA14">
-      <End Role="SanPham" EntitySet="SanPham" />
-      <End Role="CTHDSanPham" EntitySet="CTHDSanPham" />
-    </AssociationSet>
     <AssociationSet Name="FK__CTHDSanPha__SoHD__06CD04F7" Association="Self.FK__CTHDSanPha__SoHD__06CD04F7">
-      <End Role="HoaDon" EntitySet="HoaDon" />
-      <End Role="CTHDSanPham" EntitySet="CTHDSanPham" />
-    </AssociationSet>
-    <AssociationSet Name="FK__CTHDSanPha__SoHD__0A9D95DB" Association="Self.FK__CTHDSanPha__SoHD__0A9D95DB">
       <End Role="HoaDon" EntitySet="HoaDon" />
       <End Role="CTHDSanPham" EntitySet="CTHDSanPham" />
     </AssociationSet>
     <AssociationSet Name="FK__Ghe__SoPhong__5DCAEF64" Association="Self.FK__Ghe__SoPhong__5DCAEF64">
       <End Role="PhongChieu" EntitySet="PhongChieu" />
       <End Role="Ghe" EntitySet="Ghe" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HDNhapHan__MaNVN__0F624AF8" Association="Self.FK__HDNhapHan__MaNVN__0F624AF8">
-      <End Role="NhanVien" EntitySet="NhanVien" />
-      <End Role="HDNhapHang" EntitySet="HDNhapHang" />
     </AssociationSet>
     <AssociationSet Name="FK__HDNHAPHAN__MaNVN__59063A47" Association="Self.FK__HDNHAPHAN__MaNVN__59063A47">
       <End Role="NhanVien" EntitySet="NhanVien" />
@@ -511,23 +400,7 @@
       <End Role="KhachHang" EntitySet="KhachHang" />
       <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>
-    <AssociationSet Name="FK__HoaDon__MaKH__08B54D69" Association="Self.FK__HoaDon__MaKH__08B54D69">
-      <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HOADON__MaKH__52593CB8" Association="Self.FK__HOADON__MaKH__52593CB8">
-      <End Role="KhachHang" EntitySet="KhachHang" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
-    </AssociationSet>
     <AssociationSet Name="FK__HoaDon__MaNV__04E4BC85" Association="Self.FK__HoaDon__MaNV__04E4BC85">
-      <End Role="NhanVien" EntitySet="NhanVien" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HoaDon__MaNV__09A971A2" Association="Self.FK__HoaDon__MaNV__09A971A2">
-      <End Role="NhanVien" EntitySet="NhanVien" />
-      <End Role="HoaDon" EntitySet="HoaDon" />
-    </AssociationSet>
-    <AssociationSet Name="FK__HOADON__MaNV__534D60F1" Association="Self.FK__HOADON__MaNV__534D60F1">
       <End Role="NhanVien" EntitySet="NhanVien" />
       <End Role="HoaDon" EntitySet="HoaDon" />
     </AssociationSet>

@@ -24,7 +24,7 @@ namespace CinemaManagement.Models
         public decimal ThanhTien { get; set; }
         public int MaNVNhap { get; set; }
     
-        public virtual NhanVien NhanVien { get; set; }
         public virtual ICollection<CTHDNhap> CTHDNhaps { get; set; }
+        public virtual NhanVien NhanVien { get; set; }
     }
 }

@@ -37,6 +37,7 @@ namespace CinemaManagement.Models.DAL
                                                     DiaDiem = sc.DiaDiem,
                                                     CTSuCo = sc.CTSuCo,
                                                     TinhTrang = sc.TinhTrang,
+                                                    NgayBaoSC = sc.NgayBaoSC,
                                                     PhiSuaChua = sc.PhiSuaChua
                                                 }).ToListAsync();
 
@@ -62,6 +63,7 @@ namespace CinemaManagement.Models.DAL
                         DiaDiem = newSuCo.DiaDiem,
                         CTSuCo = newSuCo.CTSuCo,
                         TinhTrang = newSuCo.TinhTrang,
+                        NgayBaoSC = DateTime.Now,
                         PhiSuaChua = 0
                     };
                     context.SuCoes.Add(SC);
@@ -97,6 +99,7 @@ namespace CinemaManagement.Models.DAL
                     SC.CTSuCo = UpdatedSC.CTSuCo;
                     SC.TinhTrang = UpdatedSC.TinhTrang;
                     SC.PhiSuaChua = UpdatedSC.PhiSuaChua;
+                    SC.NgayBaoSC = UpdatedSC.NgayBaoSC;
 
                     await context.SaveChangesAsync();
 
