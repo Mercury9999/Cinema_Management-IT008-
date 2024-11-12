@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VVqV+WzoSKc=",
+  "dgSpecHash": "sc6DWsk09p0=",
   "success": true,
-  "projectFilePath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj",
+  "projectFilePath": "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\vantr\\.nuget\\packages\\entityframework\\6.5.1\\entityframework.6.5.1.nupkg.sha512",
     "C:\\Users\\vantr\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
