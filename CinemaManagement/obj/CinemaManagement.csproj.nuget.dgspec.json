@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj": {}
+    "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj": {}
   },
   "projects": {
-    "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj": {
+    "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj",
+        "projectUniqueName": "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
         "projectName": "CinemaManagement",
-        "projectPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\CinemaManagement.csproj",
+        "projectPath": "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
         "packagesPath": "C:\\Users\\vantr\\.nuget\\packages\\",
-        "outputPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\obj\\",
+        "outputPath": "D:\\UIT\\Cinema_Management-IT008\\CinemaManagement\\obj\\",
         "projectStyle": "PackageReference",
         "crossTargeting": true,
         "fallbackFolders": [
