@@ -1,60 +1,66 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\",
+  "WorkspaceRootPath": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\view\\loginwindow\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\view\\loginwindow\\loginwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\suatchieudal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\suatchieudal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagementcontext.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagementcontext.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\sucodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\sucodal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\ve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\ve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\dtos\\sucodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\dtos\\sucodto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagement.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagement.edmx.diagram||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\nhanviendal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\nhanviendal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\models\\cinemamanagementmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\cinemamanagementmodel.context.tt||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\phongchieudal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\phongchieudal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\cinemamanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\cinemamanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\phimdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\phimdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\app.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\nhaphangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\nhaphangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\khachhangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\khachhangdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\assemblyinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\hdnhapdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\hdnhapdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\resourcexaml\\mainresource.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\datmuadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\datmuadal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\sanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\sanphamdal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\dtos\\suatchieudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\dtos\\suatchieudto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008\\cinemamanagement\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\viewmodel\\baseviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\dtos\\phimdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\dtos\\phimdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|d:\\uit\\c#\\it008\\cinema_management-it008-\\cinemamanagement\\models\\dal\\hoadondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D7ED451-626D-411E-BA96-5586945E3725}|CinemaManagement\\CinemaManagement.csproj|solutionrelative:cinemamanagement\\models\\dal\\hoadondal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -64,170 +70,202 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "LoginWindow.xaml",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
-              "RelativeDocumentMoniker": "CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
-              "RelativeToolTip": "CinemaManagement\\View\\LoginWindow\\LoginWindow.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-05T03:54:33.644Z",
+              "DocumentIndex": 2,
+              "Title": "Ve.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\Ve.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\Ve.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\Ve.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\Ve.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:58:28.653Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SuCoDTO.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\SuCoDTO.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\DTOs\\SuCoDTO.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\SuCoDTO.cs",
+              "RelativeToolTip": "CinemaManagement\\DTOs\\SuCoDTO.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAqwB4AAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:47:39.067Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "SuCoDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SuCoDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\SuCoDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SuCoDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\SuCoDAL.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAA7wGUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:45:50.428Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "CinemaManagement.edmx.diagram",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
-              "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
-              "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.edmx.diagram",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2024-11-05T03:21:54.847Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CinemaManagementContext.tt",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagementContext.tt",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-11-05T03:21:52.63Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CinemaManagement.Designer.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
-              "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.Designer.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.Designer.cs",
-              "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.Designer.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAkAAAAMAAAAAAAAAA==",
+              "Title": "NhanVienDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\NhanVienDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\NhanVienDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\NhanVienDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\NhanVienDAL.cs",
+              "ViewState": "AgIAAGQAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T03:14:33.549Z"
+              "WhenOpened": "2024-11-12T13:44:47.892Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CinemaManagement.edmx",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx",
-              "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagement.edmx",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagement.edmx",
-              "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagement.edmx",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
-              "WhenOpened": "2024-11-05T03:14:22.054Z"
+              "DocumentIndex": 6,
+              "Title": "PhimDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\PhimDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\PhimDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\PhimDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\PhimDAL.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAAJgAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:19:49.636Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "CinemaManagementModel.Context.tt",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
-              "RelativeDocumentMoniker": "CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
-              "RelativeToolTip": "CinemaManagement\\Models\\CinemaManagementModel.Context.tt",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
-              "WhenOpened": "2024-11-05T03:21:49.097Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MainResource.xaml",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
-              "RelativeDocumentMoniker": "CinemaManagement\\ResourceXAML\\MainResource.xaml",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ResourceXAML\\MainResource.xaml",
-              "RelativeToolTip": "CinemaManagement\\ResourceXAML\\MainResource.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-05T02:54:22.751Z",
+              "Title": "PhongChieuDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\PhongChieuDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\PhongChieuDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\PhongChieuDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\PhongChieuDAL.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:45:28.583Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
-              "Title": "AssemblyInfo.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\AssemblyInfo.cs",
-              "RelativeDocumentMoniker": "CinemaManagement\\AssemblyInfo.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\AssemblyInfo.cs",
-              "RelativeToolTip": "CinemaManagement\\AssemblyInfo.cs",
+              "Title": "HDNhapDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\HDNhapDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\HDNhapDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\HDNhapDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\HDNhapDAL.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T02:38:12.674Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CinemaManagement.csproj",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
-              "RelativeDocumentMoniker": "CinemaManagement\\CinemaManagement.csproj",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\CinemaManagement.csproj",
-              "RelativeToolTip": "CinemaManagement\\CinemaManagement.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-11-04T16:05:01.331Z"
+              "WhenOpened": "2024-11-12T13:16:26.033Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "App.Config",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.Config",
-              "RelativeDocumentMoniker": "CinemaManagement\\App.Config",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.Config",
-              "RelativeToolTip": "CinemaManagement\\App.Config",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAQAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
-              "WhenOpened": "2024-11-05T02:38:11.723Z"
+              "Title": "NhapHangDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\NhapHangDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\NhapHangDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\NhapHangDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\NhapHangDAL.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:22:04.369Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "App.xaml",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.xaml",
-              "RelativeDocumentMoniker": "CinemaManagement\\App.xaml",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\App.xaml",
-              "RelativeToolTip": "CinemaManagement\\App.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-11-04T10:18:55.163Z",
+              "DocumentIndex": 0,
+              "Title": "SuatChieuDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SuatChieuDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\SuatChieuDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SuatChieuDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\SuatChieuDAL.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAD4v1wAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:16:19.97Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "DatMuaDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\DatMuaDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\DatMuaDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\DatMuaDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\DatMuaDAL.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAYwA8AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:16:24.017Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
-              "Title": "Microsoft.NET.TargetFrameworkInference.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.NET.TargetFrameworkInference.targets",
-              "ViewState": "AgIAAEsAAAAAAAAAAAAuwF8AAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-11-05T02:46:24.159Z"
+              "Title": "SanPhamDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SanPhamDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\SanPhamDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\SanPhamDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\SanPhamDAL.cs",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAwwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:16:28.865Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "Microsoft.PackageDependencyResolution.targets",
-              "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ToolTip": "C:\\Program Files\\dotnet\\sdk\\8.0.403\\Sdks\\Microsoft.NET.Sdk\\targets\\Microsoft.PackageDependencyResolution.targets",
-              "ViewState": "AgIAAAoBAAAAAAAAAAAuwAkBAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2024-11-04T16:54:10.628Z"
+              "Title": "SuatChieuDTO.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\SuatChieuDTO.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\DTOs\\SuatChieuDTO.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\SuatChieuDTO.cs",
+              "RelativeToolTip": "CinemaManagement\\DTOs\\SuatChieuDTO.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:34:15.859Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "KhachHangDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\KhachHangDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\KhachHangDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\KhachHangDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\KhachHangDAL.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T09:45:25.047Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 13,
-              "Title": "BaseViewModel.cs",
-              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
-              "RelativeDocumentMoniker": "CinemaManagement\\ViewModel\\BaseViewModel.cs",
-              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008\\CinemaManagement\\ViewModel\\BaseViewModel.cs",
-              "RelativeToolTip": "CinemaManagement\\ViewModel\\BaseViewModel.cs",
-              "ViewState": "AgIAABoAAAAAAAAAAAAAwBsAAAAlAAAAAAAAAA==",
+              "Title": "PhimDTO.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\PhimDTO.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\DTOs\\PhimDTO.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\DTOs\\PhimDTO.cs",
+              "RelativeToolTip": "CinemaManagement\\DTOs\\PhimDTO.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-04T09:12:44.417Z"
+              "WhenOpened": "2024-11-12T13:23:02.658Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "HoaDonDAL.cs",
+              "DocumentMoniker": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\HoaDonDAL.cs",
+              "RelativeDocumentMoniker": "CinemaManagement\\Models\\DAL\\HoaDonDAL.cs",
+              "ToolTip": "D:\\UIT\\C#\\IT008\\Cinema_Management-IT008-\\CinemaManagement\\Models\\DAL\\HoaDonDAL.cs",
+              "RelativeToolTip": "CinemaManagement\\Models\\DAL\\HoaDonDAL.cs",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAzwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T13:15:43.749Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -52,7 +52,7 @@
       <PropertyRef Name="SoHDNhap" />
     </Key>
     <Property Name="SoHDNhap" Type="Int32" Nullable="false" />
-    <Property Name="NgayNhap" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayNhap" Type="DateTime" Nullable="false" />
     <Property Name="ThanhTien" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <Property Name="MaNVNhap" Type="Int32" Nullable="false" />
     <NavigationProperty Name="NHANVIEN" Relationship="Self.FK__HDNHAPHAN__MaNVN__59063A47" FromRole="HDNHAPHANG" ToRole="NHANVIEN" />
@@ -64,7 +64,7 @@
     <Property Name="SoHD" Type="Int32" Nullable="false" />
     <Property Name="MaKH" Type="Int32" Nullable="false" />
     <Property Name="MaNV" Type="Int32" Nullable="false" />
-    <Property Name="NgayHD" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayHD" Type="DateTime" Nullable="false" />
     <Property Name="ChietKhau" Type="Int32" />
     <Property Name="GiaTriHD" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="CTHD_SP" Relationship="Self.FK__CTHD_SP__SoHD__5441852A" FromRole="HOADON" ToRole="CTHD_SP" />
@@ -81,9 +81,9 @@
     <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
     <Property Name="SDT_KH" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="email_KH" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" />
     <Property Name="HDTichLuy" Type="Decimal" Precision="19" Scale="4" />
-    <Property Name="NgayDK" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayDK" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="HOADONs" Relationship="Self.FK__HOADON__MaKH__52593CB8" FromRole="KHACHHANG" ToRole="HOADON" />
   </EntityType>
   <EntityType Name="NHANVIEN">
@@ -96,9 +96,9 @@
     <Property Name="acc_password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="SDT_NV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
     <Property Name="email_NV" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="NgaySinh" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgaySinh" Type="DateTime" Nullable="false" />
     <Property Name="GioiTinh" Type="String" MaxLength="3" FixedLength="false" Unicode="true" />
-    <Property Name="NgayVaoLam" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="NgayVaoLam" Type="DateTime" Nullable="false" />
     <Property Name="ChucVu" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Staff_Level" Type="Byte" Nullable="false" />
     <Property Name="IsDeleted" Type="Boolean" />
@@ -114,7 +114,7 @@
     <Property Name="TheLoai" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="ThoiLuong" Type="Int32" Nullable="false" />
     <Property Name="NuocSX" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
-    <Property Name="NgayPH" Type="DateTime" Precision="3" />
+    <Property Name="NgayPH" Type="DateTime" />
     <Property Name="DaoDien" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <Property Name="NoiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="GioiHanTuoi" Type="Byte" Nullable="false" />
@@ -152,8 +152,8 @@
     <Property Name="MaSC" Type="Int32" Nullable="false" />
     <Property Name="MaPhim" Type="Int32" Nullable="false" />
     <Property Name="SoPhongChieu" Type="Int32" Nullable="false" />
-    <Property Name="BatDau" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="KetThuc" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BatDau" Type="DateTime" Nullable="false" />
+    <Property Name="KetThuc" Type="DateTime" Nullable="false" />
     <Property Name="GiaVe" Type="Decimal" Precision="19" Scale="4" Nullable="false" />
     <NavigationProperty Name="BANVEs" Relationship="Self.FK__BANVE__MaSC__5EBF139D" FromRole="SUATCHIEU" ToRole="BANVE" />
     <NavigationProperty Name="PHIM" Relationship="Self.FK__SUATCHIEU__MaPhi__5BE2A6F2" FromRole="SUATCHIEU" ToRole="PHIM" />
