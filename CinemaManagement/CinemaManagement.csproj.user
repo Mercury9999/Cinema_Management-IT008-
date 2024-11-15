@@ -7,15 +7,57 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="MainNavigation.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="Project_UserControl\ControlBarUC.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginWindow\LoginWindow.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\QuanLyKhachHang.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\QuanLyNhanVien.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\QuanLyPhim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\QuanLySanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\QuanLySuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Page Update="MainNavigation.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Project_UserControl\ControlBarUC.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginWindow\LoginWindow.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\QuanLyKhachHang.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\QuanLyNhanVien.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\QuanLyPhim.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\QuanLySanPham.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\QuanLySuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

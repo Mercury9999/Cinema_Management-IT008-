@@ -11,6 +11,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Models\**" />
+    <Compile Remove="Resource\Assets\**" />
+    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Resource\Assets\**" />
+    <None Remove="Models\**" />
+    <None Remove="Resource\Assets\**" />
+    <Page Remove="Models\**" />
+    <Page Remove="Resource\Assets\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
     <None Remove="CinemaManagement.edmx" />
     <None Remove="Models\CinemaManagementModel1.edmx" />
   </ItemGroup>
@@ -64,6 +76,10 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>CinemaManagementModel1.cs</LastGenOutput>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>
