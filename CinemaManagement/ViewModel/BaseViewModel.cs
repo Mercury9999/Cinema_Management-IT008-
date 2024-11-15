@@ -13,6 +13,7 @@ namespace CinemaManagement.ViewModel
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
     }
 
     //Relay Command
