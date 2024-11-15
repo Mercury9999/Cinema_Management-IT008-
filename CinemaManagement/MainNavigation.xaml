@@ -1,0 +1,156 @@
+﻿<Window x:Class="CinemaManagement.MainNavigation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:uc="clr-namespace:CinemaManagement.Project_UserControl"
+        xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:vm="clr-namespace:CinemaManagement.ViewModel"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
+        Background="{DynamicResource MaterialDesignPaper}"
+        FontFamily="{DynamicResource MaterialDesignFont}"
+        Style="{StaticResource MaterialDesignWindow}"
+        mc:Ignorable="d"
+        Title="QuanLyPhim" 
+        Height="850" 
+        Width="1200"
+        WindowStyle="None"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <vm:MainNavigationVM/>
+    </Window.DataContext>
+    
+    
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <!-- Thanh tiêu đề -->
+            <Grid Grid.Row="0">
+                <uc:ControlBarUC></uc:ControlBarUC>
+            </Grid>
+
+            <!-- Navigation Panel -->
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#343155" Offset="0"/>
+                            <GradientStop Color="#3B2E58" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+
+                <Border Grid.Column="1">
+                    <Border.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                            <GradientStop Color="#3E3A65" Offset="0"/>
+                            <GradientStop Color="#473765" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Border.Background>
+                </Border>
+
+                <!-- Navigation Content -->
+
+            <StackPanel Grid.Column="0">
+
+                <TextBlock HorizontalAlignment="Center" Text="UIT_Cinema" FontSize="25" FontWeight="Bold" Foreground="White" VerticalAlignment="Center" Margin="20 50 20 40"/>
+
+                <Button Command="{Binding QuanLyPhimCommand}" Style="{StaticResource activeMenuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Film" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Quản lý phim</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+
+                <Button Command="{Binding QuanLySuatChieuCommand}" Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Table" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Quản lý suất chiếu</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+
+                <Button Command="{Binding QuanLySanPhamCommand}" Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="ProductHunt" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Quản lý sản phẩm</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="AddressCardOutline" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Quản lý khách hàng</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+
+                <Button Command="{Binding QuanLyNhanVienCommand}" Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="Users" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Quản lý nhân viên</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+
+                <Button Style="{StaticResource menuButton}">
+                    <Grid>
+                        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+                            <fa:ImageAwesome Icon="CircleOutlineNotch" Style="{StaticResource buttonIcon }"/>
+                            <TextBlock Style="{StaticResource buttonText }">Đăng xuất</TextBlock>
+                        </StackPanel>
+                        <fa:ImageAwesome Icon="AngleRight" HorizontalAlignment="Right" Visibility="Visible" Style="{StaticResource buttonIconExpanded}"/>
+                    </Grid>
+                </Button>
+            </StackPanel>
+
+
+            <Grid Grid.Column="1">
+                <!--binding current view-->
+                <Frame Content="{Binding CurrentViewModel}">
+              
+                
+                
+                </Frame>
+
+
+            </Grid>   
+                
+                
+                
+        </Grid>
+
+       
+            
+
+
+
+        </Grid>
+</Window>
