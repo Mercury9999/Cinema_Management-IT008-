@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaManagement.View.LoginWindow"
         mc:Ignorable="d"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -77,14 +77,22 @@
                      FontSize="20"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      HorizontalAlignment="Left"
-                     Height="40" Width="230"/>
+                     Height="40" Width="230"
+                     Text="{Binding Username}"/>
 
                 <PasswordBox x:Name="textBox_password"
                          materialDesign:HintAssist.Hint="Mật khẩu"
                          materialDesign:TextFieldAssist.HasClearButton="True"
                          HorizontalAlignment="Left"
                          FontSize="20"
-                         Height="40" Width="230"/>
+                         Height="40" Width="230">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="PasswordChanged">
+                            <i:InvokeCommandAction Command="{Binding PassChangedCM}"
+                                                   CommandParameter="{Binding ElementName=textBox_password}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </PasswordBox>
 
                 <StackPanel Orientation="Horizontal"
                         HorizontalAlignment="Left" Width="306" Height="46">
@@ -101,10 +109,24 @@
                         Width="100"
                         Content="Đăng nhập"
                         Style="{StaticResource MaterialDesignRaisedDarkButton}"
-                        Margin="40,0,0,0"/>
+                        Margin="40,0,0,0">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding LoginCM}">
+                                </i:InvokeCommandAction>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </Button>
 
                 </StackPanel>
             </StackPanel>
         </Grid>
     </Grid>
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding SaveLoginWindowCM}"
+                                   CommandParameter="{Binding ElementName=loginWindow}">
+            </i:InvokeCommandAction>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 </Window>
