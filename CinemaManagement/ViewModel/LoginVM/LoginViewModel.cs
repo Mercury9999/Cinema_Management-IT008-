@@ -11,10 +11,14 @@ namespace CinemaManagement.ViewModel.LoginVM
 {
     public class LoginViewModel : BaseViewModel
     {
+        #region Icommand
         public ICommand LoginCM { get; set; }
         public ICommand PassChangedCM { get; set; }
         public ICommand SaveLoginWindowCM { get; set; }
         public Window LoginWindow { get; set; }
+        #endregion
+
+        #region Thuộc tính
 
         private string _username;
         public string Username
@@ -42,6 +46,9 @@ namespace CinemaManagement.ViewModel.LoginVM
                 OnPropertyChanged();
             }
         }
+        private bool IsLoading { get; set; }
+        #endregion
+
         public LoginViewModel() 
         {
             LoginCM = new RelayCommand<Label>((p) => { return true; }, async (p) =>
@@ -49,7 +56,9 @@ namespace CinemaManagement.ViewModel.LoginVM
                 string user = Username;
                 string pass = Password;
 
+                IsLoading = true;
                 await CheckUserPass(user, pass, p);
+                IsLoading = false;
             });
 
             PassChangedCM= new RelayCommand<PasswordBox>((p) => { return true; }, (p) =>
