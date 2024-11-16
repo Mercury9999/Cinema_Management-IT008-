@@ -2,9 +2,9 @@
 using System.Windows.Input;
 
 
-namespace CinemaManagement.ViewModel
+namespace CinemaManagement.ViewModel.AdminVM
 {
-    class MainNavigationVM :BaseViewModel
+    class MainNavigationVM : BaseViewModel
     {
         public BaseViewModel CurrentViewModel { get; }
 
