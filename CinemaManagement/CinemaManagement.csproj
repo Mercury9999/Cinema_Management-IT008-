@@ -11,27 +11,19 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Models\**" />
+    <Compile Remove="Model\**" />
     <Compile Remove="Resource\Assets\**" />
-    <EmbeddedResource Remove="Models\**" />
+    <EmbeddedResource Remove="Model\**" />
     <EmbeddedResource Remove="Resource\Assets\**" />
-    <None Remove="Models\**" />
+    <None Remove="Model\**" />
     <None Remove="Resource\Assets\**" />
-    <Page Remove="Models\**" />
+    <Page Remove="Model\**" />
     <Page Remove="Resource\Assets\**" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
     <None Remove="CinemaManagement.edmx" />
-    <None Remove="Models\CinemaManagementModel1.edmx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EntityDeploy Include="Models\CinemaManagementModel1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CinemaManagementModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
 
   <ItemGroup>
@@ -47,39 +39,6 @@
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Models\CinemaManagementModel1.Context.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagementModel1.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Models\CinemaManagementModel1.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagementModel1.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Models\CinemaManagementModel1.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CinemaManagementModel1.edmx</DependentUpon>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Update="Models\CinemaManagementModel1.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CinemaManagementModel1.Context.cs</LastGenOutput>
-    </None>
-    <None Update="Models\CinemaManagementModel1.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>CinemaManagementModel1.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Model\" />
   </ItemGroup>
 
 </Project>

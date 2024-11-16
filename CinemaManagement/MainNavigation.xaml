@@ -24,7 +24,7 @@
         WindowStartupLocation="CenterScreen">
 
     <Window.DataContext>
-        <vm:MainNavigationVM/>
+         <vm:MainNavigationVM/>
     </Window.DataContext>
     
     
