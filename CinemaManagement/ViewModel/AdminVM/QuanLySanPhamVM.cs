@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CinemaManagement.ViewModel
+namespace CinemaManagement.ViewModel.AdminVM
 {
-    public class QuanLySuatChieuVM
+    public class QuanLySanPhamVM
     {
     }
 }

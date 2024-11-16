@@ -6,7 +6,6 @@
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:uc="clr-namespace:CinemaManagement.Project_UserControl"
         xmlns:fa="http://schemas.fontawesome.io/icons/"
-        xmlns:vm="clr-namespace:CinemaManagement.ViewModel"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -15,6 +14,7 @@
         Background="{DynamicResource MaterialDesignPaper}"
         FontFamily="{DynamicResource MaterialDesignFont}"
         Style="{StaticResource MaterialDesignWindow}"
+        DataContext="{StaticResource NavigationVM}"
         mc:Ignorable="d"
         Title="QuanLyPhim" 
         Height="850" 
@@ -23,12 +23,8 @@
         ResizeMode="NoResize"
         WindowStartupLocation="CenterScreen">
 
-    <Window.DataContext>
-         <vm:MainNavigationVM/>
-    </Window.DataContext>
-    
-    
-        <Grid>
+
+    <Grid>
             <Grid.RowDefinitions>
                 <RowDefinition Height="auto"></RowDefinition>
                 <RowDefinition></RowDefinition>
