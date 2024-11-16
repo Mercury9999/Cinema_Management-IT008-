@@ -1,4 +1,6 @@
 ﻿using CinemaManagement.View;
+using System.ComponentModel.Design;
+using System.Windows;
 using System.Windows.Input;
 
 
@@ -7,9 +9,10 @@ namespace CinemaManagement.ViewModel.AdminVM
     class MainNavigationVM : BaseViewModel
     {
         public BaseViewModel CurrentViewModel { get; }
-
-        public MainNavigationVM() => CurrentViewModel = new QuanLyPhimVM();
-
+        public MainNavigationVM()
+        {
+            CurrentViewModel = new QuanLyPhimVM();
+        }
 
 
 

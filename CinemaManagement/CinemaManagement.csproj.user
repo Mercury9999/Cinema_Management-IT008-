@@ -7,10 +7,10 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MainNavigation.xaml.cs">
+    <Compile Update="CustomControls\W_MessageBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Project_UserControl\ControlBarUC.xaml.cs">
+    <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\LoginWindow\LoginWindow.xaml.cs">
@@ -33,10 +33,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="MainNavigation.xaml">
+    <Page Update="CustomControls\W_MessageBox.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Project_UserControl\ControlBarUC.xaml">
+    <Page Update="MainNavigation.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ResourceXAML\MainResource.xaml">
