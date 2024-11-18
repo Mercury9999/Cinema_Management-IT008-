@@ -16,10 +16,11 @@
       Style="{StaticResource MaterialDesignWindow}"
       DataContext="{StaticResource CustomerVM}"
       Name ="QLKHwindow"
-      d:DesignHeight="450" d:DesignWidth="800"
+      d:DesignHeight="810" 
+      d:DesignWidth="900"
       Title="QuanLyKhachHang">
 
     <Grid>
-
+        
     </Grid>
 </Page>
