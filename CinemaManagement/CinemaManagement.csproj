@@ -24,18 +24,11 @@
   <ItemGroup>
     <PackageReference Include="FontAwesome.WPF" Version="4.7.0.9" />
     <None Remove="CinemaManagement.edmx" />
-    <None Remove="Models\CinemaManagementModel1.edmx" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EntityDeploy Include="Models\CinemaManagementModel1.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>CinemaManagementModel1.Designer.cs</LastGenOutput>
-    </EntityDeploy>
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="EntityFramework" Version="6.5.1" />
+    <PackageReference Include="MahApps.Metro.IconPacks.Material" Version="5.1.0" />
     <PackageReference Include="MaterialDesignThemes" Version="5.1.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.13" />
   </ItemGroup>

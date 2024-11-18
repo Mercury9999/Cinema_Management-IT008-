@@ -1,6 +1,9 @@
-﻿using System;
+﻿using CinemaManagement.View;
+using CinemaManagement.ViewModel.AdminVM;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Channels;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,6 +25,15 @@ namespace CinemaManagement
         public MainNavigation()
         {
             InitializeComponent();
+            MainFrame.Navigate(new QuanLyPhim());
         }
+
+        private void Closebutton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
+
+
+
     }
 }
