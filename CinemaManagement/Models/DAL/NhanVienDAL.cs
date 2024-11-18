@@ -101,13 +101,17 @@ namespace CinemaManagement.Models.DAL
                     {
                         return (false, "Tên đăng nhập đã tồn tại");
                     }
-                    if(checkSDT)
+                    if (checkSDT && !checkEmail)
                     {
                         return (false, "Số điện thoại đã được đăng ký");
                     }
-                    if(checkEmail)
+                    if (checkEmail && !checkSDT)
                     {
                         return (false, "Email đã được đăng ký");
+                    }
+                    if (checkSDT && checkEmail)
+                    {
+                        return (false, "Số điện thoại và email đã được đăng ký");
                     }
                     nv.TenNV = nvcapnhat.TenNV;
                     nv.acc_username = nvcapnhat.acc_username;
@@ -146,15 +150,18 @@ namespace CinemaManagement.Models.DAL
                     //Kiểm tra SĐT, email của NV mới
                     bool checkSDT = await context.NhanViens.AnyAsync(s => s.SDT_NV == nhanvien.SDT_NV && s.MaNV != nhanvien.MaNV);
                     bool checkEmail = await context.NhanViens.AnyAsync(s => s.email_NV == nhanvien.email_NV && s.MaNV != nhanvien.MaNV);
-                    if (checkSDT)
+                    if (checkSDT && !checkEmail)
                     {
                         return (false, "Số điện thoại đã được đăng ký");
                     }
-                    if (checkEmail)
+                    if (checkEmail && !checkSDT)
                     {
                         return (false, "Email đã được đăng ký");
                     }
-
+                    if(checkSDT && checkEmail)
+                    {
+                        return (false, "Số điện thoại và email đã được đăng ký");
+                    }
                     nv.MaNV = newStaffId;
                     nv.TenNV = nhanvien.TenNV;
                     nv.acc_username = "NHANVIEN" + newStaffId.ToString();
