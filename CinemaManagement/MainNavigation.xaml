@@ -29,7 +29,6 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
             <ColumnDefinition Width="203*"/>
-            <ColumnDefinition Width="37*"/>
         </Grid.ColumnDefinitions>
 
 
@@ -129,11 +128,8 @@
             <!--binding current view-->
             <Button Grid.Row="0" Style="{StaticResource buttonClose}" Content="X" HorizontalAlignment="Left" Margin="907,0,0,0" Width="53" Background="#FFF25C5C" Foreground="#FFE7DDDD" 
                     Click="Closebutton_Click"/>
-            <Frame Grid.Row="1" Content="{Binding CurrentViewModel}">
-
-
-            </Frame>
-
+            <!--<Frame x:Name="MainFrame" NavigationUIVisibility="Visible" Grid.Row="1" Content="{Binding CurrentViewModel}" Width="900" Margin="30,0,30,33"/>-->
+            <Frame x:Name="MainFrame" NavigationUIVisibility="Hidden" Grid.Row="1" Width="900" Margin="30,0,30,33"/>
 
         </Grid>
 
