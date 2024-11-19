@@ -31,7 +31,13 @@
     <Compile Update="View\QuanLySuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\SuaPhim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ThemKH.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ThongTinPhim.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -63,7 +69,13 @@
     <Page Update="View\QuanLySuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\SuaPhim.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ThemKH.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ThongTinPhim.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
