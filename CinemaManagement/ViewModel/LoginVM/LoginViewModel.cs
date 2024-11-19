@@ -17,10 +17,10 @@ namespace CinemaManagement.ViewModel.LoginVM
         public ICommand LoginCM { get; set; }
         public ICommand PassChangedCM { get; set; }
         public ICommand SaveLoginWindowCM { get; set; }
-        public Window LoginWindow { get; set; }
         #endregion
 
         #region Thuộc tính
+        public Window LoginWindow { get; set; }
 
         private string _username;
         public string Username
