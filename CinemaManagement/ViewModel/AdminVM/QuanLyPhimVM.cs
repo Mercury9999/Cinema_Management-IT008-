@@ -4,11 +4,13 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Input;
 using CinemaManagement.DTOs;
 using CinemaManagement.Models;
 using CinemaManagement.Models.DAL;
+using CinemaManagement.View;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -19,16 +21,19 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public ICommand AddFilmCM { get; set; }
         public ICommand UpdateFilmCM { get; set; }
+        public ICommand ViewFilmCM { get; set; }
         public ICommand DeleteFilmCM { get; set; }
 
         public ICommand OpenAddFilmCM { get; set; }
         public ICommand OpenUpdateFilmCM { get; set; }
+        public ICommand OpenViewFilmCM { get; set; }
         public ICommand OpenDeleteFilmCM { get; set; }
 
         public ICommand LoadDataFilmCM { get; set; }
 
         #endregion
         #region Thuộc tính
+        private DataGrid dataGrid {  get; set; }
         private PhimDTO _phim {  get; set; }
         public PhimDTO Phim { get { return _phim; } set { _phim = value; OnPropertyChanged(); } }
         private ObservableCollection<PhimDTO> _dsphim { get; set; }
@@ -38,6 +43,10 @@ namespace CinemaManagement.ViewModel.AdminVM
         #endregion
         public QuanLyPhimVM()
         {
+            GetDataGridCM = new RelayCommand<DataGrid>((p) => { return true; }, async (p) =>
+            {
+                dataGrid = p;
+            });
             LoadDataFilmCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
             {
                 try
