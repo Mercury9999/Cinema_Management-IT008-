@@ -166,27 +166,17 @@
 
                         <Button
                             Width="70"
- Height="30"
- materialDesign:ButtonAssist.CornerRadius="10"
- IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
- Style="{StaticResource MaterialDesignRaisedButton}"
- ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="30 0 0 0"
+                     Height="30"
+                     materialDesign:ButtonAssist.CornerRadius="10"
+                     IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}"
+                     Style="{StaticResource MaterialDesignRaisedButton}"
+                     ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="30 0 0 0"
 >
-                            <TextBlock
-   Text="Thoat" />
+                            <TextBlock Text="Thoat" />
                         </Button>
                     </StackPanel>
-
-
                 </Grid>
-
-
             </Grid>
-
-
-
-
         </Grid>
-
     </Border>
 </Window>
