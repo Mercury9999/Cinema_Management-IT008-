@@ -126,7 +126,7 @@ namespace CinemaManagement.Models.DAL
 
                     var p = new Phim()
                     {
-                        MaPhim = newMovieId,
+                        MaPhim = newMovieId, 
                         TenPhim = phim.TenPhim,
                         TheLoai = phim.TheLoai,
                         ThoiLuong = phim.ThoiLuong,
