@@ -1,10 +1,12 @@
 ﻿using CinemaManagement.DTOs;
 using CinemaManagement.Models.DAL;
+using CinemaManagement.View;
 using CinemaManagement.View.LoginWindow;
 using System;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using System.Windows.Navigation;
 
 
 namespace CinemaManagement.ViewModel.LoginVM
@@ -15,10 +17,10 @@ namespace CinemaManagement.ViewModel.LoginVM
         public ICommand LoginCM { get; set; }
         public ICommand PassChangedCM { get; set; }
         public ICommand SaveLoginWindowCM { get; set; }
-        public Window LoginWindow { get; set; }
         #endregion
 
         #region Thuộc tính
+        public Window LoginWindow { get; set; }
 
         private string _username;
         public string Username
@@ -87,7 +89,7 @@ namespace CinemaManagement.ViewModel.LoginVM
                 LoginWindow.Hide();
                 if(nhanvien.Staff_Level == 1)
                 {
-                    MainNavigation w1 = new MainNavigation();
+                    NavigationWindow w1 = new NavigationWindow();
                     w1.Show();
                     LoginWindow.Close();
                     return;

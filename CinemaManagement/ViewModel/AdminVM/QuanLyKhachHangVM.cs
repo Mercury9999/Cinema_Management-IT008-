@@ -18,7 +18,6 @@ namespace CinemaManagement.ViewModel.AdminVM
     {
         #region Thuộc tính
 
-        public ListView listView;
         private KhachHangDTO _khachhang { get; set; }
         public KhachHangDTO KhachHang
         {
@@ -65,12 +64,10 @@ namespace CinemaManagement.ViewModel.AdminVM
         #endregion
         public QuanLyKhachHangVM()
         {
-            GetListViewCM = new RelayCommand<ListView>((p) => { return true; }, (p) =>
-            {
-                listView = p;
-            });
+
             LoadDataCustomerCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
             {
+                /*
                 try
                 {
                     IsLoading = true;
@@ -83,6 +80,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     MessageBox.Show(ex.ToString());
                     return;
                 }
+                */
             });
             OpenAddCustomerCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {

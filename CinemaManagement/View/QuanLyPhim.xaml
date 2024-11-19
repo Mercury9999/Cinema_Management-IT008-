@@ -4,7 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CinemaManagement.View"
-      xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
+      xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyPhimVM}"
       mc:Ignorable="d"
       DataContext="{StaticResource FilmVM}"
       d:DesignHeight="810" 
@@ -12,7 +12,11 @@
       Title="QuanLyPhim"
       Background="Transparent"
       >
-
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadDataFilmCM}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
@@ -30,7 +34,7 @@
             <Grid Grid.Row="0" Margin="0,40,0,0">
                 <!-- Search TextBox-->
                 <Grid Margin="30,0,0,0" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left">
-                    <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False" Text="Search here..."
+                    <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="True" Text="Tìm tên phim"
                     Panel.ZIndex="1"
                     Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BooltoVis}}"/>
                     <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}" Height="31" />
@@ -43,14 +47,16 @@
                 <Button Margin="717,24,30,25">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                        <TextBlock Text="Add new film"/>
+                        <TextBlock Text="Thêm phim"/>
                     </StackPanel>
                 </Button>
             </Grid>
 
             <!-- Data grid -->
-            <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}" Grid.Row="1"
-                x:Name="filmGrid" SelectionChanged="filmGrid_SelectionChanged">
+            <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
+                      x:Name="filmGrid" SelectionChanged="filmGrid_SelectionChanged"
+                      AutoGenerateColumns="False" ItemsSource="{Binding dsPhim}" IsReadOnly="True"
+                      Grid.Row="1">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
                         <DataGridCheckBoxColumn.HeaderTemplate>
@@ -60,25 +66,25 @@
                         </DataGridCheckBoxColumn.HeaderTemplate>
                     </DataGridCheckBoxColumn>
 
-                    <DataGridTextColumn Header="#" IsReadOnly="True" CanUserResize="False" Width="Auto"/>
+                    <DataGridTextColumn Header="" IsReadOnly="True" CanUserResize="False" Width="Auto"/>
 
                     <DataGridTemplateColumn Header="Tên Phim" IsReadOnly="True" Width="*">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
                                     <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="Red">
-                                        <TextBlock Text="..." VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
+                                        <TextBlock Text="{Binding TenPhim}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
                                     </Border>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>
 
-                    <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*"/>
-                    <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*"/>
-                    <DataGridTextColumn Header="Đạo diễn" IsReadOnly="True" Width="*"/>
+                    <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding TheLoai}"/>
+                    <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiLuong}"/>
+                    <DataGridTextColumn Header="Đạo diễn" IsReadOnly="True" Width="*" Binding="{Binding DaoDien}"/>
 
-                    <DataGridTemplateColumn Header="Operations" IsReadOnly="True" Width="Auto">
+                    <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">

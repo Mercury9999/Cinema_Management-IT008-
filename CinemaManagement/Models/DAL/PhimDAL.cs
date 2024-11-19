@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Reflection;
+using System.Windows;
 using System.Windows.Input;
 
 namespace CinemaManagement.Models.DAL

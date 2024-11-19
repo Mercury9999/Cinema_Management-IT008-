@@ -24,7 +24,6 @@ namespace CinemaManagement.View
         {
             InitializeComponent();
         }
-
         private void filmGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
