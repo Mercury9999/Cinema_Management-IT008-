@@ -53,7 +53,9 @@
             </Grid>
 
             <!-- Data grid -->
-            <DataGrid AutoGenerateColumns="False" ItemsSource="{Binding dsPhim}"
+            <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
+                      x:Name="filmGrid" SelectionChanged="filmGrid_SelectionChanged"
+                      AutoGenerateColumns="False" ItemsSource="{Binding dsPhim}" IsReadOnly="True"
                       Grid.Row="1">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn CanUserResize="False" Width="Auto">
