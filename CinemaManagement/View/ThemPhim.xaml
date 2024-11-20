@@ -20,6 +20,12 @@
         WindowStartupLocation="CenterScreen"
         x:Name="themPhimWindow"
         DataContext="{StaticResource FilmVM}">
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetCurrentWindow}"
+                                   CommandParameter="{Binding ElementName=themPhimWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Border Background="#ffffff" CornerRadius="25">
         <Grid>
             <Grid.RowDefinitions>

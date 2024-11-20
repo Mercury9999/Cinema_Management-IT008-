@@ -28,6 +28,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand GetQLPWindowCM {  get; set; }
         public ICommand UploadImageCM { get; set; }
         public ICommand SaveNewFilmCM { get; set; }
+        public ICommand GetCurrentWindow { get; set; }
 
         #endregion
         #region Thuộc tính
@@ -59,6 +60,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         //Biến khác
         private DataGrid dataGrid {  get; set; }
         private Window QuanLyPhimWindow { get; set; }
+        private Window CurrentWindow { get; set; }
         private PhimDTO _phim {  get; set; }
         public PhimDTO Phim { get { return _phim; } set { _phim = value; OnPropertyChanged(); } }
         private ObservableCollection<PhimDTO> _dsphim { get; set; }
@@ -71,6 +73,10 @@ namespace CinemaManagement.ViewModel.AdminVM
             GetQLPWindowCM = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 QuanLyPhimWindow = p;
+            });
+            GetCurrentWindow = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            {
+                CurrentWindow = p;
             });
             LoadDataFilmCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
             {
