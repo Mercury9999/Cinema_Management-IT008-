@@ -40,6 +40,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     MessageBox.Show(messages);
                     dsPhim.Add(Phim);
+                    CurrentWindow.Close();
                     return;
                 }
                 else
