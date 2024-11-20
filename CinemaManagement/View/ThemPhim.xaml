@@ -47,7 +47,7 @@
                  IsReadOnly="True"
                  FontWeight="SemiBold" Margin="0,0,300,0"
                 />
-                <Button Content="X" HorizontalAlignment="Left" Style="{StaticResource buttonClose}" Background="#FFFC6E6E" Foreground="#FFF7F3F3" Margin="534,0,0,0" Width="66"
+                <Button Content="X" HorizontalAlignment="Left" Style="{StaticResource buttonClose}" Background="#FFFC6E6E" Foreground="#FFF7F3F3" Margin="634,0,0,0" Width="66"
                 />
             </Grid>
 
@@ -97,7 +97,7 @@
                 <Label Margin="10 20 0 0" Content="Đạo diễn" Grid.Column="0" Grid.ColumnSpan="2"/>
                 <Label Margin="10,20,233,0" Content="Quốc gia" Grid.Column="2" Grid.ColumnSpan="2"/>
                 <Label Margin="0,20,10,0" Content="Thời lượng" Grid.Column="3"/>
-                <Label Margin="110,20,-100,0" Content="Rating" Grid.Column="3"/>
+                <Label Margin="130,20,-100,0" Content="Rating" Grid.Column="3"/>
 
             </Grid>
 
@@ -127,7 +127,7 @@
                 />
                 <TextBox Grid.Column="2" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
                         Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                        Text="{Binding GioiHanTuoi}" Margin="100,0,25,0"
+                        Text="{Binding GioiHanTuoi}" Margin="127,0,25,0"
                         x:Name="txtRating"
                 />
             </Grid>

@@ -12,6 +12,7 @@
       Title="QuanLyPhim"
       Background="Transparent"
       >
+    
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding LoadDataFilmCM}" />
@@ -73,22 +74,10 @@
 
                     <DataGridTextColumn Header="" IsReadOnly="True" CanUserResize="False" Width="Auto"/>
 
-                    <DataGridTemplateColumn Header="Tên Phim" IsReadOnly="True" Width="*">
-                        <DataGridTemplateColumn.CellTemplate>
-                            <DataTemplate>
-                                <StackPanel Orientation="Horizontal">
-                                    <Border Width="25" Height="25" CornerRadius="50" Margin="0 0 10 0" Background="Red">
-                                        <TextBlock Text="{Binding TenPhim}" VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" Margin="0 0 0 1"/>
-                                    </Border>
-                                </StackPanel>
-                            </DataTemplate>
-                        </DataGridTemplateColumn.CellTemplate>
-                    </DataGridTemplateColumn>
-
+                    <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding TenPhim}"/>
                     <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding TheLoai}"/>
                     <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiLuong}"/>
                     <DataGridTextColumn Header="Đạo diễn" IsReadOnly="True" Width="*" Binding="{Binding DaoDien}"/>
-
                     <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
@@ -120,8 +109,8 @@
                     </Button>
 
                     <Rectangle Width="1" Fill="#dee4ec" Margin="3 7"/>
-                    <Button Style="{StaticResource pagingButton}" Content="1"/>
-                    <Button Style="{StaticResource pagingButton}" Content="2" Background="#7950f2" Foreground="#ffffff"/>
+                    <Button Style="{StaticResource pagingButton}" Content="1" Background="#7950f2" Foreground="#ffffff"/>
+                    <Button Style="{StaticResource pagingButton}" Content="2"/>
                     <Button Style="{StaticResource pagingButton}" Content="3"/>
 
                     <TextBlock Text="..." Foreground="#6c7682" VerticalAlignment="Center" FontSize="15" Margin="10 0"/>
