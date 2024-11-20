@@ -14,7 +14,11 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CinemaManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
+<<<<<<< HEAD
 [assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8347a6481cdd7e6ef25ee3e713e0e136a69a7e41")]
+=======
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9a41dd91410587a3965fab9783863c42e008c400")]
+>>>>>>> 21a7ee6e88a4a764a8a7d56a0821170cfc89da0a
 [assembly: System.Reflection.AssemblyProductAttribute("CinemaManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CinemaManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
