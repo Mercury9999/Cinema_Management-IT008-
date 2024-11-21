@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
+using CinemaManagement.ViewModel.AdminVM;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -45,14 +46,13 @@ namespace CinemaManagement.ViewModel.AdminVM
                 }
                 else
                 {
-                    MessageBox.Show(messages);
-                    MessageBox.Show("Lỗi hệ thống");
+                    CustomControls.MyMessageBox.Show("Lỗi hệ thống" + messages);
                     return;
                 }
             }
             else
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                CustomControls.MyMessageBox.Show("Vui lòng nhập đủ thông tin");
             }
         }
     }
