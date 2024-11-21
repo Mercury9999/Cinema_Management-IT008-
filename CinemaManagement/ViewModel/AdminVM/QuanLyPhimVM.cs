@@ -10,7 +10,7 @@ using CinemaManagement.DTOs;
 using CinemaManagement.Models;
 using CinemaManagement.Models.DAL;
 using CinemaManagement.View;
-using Microsoft.Win32;
+using CinemaManagement.CustomControls;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -61,8 +61,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         private DataGrid dataGrid {  get; set; }
         private Window QuanLyPhimWindow { get; set; }
         private Window CurrentWindow { get; set; }
-        private PhimDTO _phim {  get; set; }
-        public PhimDTO Phim { get { return _phim; } set { _phim = value; OnPropertyChanged(); } }
+        private PhimDTO _phimselected {  get; set; }
+        public PhimDTO PhimSelected { get { return _phimselected; } set { _phimselected = value; OnPropertyChanged(); } }
         private ObservableCollection<PhimDTO> _dsphim { get; set; }
         public ObservableCollection<PhimDTO> dsPhim { get { return _dsphim; } set { _dsphim = value; OnPropertyChanged(); } }
         private bool IsSaving { get; set; }
@@ -89,7 +89,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Lỗi hệ thống");
+                    CustomControls.MyMessageBox.Show("Lỗi hệ thống");
                     return;
                 }
             });
@@ -113,6 +113,27 @@ namespace CinemaManagement.ViewModel.AdminVM
                 IsSaving = true;
                 await SaveNewFilm(p);
                 IsSaving = false;
+            });
+            DeleteFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+            {
+                MessageBoxResult result = MessageBox.Show("Xoá sẽ mất hết dữ liệu", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if(result == MessageBoxResult.Yes)
+                {
+                    IsLoading = true;
+                    (bool trangthai, string message) = await PhimDAL.Instance.DeleteMovie(PhimSelected.MaPhim);
+                    if(trangthai)
+                    {
+                        for (int i = 0; i < dsPhim.Count; i++)
+                        {
+                            if (dsPhim[i].MaPhim == PhimSelected.MaPhim)
+                            {
+                                dsPhim.Remove(dsPhim[i]);
+                                break;
+                            }
+                        }
+                    }
+                    CustomControls.MyMessageBox.Show(message);
+                }
             });
         }
         private void ClearData()
