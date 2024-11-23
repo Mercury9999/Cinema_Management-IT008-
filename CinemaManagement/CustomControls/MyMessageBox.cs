@@ -13,5 +13,13 @@ namespace CinemaManagement.CustomControls
             W_MessageBox messageBox = new W_MessageBox(Text);
             messageBox.ShowDialog();
         }
+
+        public static bool ShowYesNo(string Text)
+        {
+            Y_MessageBox messageBox = new Y_MessageBox(Text);
+            messageBox.ShowDialog();
+            return messageBox.Result;
+        }
+
     }
 }

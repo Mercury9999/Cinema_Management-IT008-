@@ -10,6 +10,9 @@
     <Compile Update="CustomControls\W_MessageBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="CustomControls\Y_MessageBox.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -37,12 +40,18 @@
     <Compile Update="View\ThemKH.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ThemSuatChieu.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ThongTinPhim.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="CustomControls\W_MessageBox.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="CustomControls\Y_MessageBox.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="MainNavigation.xaml">
@@ -73,6 +82,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ThemKH.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ThemSuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ThongTinPhim.xaml">
