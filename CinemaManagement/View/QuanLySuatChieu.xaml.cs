@@ -23,6 +23,22 @@ namespace CinemaManagement.View
         public QuanLySuatChieu()
         {
             InitializeComponent();
+            List<SuatChieu> testData = new List<SuatChieu>
+            {
+                new SuatChieu { Ten = "Chu meo con", TheLoai = "Hoat hinh", ThoiLuong = "120" },
+                new SuatChieu { Ten = "Hoang ha Dao Chu", TheLoai = "Tien hiep", ThoiLuong = "130" }
+            };
+
+            filmGrid2.ItemsSource = testData;
+
         }
+        public class SuatChieu
+        {
+            public string Ten { get; set; }
+            public string TheLoai { get; set; }
+            public string ThoiLuong { get; set; }
+
+        }
+
     }
 }

@@ -10,25 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CinemaManagement.View
 {
     /// <summary>
-    /// Interaction logic for QuanLyPhim.xaml
+    /// Interaction logic for ThemSuatChieu.xaml
     /// </summary>
-    public partial class QuanLyPhim : Page
+    public partial class ThemSuatChieu : Window
     {
-        public QuanLyPhim()
+        public ThemSuatChieu()
         {
-            InitializeComponent();
+            InitializeComponent();         
         }
-        private void filmGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
-
     }
-
 }
