@@ -62,7 +62,7 @@
             <!-- Data grid -->
             <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
                       x:Name="filmGrid" SelectionChanged="filmGrid_SelectionChanged"
-                      AutoGenerateColumns="False" ItemsSource="{Binding dsPhim}" IsReadOnly="True"
+                      AutoGenerateColumns="False" ItemsSource="{Binding dsPhim}" IsReadOnly="True" SelectedItem="{Binding PhimSelected}"
                       Grid.Row="1">
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn CanUserResize="False" Width="Auto" ElementStyle="{StaticResource CheckBoxStyle1}">
@@ -86,7 +86,8 @@
                                     <Button Style="{StaticResource gridEditButton}">
                                         <icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
-                                    <Button Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0">
+                                    <Button Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0"
+                                            Command="{Binding ElementName=filmGrid, Path=DataContext.DeleteFilmCM}">
                                         <icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>

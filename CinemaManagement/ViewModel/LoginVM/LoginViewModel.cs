@@ -1,7 +1,5 @@
 ﻿using CinemaManagement.DTOs;
 using CinemaManagement.Models.DAL;
-using CinemaManagement.View;
-using CinemaManagement.View.LoginWindow;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -78,7 +76,7 @@ namespace CinemaManagement.ViewModel.LoginVM
         {
             if(string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                CustomControls.MyMessageBox.Show("Vui lòng nhập đủ thông tin");
                 return;
             }
 
@@ -97,7 +95,7 @@ namespace CinemaManagement.ViewModel.LoginVM
             }
             else
             {
-                MessageBox.Show(messages);
+                CustomControls.MyMessageBox.Show(messages);
                 return;
             }
         }
