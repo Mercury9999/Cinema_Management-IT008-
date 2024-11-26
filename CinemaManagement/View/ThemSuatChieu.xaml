@@ -72,7 +72,7 @@
                     Width="158"
                     Style="{StaticResource MaterialDesignOutlinedDatePicker}"
                     HorizontalAlignment="Left"                   
- />
+                />
             </Grid>
 
             <Grid Grid.Row="3">

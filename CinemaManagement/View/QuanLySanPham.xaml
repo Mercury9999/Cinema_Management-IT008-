@@ -4,11 +4,606 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:CinemaManagement.View"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="810" d:DesignWidth="900"
       Title="QuanLySanPham">
 
-    <Grid>
-        
-    </Grid>
+
+    <Border CornerRadius="30" Background="#eff2f7">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Orientation="Horizontal">
+                <TextBox
+                        materialDesign:HintAssist.Hint="Tìm kiếm"
+                        materialDesign:HintAssist.HintOpacity=".26"   
+                        Margin="50,30,50,0" VerticalAlignment="Top" Width="208"
+                />
+
+                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F">
+                    <StackPanel Orientation="Horizontal">
+                        <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
+                        <TextBlock Text="Thêm sản phẩm"/>
+                    </StackPanel>
+                </Button>
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <ScrollViewer VerticalScrollBarVisibility="Auto" Height="672" Width="776">
+                    <WrapPanel Margin="20" Orientation="Horizontal">
+
+                        <!-- San pham -->
+
+
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                        <materialDesign:Card
+                         Width="200"
+                         Margin="30 20 0 0"
+                    >
+                            <Grid
+>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition
+                                 Height="140" />
+                                    <RowDefinition
+                                 Height="*" />
+                                    <RowDefinition
+                                 Height="Auto" />
+                                </Grid.RowDefinitions>
+
+                                <!--<Image
+                                 Height="140"
+                                 Source=""
+                                 Stretch="UniformToFill" />-->
+
+                                <Button
+                               Grid.Row="0"
+                               Margin="0,0,16,-20"
+                               HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Background="DarkGray"
+                               BorderBrush="Black"
+                               Style="{StaticResource MaterialDesignFloatingActionMiniButton}">
+                                    <materialDesign:PackIcon Kind="PlusBold" />
+                                </Button>
+
+                                <StackPanel
+                                 Grid.Row="1"
+                                 Margin="8,24,8,0">
+                                    <TextBlock Text="Bánh mì"
+                                 FontWeight="Bold"
+                                        FontSize="20"/>
+
+                                    <StackPanel Orientation="Horizontal" Height="25">
+                                        <TextBlock
+                                     Text="SL:"
+                                     Width="31" 
+                                     FontSize="15"/>
+                                        <TextBlock Text="Số nè" FontSize="15"/>
+                                        <TextBlock TextAlignment="Center" Margin="20 0 0 0" Text="45000" FontSize="15" Width="44"/>
+                                        <materialDesign:PackIcon Kind="Money" Height="24" Width="27" />
+                                    </StackPanel>
+                                </StackPanel>
+
+                            </Grid>
+                        </materialDesign:Card>
+                    </WrapPanel>
+                </ScrollViewer>
+            </StackPanel>
+        </Grid>
+    </Border>
 </Page>
