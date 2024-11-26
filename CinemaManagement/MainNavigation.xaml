@@ -107,7 +107,7 @@
                 </Grid>
             </Button>
 
-            <Button Style="{StaticResource menuButton}">
+            <Button Style="{StaticResource menuButton}" Margin="0,200,-20,0">
                 <Grid>
                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
                         <fa:ImageAwesome Icon="CircleOutlineNotch" Style="{StaticResource buttonIcon }"/>

@@ -40,10 +40,16 @@
     <Compile Update="View\ThemKH.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ThemNhanVien.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\ThemSuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\ThongTinPhim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ThongTinSuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -84,10 +90,16 @@
     <Page Update="View\ThemKH.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ThemNhanVien.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\ThemSuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ThongTinPhim.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ThongTinSuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
