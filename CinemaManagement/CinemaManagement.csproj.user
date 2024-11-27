@@ -16,6 +16,9 @@
     <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\ChiTietHoaDon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginWindow\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -35,6 +38,9 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\SuaPhim.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\ThanhToan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\ThemKH.xaml.cs">
@@ -66,6 +72,9 @@
     <Page Update="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\ChiTietHoaDon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\LoginWindow\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -85,6 +94,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\SuaPhim.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\ThanhToan.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\ThemKH.xaml">
