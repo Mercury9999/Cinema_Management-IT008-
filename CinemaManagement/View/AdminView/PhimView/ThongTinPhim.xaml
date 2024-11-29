@@ -23,7 +23,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetCurrentWindow}"
-                               CommandParameter="{Binding ElementName=themPhimWindow}"/>
+                               CommandParameter="{Binding ElementName=thongtinPhimWindow}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Border Background="#ffffff" CornerRadius="25">
@@ -58,24 +58,26 @@
                 </Grid.ColumnDefinitions>
 
                 <Label Margin="10 20 0 0" Grid.Column="0" Content="Ten Phim"/>
-                <Label Margin="5 20 0 0" Grid.Column="1" Content="Ngay Chieu"/>
+                <Label Margin="5 20 0 0" Grid.Column="1" Content="Ngay Phat Hanh"/>
+                <Label Margin="188,16,-178,4" Grid.Column="1" Content="Mã phim"/>
 
             </Grid>
 
             <Grid Grid.Row="2">
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
+                    <ColumnDefinition Width="70*"/>
+                    <ColumnDefinition Width="13*"/>
+                    <ColumnDefinition Width="57*"/>
                 </Grid.ColumnDefinitions>
 
-                <ComboBox Grid.Column="0" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
+                <TextBox Grid.Column="0" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
                         Text="{Binding TenPhim}" Margin="10,0,55,0"
-                        IsEditable="False"
-                          />
+                        IsReadOnly="True" Cursor="Arrow"/>
 
-                <TextBox IsReadOnly="True" Grid.Column="1" 
-                         Margin="0,0,224,0" VerticalAlignment="Center" Height="30">
-                </TextBox>
+                <TextBox IsReadOnly="True" Grid.Column="1" Text="{Binding NgayPH}"
+                         Margin="0,0,224,0" VerticalAlignment="Center" Height="30" Grid.ColumnSpan="2"/>
+                <TextBox IsReadOnly="True" Grid.Column="2" Text="{Binding MaPhim}"
+          Margin="121,0,38,0" VerticalAlignment="Center" Height="30"/>
             </Grid>
 
             <Grid Grid.Row="3">
@@ -86,8 +88,8 @@
                     <ColumnDefinition Width="233*"/>
                 </Grid.ColumnDefinitions>
 
-                <Label Margin="10 20 0 0" Content="Suất Chiếu" Grid.Column="0" Grid.ColumnSpan="2"/>
-                <Label Margin="10,20,233,0" Content="Phòng Chiếu" Grid.Column="2" Grid.ColumnSpan="2"/>
+                <Label Margin="10 20 0 0" Content="Thể loại" Grid.Column="0" Grid.ColumnSpan="2"/>
+                <Label Margin="10,20,233,0" Content="Quốc gia" Grid.Column="2" Grid.ColumnSpan="2"/>
                 <Label Margin="0,20,10,0" Content="Thời lượng" Grid.Column="3"/>
                 <Label Margin="130,20,-100,0" Content="Rating" Grid.Column="3"/>
 
@@ -100,14 +102,16 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
-                <TextBox Grid.Column="0" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
+                <TextBox Name="txtTheLoai" Grid.Column="0" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
                      Style="{StaticResource MaterialDesignFloatingHintTextBox}"
                      Margin="10,0,55,0"
+                     Text="{Binding TheLoai}"
                 />
 
-                <ComboBox Grid.Column="1" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"                     
+                <TextBox Name="txtQuocGia" Grid.Column="1" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"                     
                      Margin="11,0,116,0"
-                     x:Name="txtPhongChieu" VerticalAlignment="Stretch"
+                     VerticalAlignment="Stretch"
+                     Text="{Binding NuocSX}"
                 />
 
                 <TextBox Grid.Column="2" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
@@ -134,10 +138,6 @@
                 <Label Margin="10 10 0 0" Grid.Column="0" Content="Noi dung"/>
                 <StackPanel Orientation="Horizontal" Grid.Column="1">
                     <Label Margin="10 10 0 0" Grid.Column="1" Content="Poster"/>
-                    <Button Margin="5 5 0 0" Style="{StaticResource gridEditButton}" Height="23" Width="22" Background="#FF86838E"
-                        >
-                        <TextBlock VerticalAlignment="Center" FontSize="15" Text="+"/>
-                    </Button>
                 </StackPanel>
 
 
@@ -180,7 +180,7 @@
                      Style="{StaticResource MaterialDesignRaisedButton}"
                      ToolTip="MaterialDesignRaisedButton with Round Corners" Margin="30 0 0 0"
                      Command="{Binding CloseWindowCM}"
-                     CommandParameter="{Binding ElementName=themPhimWindow}">
+                     CommandParameter="{Binding ElementName=thongtinPhimWindow}">
                             <TextBlock Text="Thoat" />
                         </Button>
                     </StackPanel>

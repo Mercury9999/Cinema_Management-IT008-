@@ -61,7 +61,7 @@ namespace CinemaManagement.ViewModel.LoginVM
                 IsLoading = false;
             });
 
-            PassChangedCM= new RelayCommand<PasswordBox>((p) => { return true; }, (p) =>
+            PassChangedCM = new RelayCommand<PasswordBox>((p) => { return true; }, (p) =>
             {
                 Password = p.Password;
             });
@@ -85,13 +85,10 @@ namespace CinemaManagement.ViewModel.LoginVM
             if(loginStatus)
             {
                 LoginWindow.Hide();
-                if(nhanvien.Staff_Level == 1)
-                {
-                    NavigationWindow w1 = new NavigationWindow();
-                    w1.Show();
-                    LoginWindow.Close();
-                    return;
-                }
+                MainNavigation w1 = new MainNavigation();
+                w1.Show();
+                LoginWindow.Close();
+                return;
             }
             else
             {

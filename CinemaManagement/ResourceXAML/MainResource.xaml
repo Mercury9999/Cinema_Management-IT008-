@@ -4,6 +4,7 @@
                     xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
                     xmlns:viewmodel1="clr-namespace:CinemaManagement.ViewModel.LoginVM"
                     xmlns:viewmodel2="clr-namespace:CinemaManagement.ViewModel.AdminVM"
+                    xmlns:viewmodel3="clr-namespace:CinemaManagement.ViewModel.NavigationVM"
                     xmlns:view="clr-namespace:CinemaManagement.View"
                     xmlns:local="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
                     xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
@@ -11,8 +12,8 @@
 
     <viewmodel1:LoginViewModel x:Key="LoginVM"/>
     <viewmodel2:QuanLyKhachHangVM x:Key="CustomerVM"/>
-    <viewmodel2:MainNavigationVM x:Key="NavigationVM"/>
     <viewmodel2:QuanLyPhimVM x:Key="FilmVM"/>
+    <viewmodel3:MainNavigationVM x:Key="NavigationVM"/>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <!--Navigation Control-->
     

@@ -25,17 +25,17 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public ICommand LoadDataFilmCM { get; set; }
         public ICommand CloseWindowCM { get; set; }
-        public ICommand GetQLPWindowCM {  get; set; }
+        public ICommand GetQLPWindowCM { get; set; }
         public ICommand UploadImageCM { get; set; }
         public ICommand SaveNewFilmCM { get; set; }
+        public ICommand SaveFilmCM { get; set; }
         public ICommand GetCurrentWindow { get; set; }
-
         #endregion
         #region Thuộc tính
         //Dùng lưu trữ dữ liệu của Phim
 
-        private int _maPhim {  get; set; }
-        public int MaPhim { get { return _maPhim; } set { _maPhim = value; OnPropertyChanged(); } }
+        private string _maPhim {  get; set; }
+        public string MaPhim { get { return _maPhim; } set { _maPhim = value; OnPropertyChanged(); } }
         private string _tenPhim { get; set; }
         public string TenPhim { get { return _tenPhim; } set { _tenPhim = value; OnPropertyChanged(); } }
         private string _theLoai {  get; set; }
@@ -67,6 +67,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ObservableCollection<PhimDTO> dsPhim { get { return _dsphim; } set { _dsphim = value; OnPropertyChanged(); } }
         private bool IsSaving { get; set; }
         private bool IsLoading { get; set; }
+        private ObservableCollection<string> _dstheloai { get; set; }
+        public ObservableCollection<string> dsTheLoai { get { return _dstheloai; } set { _dstheloai = value; OnPropertyChanged(); } }
         #endregion
         public QuanLyPhimVM()
         {
@@ -135,6 +137,36 @@ namespace CinemaManagement.ViewModel.AdminVM
                     CustomControls.MyMessageBox.Show(message);
                 }
             });
+            ViewFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+            {
+                IsLoading = true;
+                ClearData();
+                ThongTinPhim w1 = new ThongTinPhim();
+                GetDataFilm();
+                w1.ShowDialog();
+                IsLoading = false;
+            });
+            UpdateFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+            {
+                IsLoading = true;
+                ClearData();
+                SuaPhim w1 = new SuaPhim();
+                GetDataFilm();
+                w1.ShowDialog();
+                IsLoading = false;
+            });
+            SaveFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+            {
+                IsSaving = true;
+                await SaveUpdateFilm(p);
+                IsSaving = false;
+            });
+            dsTheLoai = new ObservableCollection<string>
+            { 
+                "Kinh dị",
+                "Hành động",
+                "Anime"
+            };
         }
         private void ClearData()
         {
