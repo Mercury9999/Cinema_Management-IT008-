@@ -1,10 +1,11 @@
-﻿<Window x:Class="CinemaManagement.View.SuaPhim"
+﻿<Window x:Class="CinemaManagement.View.ThemPhim"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaManagement.View"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyPhimVM}"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyPhimVM}"
         TextElement.Foreground="{DynamicResource MaterialDesignBody}"
         TextElement.FontWeight="Regular"
         TextElement.FontSize="13"
@@ -18,7 +19,7 @@
         AllowsTransparency="True"
         WindowStyle="None"
         WindowStartupLocation="CenterScreen"
-        x:Name="SuaPhimWindow"
+        x:Name="themPhimWindow"
         DataContext="{StaticResource FilmVM}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -43,11 +44,12 @@
                 <TextBox materialDesign:HintAssist.FloatingScale="0.50" materialDesign:TextFieldAssist.TextBoxViewMargin="20 0 1 0"
                  FontSize="20"
                  Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                 Text="Sửa Phim"
+                 Text="Thêm Phim"
                  IsReadOnly="True"
                  FontWeight="SemiBold" Margin="0,0,300,0"
                 />
                 <Button Content="X" HorizontalAlignment="Left" Style="{StaticResource buttonClose}" Background="#FFFC6E6E" Foreground="#FFF7F3F3" Margin="634,0,0,0" Width="66"
+                        Command="{Binding CloseWindowCM}"
                 />
             </Grid>
 
@@ -73,17 +75,10 @@
                 Text="{Binding TenPhim}" Margin="10,0,55,0"
                 />
 
-                <ComboBox Grid.Column="1" materialDesign:ComboBoxAssist.MaxLength="2" materialDesign:HintAssist.Hint="" materialDesign:HintAssist.HintOpacity=".26"
-                IsEditable="True" Margin="0,0,107,0" VerticalAlignment="Bottom" Height="30">
-                    <ComboBoxItem
-                        Content="Giat gan" />
-                    <ComboBoxItem
-                        Content="Trinh tham" />
-                    <ComboBoxItem
-                        Content="Hanh dong Nhat Ban" />
-                    <ComboBoxItem
-                        Content="Anime???!!!!" />
-                </ComboBox>
+                <ComboBox IsReadOnly="True" Cursor="Arrow" Grid.Column="1" materialDesign:ComboBoxAssist.MaxLength="2" materialDesign:HintAssist.Hint="" materialDesign:HintAssist.HintOpacity=".26"
+                          IsEditable="True" Margin="0,0,107,0" VerticalAlignment="Bottom" Height="30"
+                          ItemsSource="{Binding dsTheLoai}"
+                          SelectedValue="{Binding TheLoai, Mode=TwoWay}"/>
             </Grid>
 
             <Grid Grid.Row="3">

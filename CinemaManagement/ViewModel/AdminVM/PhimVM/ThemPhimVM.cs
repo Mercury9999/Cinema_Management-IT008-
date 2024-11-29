@@ -16,7 +16,7 @@ namespace CinemaManagement.ViewModel.AdminVM
     {
         public bool CheckNonEmpty()
         {
-            return !string.IsNullOrEmpty(TenPhim) 
+            return !string.IsNullOrEmpty(TenPhim) &&!string.IsNullOrEmpty(TheLoai)
             && !string.IsNullOrEmpty(ThoiLuong) && !string.IsNullOrEmpty(NuocSX) 
             && !string.IsNullOrEmpty(DaoDien) && !string.IsNullOrEmpty(GioiHanTuoi)
             && !string.IsNullOrEmpty(NoiDung) && Poster != null;
@@ -29,7 +29,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     TenPhim = TenPhim,
                     ThoiLuong = Convert.ToInt32(ThoiLuong),
-                    TheLoai = "Chưa binding được",
+                    TheLoai = TheLoai,
                     NuocSX = NuocSX,
                     DaoDien = DaoDien,
                     NoiDung = NoiDung,

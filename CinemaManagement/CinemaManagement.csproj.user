@@ -16,46 +16,46 @@
     <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ChiTietHoaDon.xaml.cs">
+    <Compile Update="View\AdminView\HoaDonView\ChiTietHoaDon.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\LoginWindow\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\QuanLyKhachHang.xaml.cs">
+    <Compile Update="View\AdminView\KhachHangView\QuanLyKhachHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\QuanLyNhanVien.xaml.cs">
+    <Compile Update="View\AdminView\NhanVienView\QuanLyNhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\QuanLyPhim.xaml.cs">
+    <Compile Update="View\AdminView\PhimView\QuanLyPhim.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\QuanLySanPham.xaml.cs">
+    <Compile Update="View\AdminView\SanPhamView\QuanLySanPham.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\QuanLySuatChieu.xaml.cs">
+    <Compile Update="View\AdminView\SuatChieuView\QuanLySuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\SuaPhim.xaml.cs">
+    <Compile Update="View\AdminView\PhimView\SuaPhim.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThanhToan.xaml.cs">
+    <Compile Update="View\AdminView\HoaDonView\ThanhToan.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThemKH.xaml.cs">
+    <Compile Update="View\AdminView\KhachHangView\ThemKH.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThemNhanVien.xaml.cs">
+    <Compile Update="View\AdminView\NhanVienView\ThemNhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThemSuatChieu.xaml.cs">
+    <Compile Update="View\AdminView\SuatChieuView\ThemSuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThongTinPhim.xaml.cs">
+    <Compile Update="View\AdminView\PhimView\ThongTinPhim.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="View\ThongTinSuatChieu.xaml.cs">
+    <Compile Update="View\AdminView\SuatChieuView\ThongTinSuatChieu.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -72,46 +72,46 @@
     <Page Update="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ChiTietHoaDon.xaml">
+    <Page Update="View\AdminView\HoaDonView\ChiTietHoaDon.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginWindow\LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\QuanLyKhachHang.xaml">
+    <Page Update="View\AdminView\KhachHangView\QuanLyKhachHang.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\QuanLyNhanVien.xaml">
+    <Page Update="View\AdminView\NhanVienView\QuanLyNhanVien.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\QuanLyPhim.xaml">
+    <Page Update="View\AdminView\PhimView\QuanLyPhim.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\QuanLySanPham.xaml">
+    <Page Update="View\AdminView\SanPhamView\QuanLySanPham.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\QuanLySuatChieu.xaml">
+    <Page Update="View\AdminView\SuatChieuView\QuanLySuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\SuaPhim.xaml">
+    <Page Update="View\AdminView\PhimView\SuaPhim.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThanhToan.xaml">
+    <Page Update="View\AdminView\HoaDonView\ThanhToan.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThemKH.xaml">
+    <Page Update="View\AdminView\KhachHangView\ThemKH.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThemNhanVien.xaml">
+    <Page Update="View\AdminView\NhanVienView\ThemNhanVien.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThemSuatChieu.xaml">
+    <Page Update="View\AdminView\SuatChieuView\ThemSuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThongTinPhim.xaml">
+    <Page Update="View\AdminView\PhimView\ThongTinPhim.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="View\ThongTinSuatChieu.xaml">
+    <Page Update="View\AdminView\SuatChieuView\ThongTinSuatChieu.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

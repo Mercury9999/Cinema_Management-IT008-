@@ -65,6 +65,7 @@ namespace CinemaManagement.Models.DAL
                     {
                         return (false, "Phim không tồn tại");
                     }
+                    context.Phims.Remove(p);
                     await context.SaveChangesAsync();
                     return (true, "Đã xoá phim");
                 }
