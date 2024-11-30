@@ -13,6 +13,7 @@ using CinemaManagement.ViewModel.AdminVM;
 using CinemaManagement.Models.DAL;
 using CinemaManagement.Models;
 using System.Collections.ObjectModel;
+using CinemaManagement.Ultis;
 
 
 namespace CinemaManagement.ViewModel.AdminVM
@@ -33,7 +34,8 @@ namespace CinemaManagement.ViewModel.AdminVM
                     DaoDien = DaoDien,
                     NoiDung = NoiDung,
                     GioiHanTuoi = Convert.ToByte(GioiHanTuoi),
-                    Poster = Poster
+                    Poster = Poster,
+//                    NgayPH = Convert.ToDateTime(NgayPH)
                 };
                 (bool trangthai, string messages) = await PhimDAL.Instance.UpdateMovie(Phim);
                 if (trangthai)
@@ -51,6 +53,10 @@ namespace CinemaManagement.ViewModel.AdminVM
                     CustomControls.MyMessageBox.Show("Lỗi hệ thống" + messages);
                     return;
                 }
+            }
+            else
+            {
+                CustomControls.MyMessageBox.Show("Vui lòng nhập đủ thông tin");
             }
         }
     }
