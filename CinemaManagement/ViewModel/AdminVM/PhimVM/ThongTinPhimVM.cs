@@ -14,7 +14,7 @@ namespace CinemaManagement.ViewModel.AdminVM
     public partial class QuanLyPhimVM : BaseViewModel
     {
         public void GetDataFilm()
-        {
+        { 
             MaPhim = PhimSelected.MaPhimStr;
             TheLoai = PhimSelected.TheLoai;
             NgayPH = ConvertDateTime.Day(PhimSelected.NgayPH);

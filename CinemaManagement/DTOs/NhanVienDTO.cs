@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using CinemaManagement.Ultis;
 
 namespace CinemaManagement.DTOs
 {
@@ -33,6 +34,20 @@ namespace CinemaManagement.DTOs
             get
             {
                 return $"NV{MaNV:D4}";
+            }
+        }
+        public string NgaySinhStr
+        {
+            get
+            {
+                return ConvertDateTime.Day(NgaySinh);
+            }
+        }
+        public string NgayVaoLamStr
+        {
+            get
+            {
+                return ConvertDateTime.Day(NgayVaoLam);
             }
         }
     }

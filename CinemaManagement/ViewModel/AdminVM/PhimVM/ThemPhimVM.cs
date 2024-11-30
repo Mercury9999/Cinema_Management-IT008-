@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Input;
 using CinemaManagement.ViewModel.AdminVM;
+using CinemaManagement.Ultis;
+using System.Collections.ObjectModel;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -34,14 +36,18 @@ namespace CinemaManagement.ViewModel.AdminVM
                     DaoDien = DaoDien,
                     NoiDung = NoiDung,
                     GioiHanTuoi = Convert.ToByte(GioiHanTuoi),
+                    //NgayPH = Convert.ToDateTime(NgayPH),
                     Poster = Poster
                 };
                 (bool trangthai, string messages) = await PhimDAL.Instance.AddMovie(Phim);
                 if (trangthai)
                 {
                     MessageBox.Show(messages);
-                    dsPhim.Add(Phim);
+                    IsLoading = true;
+                    var data = await Task.Run(async () => await PhimDAL.Instance.GetAllMovie());
+                    dsPhim = new ObservableCollection<PhimDTO>(data);
                     CurrentWindow.Close();
+                    IsLoading = false;
                     return;
                 }
                 else

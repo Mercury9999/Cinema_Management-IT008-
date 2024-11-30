@@ -10,17 +10,15 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace CinemaManagement.View.AdminView
-{
-    /// <summary>
-    /// Interaction logic for QuanLyNhanVien.xaml
+{   /// <summary>
+    /// Interaction logic for SuaNhanVien.xaml
     /// </summary>
-    public partial class QuanLyNhanVien : Page
+    public partial class SuaNhanVien : Window
     {
-        public QuanLyNhanVien()
+        public SuaNhanVien()
         {
             InitializeComponent();
         }

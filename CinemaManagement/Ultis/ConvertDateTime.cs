@@ -15,12 +15,12 @@ namespace CinemaManagement.Ultis
         }
         public static string Day(DateTime? dateTime)
         {
-            if (dateTime.HasValue) return dateTime.Value.ToString("dd/mm/yyyy");
+            if (dateTime.HasValue) return dateTime.Value.ToString("dd/MM/yyyy");
             else return "Không có";
         }
         public static string Full(DateTime? dateTime)
         {
-            if (dateTime.HasValue) return dateTime.Value.ToString("HH:mm:ss dd/mm/yyyy");
+            if (dateTime.HasValue) return dateTime.Value.ToString("HH:mm:ss dd/MM/yyyy");
             else return "Không có";
         }
     }
