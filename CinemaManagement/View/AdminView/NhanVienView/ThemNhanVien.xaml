@@ -57,6 +57,15 @@
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Giới tính" Margin="10 10 0 0"/>
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
+                          Margin="45 0 0 0"
+                          />
+                </StackPanel>
+
+
+                <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Email" Margin="10 10 0 0"/>
                     <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
@@ -70,17 +79,6 @@
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="45 0 0 0"
                           />
-                </StackPanel>
-
-                <StackPanel Orientation="Horizontal">
-                    <TextBlock Text="Ngày vào làm" Margin="10 10 0 0"/>
-                    <DatePicker
-                              Width="100"
-                              materialDesign:HintAssist.Hint=""
-                              materialDesign:TextFieldAssist.HasClearButton="True"
-                              Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
-                              Margin="16 0 0 0" Height="26"
-                    />  
                 </StackPanel>
 
                 <TextBlock Text="Tài khoản đăng nhập" FontSize="15" Margin="10 20 0 0" FontWeight="DemiBold"/>
@@ -101,7 +99,7 @@
                              />
                 </StackPanel>
 
-                <StackPanel Orientation="Horizontal" Margin="250 30 0 0">
+                <StackPanel Orientation="Horizontal" Margin="250 20 0 0">
                     <Button BorderThickness="0" Width="57" Padding="0">
                         <TextBlock Text="Xác nhận" FontSize="10"/>
                     </Button>

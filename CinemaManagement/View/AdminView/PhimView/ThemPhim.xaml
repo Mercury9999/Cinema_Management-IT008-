@@ -55,12 +55,14 @@
 
             <Grid Grid.Row="1">
                 <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="340"/>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
 
                 <Label Margin="10 20 0 0" Grid.Column="0" Content="Ten Phim"/>
                 <Label Margin="5 20 0 0" Grid.Column="1" Content="The Loai"/>
+                <Label Margin="5 20 0 0" Grid.Column="2" Content="Ngay Phat Hanh"/>
 
             </Grid>
 
@@ -72,13 +74,22 @@
 
                 <TextBox Grid.Column="0" materialDesign:TextFieldAssist.TextBoxViewMargin="5 0 1 0" FontSize="15"
                 Style="{StaticResource MaterialDesignFloatingHintTextBox}"
-                Text="{Binding TenPhim}" Margin="10,0,55,0"
+                Text="{Binding TenPhim}" Margin="10,0,96,0"
                 />
 
                 <ComboBox IsReadOnly="True" Cursor="Arrow" Grid.Column="1" materialDesign:ComboBoxAssist.MaxLength="2" materialDesign:HintAssist.Hint="" materialDesign:HintAssist.HintOpacity=".26"
-                          IsEditable="True" Margin="0,0,107,0" VerticalAlignment="Bottom" Height="30"
+                          IsEditable="True" Margin="0,0,209,0" VerticalAlignment="Bottom" Height="30"
                           ItemsSource="{Binding dsTheLoai}"
                           SelectedValue="{Binding TheLoai, Mode=TwoWay}"/>
+
+                <DatePicker Grid.Column="1" Width="140"
+                            materialDesign:HintAssist.Hint=""
+                            Style="{StaticResource MaterialDesignOutlinedDatePicker}"
+                            Margin="0 5 40 0"                            
+                            HorizontalAlignment="Right"    
+                            SelectedDate="{Binding NgayPH, Mode=TwoWay}"
+                />
+
             </Grid>
 
             <Grid Grid.Row="3">
