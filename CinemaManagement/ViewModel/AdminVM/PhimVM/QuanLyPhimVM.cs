@@ -139,12 +139,15 @@ namespace CinemaManagement.ViewModel.AdminVM
             });
             ViewFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
-                IsLoading = true;
-                ClearData();
-                ThongTinPhim w1 = new ThongTinPhim();
-                GetDataFilm();
-                w1.ShowDialog();
-                IsLoading = false;
+                if (PhimSelected != null)
+                {
+                    IsLoading = true;
+                    ClearData();
+                    ThongTinPhim w1 = new ThongTinPhim();
+                    GetDataFilm();
+                    w1.ShowDialog();
+                    IsLoading = false;
+                }
             });
             UpdateFilmCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {

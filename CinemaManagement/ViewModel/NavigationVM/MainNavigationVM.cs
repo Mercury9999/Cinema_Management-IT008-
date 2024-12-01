@@ -1,5 +1,6 @@
 ﻿using CinemaManagement.View;
 using CinemaManagement.View.LoginWindow;
+using CinemaManagement.View.AdminView;
 using System;
 using System.Collections.Generic;
 using System.IO;
