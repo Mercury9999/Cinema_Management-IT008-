@@ -6,13 +6,19 @@
       xmlns:local="clr-namespace:CinemaManagement.View"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
-      xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+      xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLySanPhamVM}"
       mc:Ignorable="d" 
       d:DesignHeight="810" d:DesignWidth="900"
       Title="QuanLySanPham"
       x:Name="quanlysanphamPage"
-      >
+      DataContext="{StaticResource ProductVM}">
 
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadDataProductCM}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Page.Triggers>
         <EventTrigger RoutedEvent="Page.Loaded">
             <BeginStoryboard>
@@ -38,19 +44,19 @@
 
             <StackPanel Orientation="Horizontal">
                 <TextBox
-                        materialDesign:HintAssist.Hint="Tìm kiếm"
+                        materialDesign:HintAssist.Hint="Tìm kiếm theo tên..."
                         materialDesign:HintAssist.HintOpacity=".26"   
                         Margin="50,30,50,0" VerticalAlignment="Top" Width="208"
                 />
 
-                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Click="Button_Click">
+                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding AddProductCM}">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                         <TextBlock Text="Thêm sản phẩm"/>
                     </StackPanel>
                 </Button>
 
-                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Click="Button_Click">
+                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding DeleteProductCM}">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                         <TextBlock Text="Nhập hàng"/>
@@ -64,14 +70,15 @@
                 <StackPanel>
 
                     <ScrollViewer VerticalScrollBarVisibility="Auto"
-                                 
                                   Height="580"
                                   VerticalAlignment="Top">
                         <ListBox
-                                 x:Name="listBox"
+                                 x:Name="sanphamlistBox"
                                  VerticalAlignment="Top"
                                  materialDesign:ListBoxItemAssist.ShowSelection="False"
-                                 materialDesign:ListBoxAssist.IsToggle="False">
+                                 materialDesign:ListBoxAssist.IsToggle="False"
+                                 ItemsSource="{Binding dsSP}"
+                                 SelectedItem="{Binding SPSelected}">
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem"
                                        BasedOn="{StaticResource MaterialDesignListBoxItem}">
@@ -138,6 +145,7 @@
                                                                    Margin="5"
                                                                    VerticalAlignment="Center"
                                                                    HorizontalAlignment="Center" 
+                                                                   Source="{Binding HinhAnhSP}"
                                                                   />
                                                         </StackPanel>
                                                     </Border>
@@ -207,7 +215,7 @@
                                                        HorizontalAlignment="Left"
                                                        VerticalAlignment="Center"
                                                        Margin="10 0 0 0" 
-                                                       Text="{Binding Name}"/>
+                                                       Text="{Binding TenSP}"/>
 
                                             <Grid Grid.Row="2">
                                                 <Grid.ColumnDefinitions>
@@ -228,7 +236,7 @@
                                                                Margin="0 0 0 3"
                                                                VerticalAlignment="Bottom"
                                                                HorizontalAlignment="Right" 
-                                                               Text="{Binding Count}"/>
+                                                               Text="{Binding SoLuong}"/>
                                                 </StackPanel>
                                                 <StackPanel Grid.Column="1"
                                                             Orientation="Horizontal"
@@ -240,7 +248,7 @@
                                                                VerticalAlignment="Bottom"
                                                                HorizontalAlignment="Right"
                                                                Margin="0 0 3 3"
-                                                               Text="{Binding Price}"/>
+                                                               Text="{Binding GiaSP}"/>
                                                     <icon:PackIconMaterial Kind="Card" 
                                                            Margin=" 0 0 3 3"
                                                            Height="22"

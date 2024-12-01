@@ -108,14 +108,17 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã cập nhật");
         }
-        public async Task<(bool, string)> AddProduct(SanPhamDTO sanpham)
+        public async Task<(bool, string, int)> AddProduct(SanPhamDTO sanpham)
         {
+            int newProductId = -1;
             try
             {
                 using (var context = new CinemaManagementEntities())
                 {
-                    int maxProductId = await context.SanPhams.MaxAsync(s => s.MaSP);
-                    int newProductId = maxProductId + 1;
+                    int maxProductId;
+                    if (await context.SanPhams.AnyAsync()) maxProductId = await context.SanPhams.MaxAsync(s => s.MaSP); 
+                    else maxProductId = 0;
+                    newProductId = maxProductId + 1;
 
                     var sp = new SanPham()
                     {
@@ -133,13 +136,13 @@ namespace CinemaManagement.Models.DAL
             }
             catch (DbUpdateException e)
             {
-                return (false, "Lỗi CSDL");
+                return (false, "Lỗi CSDL", newProductId);
             }
             catch (Exception ex)
             {
-                return (false, ex.ToString());
+                return (false, ex.ToString(), newProductId);
             }
-            return (true, "Thêm sản phẩm thành công");
+            return (true, "Thêm sản phẩm thành công", newProductId);
         }
     }
 }

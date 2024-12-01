@@ -26,7 +26,6 @@ namespace CinemaManagement.Models
         }
     
         public virtual DbSet<BanVe> BanVes { get; set; }
-        public virtual DbSet<CTHDNhap> CTHDNhaps { get; set; }
         public virtual DbSet<CTHDSanPham> CTHDSanPhams { get; set; }
         public virtual DbSet<Ghe> Ghes { get; set; }
         public virtual DbSet<HDNhapHang> HDNhapHangs { get; set; }

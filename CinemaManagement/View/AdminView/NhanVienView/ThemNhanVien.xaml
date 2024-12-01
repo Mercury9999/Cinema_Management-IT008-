@@ -67,8 +67,9 @@
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
                           Margin="45 0 0 0"
                           Padding="0"
-                             TextAlignment="Center"
-                          />
+                          TextAlignment="Center"
+                          Text="{Binding GioiTinh}"
+                     />
                 </StackPanel>
 
 
@@ -77,8 +78,7 @@
                     <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="59 0 0 0"
-                             Padding="0"
-                          />
+                             Padding="0" Text="{Binding Email}"/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">

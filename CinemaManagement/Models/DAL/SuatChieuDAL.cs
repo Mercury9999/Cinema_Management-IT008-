@@ -26,36 +26,37 @@ namespace CinemaManagement.Models.DAL
             }
             private set => _instance = value;   
         }
-        public async Task<(bool, string)> AddShowTime(SuatChieuDTO suatchieu)
+        public async Task<(bool, string, int)> AddShowTime(SuatChieuDTO suatchieu)
         {
+            int newShowtimeId = -1;
             try
             {
                 using(var context = new CinemaManagementEntities())
                 {
                     var p = await context.Phims.FindAsync(suatchieu.MaPhim);
-                    if(p == null)
-                    {
-                        return (false, "Phim không tồn tại");
-                    }
+                    if(p == null) return (false, "Phim không tồn tại", newShowtimeId);
                     var st = suatchieu.BatDau;
                     var ed = suatchieu.KetThuc;
                     TimeSpan thoigian = ed - st;
                     double tg = thoigian.TotalMinutes;
                     if(tg < suatchieu.Phim.ThoiLuong + 20)
                     {
-                        return (false, "Thời gian suất chiếu tối thiểu phải dài hơn thời lượng phim 20 phút");
+                        return (false, "Thời gian suất chiếu tối thiểu phải dài hơn thời lượng phim 20 phút", newShowtimeId);
                         //Thời gian suất chiếu min = thời gian chiếu phim + 20 phút, lúc in vé chỉ in thời gian bắt đầu và thời lượng phim
                     }
                     var s = context.SuatChieux.Where(s => (IsTimeBetween(st, s.BatDau, s.KetThuc) || IsTimeBetween(ed, s.BatDau, s.KetThuc) == true)
                                                            && s.SoPhongChieu == suatchieu.SoPhongChieu).FirstOrDefault(); 
                     if(s != null)
                     {
-                        return (false, $"Thời gian {ConvertDateTime.Clock(s.BatDau)} đến {ConvertDateTime.Clock(s.KetThuc)} đã có suất chiếu khác ");
+                        return (false, $"Thời gian {ConvertDateTime.Clock(s.BatDau)} đến {ConvertDateTime.Clock(s.KetThuc)} đã có suất chiếu khác ", newShowtimeId);
                     }
-                    int newShowTimeId = await context.SuatChieux.MaxAsync(s => s.MaSC) + 1;
+                    int maxShowtimeId = -1;
+                    if (await context.SuatChieux.AnyAsync()) maxShowtimeId = await context.SuatChieux.MaxAsync(s => s.MaSC);
+                    else maxShowtimeId = 0;
+                    newShowtimeId = maxShowtimeId + 1;
                     SuatChieu sc = new SuatChieu()
                     {
-                        MaSC = newShowTimeId,
+                        MaSC = newShowtimeId,
                         MaPhim = suatchieu.MaPhim,
                         BatDau = suatchieu.BatDau,
                         KetThuc = suatchieu.KetThuc,
@@ -74,7 +75,7 @@ namespace CinemaManagement.Models.DAL
                     {
                         banve.Add(new BanVe
                         {
-                            MaSC = newShowTimeId,
+                            MaSC = newShowtimeId,
                             MaGhe = maghe,
                             DaBan = false
                         });
@@ -86,9 +87,9 @@ namespace CinemaManagement.Models.DAL
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
-                return (false, "Lỗi hệ thống");
+                return (false, "Lỗi hệ thống", newShowtimeId);
             }
-            return (true, "Thêm suất chiếu thành công");
+            return (true, "Thêm suất chiếu thành công", newShowtimeId);
         }
 
         //Này cho tính năng tìm kiếm

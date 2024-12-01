@@ -133,14 +133,15 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã cập nhật");
         }
-        public async Task<(bool, string)> AddStaff(NhanVienDTO nhanvien)
+        public async Task<(bool, string, int)> AddStaff(NhanVienDTO nhanvien)
         {
+            int newStaffId = -1;
             try
             {
                 using(var context = new CinemaManagementEntities())
                 {
                     int maxStaffId = await context.NhanViens.MaxAsync(s => s.MaNV);
-                    int newStaffId = maxStaffId + 1;
+                    newStaffId = maxStaffId + 1;
 
                     var nv = new NhanVien();
 
@@ -149,15 +150,15 @@ namespace CinemaManagement.Models.DAL
                     bool checkEmail = await context.NhanViens.AnyAsync(s => s.email_NV == nhanvien.email_NV && s.MaNV != nhanvien.MaNV);
                     if (checkSDT && !checkEmail)
                     {
-                        return (false, "Số điện thoại đã được đăng ký");
+                        return (false, "Số điện thoại đã được đăng ký", newStaffId);
                     }
                     if (checkEmail && !checkSDT)
                     {
-                        return (false, "Email đã được đăng ký");
+                        return (false, "Email đã được đăng ký", newStaffId);
                     }
                     if(checkSDT && checkEmail)
                     {
-                        return (false, "Số điện thoại và email đã được đăng ký");
+                        return (false, "Số điện thoại và email đã được đăng ký", newStaffId);
                     }
                     nv.MaNV = newStaffId;
                     nv.TenNV = nhanvien.TenNV;
@@ -176,13 +177,13 @@ namespace CinemaManagement.Models.DAL
             }
             catch (DbUpdateException e)
             {
-                return (false, "Lỗi CSDL");
+                return (false, "Lỗi CSDL", newStaffId);
             }
             catch (Exception ex)
             {
-                return (false, ex.ToString());
+                return (false, ex.ToString(), newStaffId);
             }
-            return (true, "Đăng ký nhân viên thành công");
+            return (true, "Đăng ký nhân viên thành công", newStaffId);
         }
         //Dùng cho chức năng login
         public async Task<(bool, string, NhanVienDTO)> Login(string username, string password)

@@ -20,7 +20,7 @@ namespace CinemaManagement.ViewModel.AdminVM
             NgayPH = ConvertDateTime.Day(PhimSelected.NgayPH);
             TenPhim = PhimSelected.TenPhim;
             NuocSX = PhimSelected.NuocSX;
-            ThoiLuong = Convert.ToString(PhimSelected.ThoiLuong);
+            ThoiLuong = PhimSelected.ThoiLuong;
             GioiHanTuoi = Convert.ToString(PhimSelected.GioiHanTuoi);
             NoiDung = PhimSelected.NoiDung;
             Poster = PhimSelected.Poster;

@@ -473,3 +473,13 @@ INSERT INTO PHIM VALUES ('1', 'Hành động', '120', 'Việt Nam', '11/18/2024'
 
 INSERT INTO SanPham VALUES (1,'Nước ngọt', 'Sting dâu', 100, '20000', (CONVERT(VARBINARY(MAX), 'HelloWorld')), 0)
 INSERT INTO SanPham VALUES (2,'Đồ ăn', 'Bắp rang', 100, '40000', (CONVERT(VARBINARY(MAX), 'HelloWorld')), 0)
+
+-------------
+Sửa database sản phẩm nhập
+drop table CTHDNhap
+
+alter table HDNhapHang add MaSPNhap int 
+alter table HDNhapHang add DonGiaNhap money
+alter table HDNhapHang add SoLuong int
+
+alter table HDNhapHang add constraint fk_MASPNhap_MaSP FOREIGN KEY (MaSPNhap) REFERENCES SanPham(MaSP)

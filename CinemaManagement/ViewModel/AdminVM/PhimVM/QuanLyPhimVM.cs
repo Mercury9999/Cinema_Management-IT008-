@@ -25,11 +25,12 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public ICommand LoadDataFilmCM { get; set; }
         public ICommand CloseWindowCM { get; set; }
-        public ICommand GetQLPWindowCM { get; set; }
+        public ICommand GetQLPPageCM { get; set; }
         public ICommand UploadImageCM { get; set; }
         public ICommand SaveNewFilmCM { get; set; }
         public ICommand SaveFilmCM { get; set; }
         public ICommand GetCurrentWindow { get; set; }
+        public ICommand GetQLPPage { get; set; }
         #endregion
         #region Thuộc tính
         //Dùng lưu trữ dữ liệu của Phim
@@ -40,8 +41,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public string TenPhim { get { return _tenPhim; } set { _tenPhim = value; OnPropertyChanged(); } }
         private string _theLoai {  get; set; }
         public string TheLoai { get { return _theLoai; } set { _theLoai = value; OnPropertyChanged(); } }   
-        private string _thoiLuong { get; set; }
-        public string ThoiLuong { get { return _thoiLuong; } set { _thoiLuong = value; OnPropertyChanged(); } }
+        private int? _thoiLuong { get; set; }
+        public int? ThoiLuong { get { return _thoiLuong; } set { _thoiLuong = value; OnPropertyChanged(); } }
         private string _nuocSX {  get; set; }
         public string NuocSX { get { return _nuocSX; } set { _nuocSX = value; OnPropertyChanged(); } }  
         private string _ngayPH { get; set; }
@@ -59,22 +60,22 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         //Biến khác
         private DataGrid dataGrid {  get; set; }
-        private Window QuanLyPhimWindow { get; set; }
+        private Window QuanLyPhimPage { get; set; }
         private Window CurrentWindow { get; set; }
         private PhimDTO _phimselected {  get; set; }
         public PhimDTO PhimSelected { get { return _phimselected; } set { _phimselected = value; OnPropertyChanged(); } }
         private ObservableCollection<PhimDTO> _dsphim { get; set; }
         public ObservableCollection<PhimDTO> dsPhim { get { return _dsphim; } set { _dsphim = value; OnPropertyChanged(); } }
-        private bool IsSaving { get; set; }
-        private bool IsLoading { get; set; }
+        public bool IsSaving { get; set; }
+        public bool IsLoading { get; set; }
         private ObservableCollection<string> _dstheloai { get; set; }
         public ObservableCollection<string> dsTheLoai { get { return _dstheloai; } set { _dstheloai = value; OnPropertyChanged(); } }
         #endregion
         public QuanLyPhimVM()
         {
-            GetQLPWindowCM = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            GetQLPPage = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
-                QuanLyPhimWindow = p;
+                QuanLyPhimPage = p;
             });
             GetCurrentWindow = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {

@@ -36,7 +36,7 @@ namespace CinemaManagement.View
         public QuanLySanPham()
         {
             InitializeComponent();
-            listBox.ItemsSource = items;
+
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)

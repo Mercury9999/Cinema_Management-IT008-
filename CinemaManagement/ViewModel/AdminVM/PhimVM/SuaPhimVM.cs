@@ -35,7 +35,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     NoiDung = NoiDung,
                     GioiHanTuoi = Convert.ToByte(GioiHanTuoi),
                     Poster = Poster,
-//                    NgayPH = Convert.ToDateTime(NgayPH)
+                    NgayPH = Convert.ToDateTime(NgayPH)
                 };
                 (bool trangthai, string messages) = await PhimDAL.Instance.UpdateMovie(Phim);
                 if (trangthai)
@@ -43,15 +43,17 @@ namespace CinemaManagement.ViewModel.AdminVM
                     MessageBox.Show(messages);
                     CurrentWindow.Close();
                     IsLoading = true;
-                    var data = await Task.Run(async () => await PhimDAL.Instance.GetAllMovie());
-                    dsPhim = new ObservableCollection<PhimDTO>(data);
+                    var PhimUpdated = dsPhim.FirstOrDefault(s => s.MaPhim == Phim.MaPhim);
+                    if(PhimUpdated != null)
+                    {
+                        PhimUpdated = Phim;
+                    }
                     IsLoading = false;
                     return;
                 }
                 else
                 {
                     CustomControls.MyMessageBox.Show("Lỗi hệ thống" + messages);
-                    return;
                 }
             }
             else

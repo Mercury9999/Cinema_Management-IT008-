@@ -14,19 +14,15 @@ namespace CinemaManagement.Models
     
     public partial class HDNhapHang
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public HDNhapHang()
-        {
-            this.CTHDNhaps = new HashSet<CTHDNhap>();
-        }
-    
         public int SoHDNhap { get; set; }
         public System.DateTime NgayNhap { get; set; }
         public decimal ThanhTien { get; set; }
         public int MaNVNhap { get; set; }
+        public Nullable<int> MaSPNhap { get; set; }
+        public Nullable<decimal> DonGiaNhap { get; set; }
+        public Nullable<int> SoLuong { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHDNhap> CTHDNhaps { get; set; }
         public virtual NhanVien NhanVien { get; set; }
+        public virtual SanPham SanPham { get; set; }
     }
 }

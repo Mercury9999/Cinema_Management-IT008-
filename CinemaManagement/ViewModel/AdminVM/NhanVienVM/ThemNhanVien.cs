@@ -37,13 +37,13 @@ namespace CinemaManagement.ViewModel.AdminVM
                     GioiTinh = GioiTinh,
                     ChucVu = ChucVu
                 };
-                (bool trangthai, string messages) = await NhanVienDAL.Instance.AddStaff(NhanVien);
+                (bool trangthai, string messages, int newStaffId) = await NhanVienDAL.Instance.AddStaff(NhanVien);
                 if (trangthai)
                 {
                     MessageBox.Show(messages);
                     IsLoading = true;
-                    var data = await Task.Run(async () => await NhanVienDAL.Instance.GetAllStaff());
-                    dsNV = new ObservableCollection<NhanVienDTO>(data);
+                    NhanVien.MaNV = newStaffId;
+                    dsNV.Add(NhanVien);
                     IsLoading = false;
                     CurrentWindow.Close();
                     return;
