@@ -25,6 +25,12 @@
     <Compile Update="View\AdminView\NhanVienView\ThongTinNhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AdminView\SanPhamView\SuaSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\SanPhamView\ThemSanPham.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\LoginWindow\LoginWindow.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -85,6 +91,12 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AdminView\NhanVienView\ThongTinNhanVien.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\SanPhamView\SuaSanPham.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\SanPhamView\ThemSanPham.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\LoginWindow\LoginWindow.xaml">
