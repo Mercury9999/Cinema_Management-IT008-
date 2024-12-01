@@ -12,16 +12,6 @@ namespace CinemaManagement.DTOs
         {
             
         }
-        public SanPhamDTO(int maSP, string loaiSP, string tenSP, int soLuong, decimal giaSP, byte[] hinhAnhSP)
-        {
-            MaSP = maSP;
-            LoaiSP = loaiSP;
-            TenSP = tenSP;
-            SoLuong = soLuong;
-            GiaSP = giaSP;
-            HinhAnhSP = hinhAnhSP;
-        }
-
         public int MaSP { get; set; }
         public string LoaiSP { get; set; }
         public string TenSP { get; set; }

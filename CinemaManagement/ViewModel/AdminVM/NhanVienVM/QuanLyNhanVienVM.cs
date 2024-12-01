@@ -11,6 +11,7 @@ using CinemaManagement.Models;
 using CinemaManagement.Models.DAL;
 using CinemaManagement.View.AdminView;
 using CinemaManagement.CustomControls;
+using System.Web.UI;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -25,7 +26,7 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public ICommand LoadDataStaffCM { get; set; }
         public ICommand CloseWindowCM { get; set; }
-        public ICommand GetQLNVWindowCM { get; set; }
+        public ICommand GetQLNVPageCM { get; set; }
         public ICommand UploadImageCM { get; set; }
         public ICommand SaveNewStaffCM { get; set; }
         public ICommand SaveStaffCM { get; set; }
@@ -56,23 +57,22 @@ namespace CinemaManagement.ViewModel.AdminVM
         #endregion
 
         #region  Biến khác
-        private DataGrid dataGrid { get; set; }
-        private Window QuanLyNVWindow { get; set; }
+        private Page QuanLyNVPage { get; set; }
         private Window CurrentWindow { get; set; }
         private NhanVienDTO _NVselected { get; set; }
         public NhanVienDTO NVSelected { get { return _NVselected; } set { _NVselected = value; OnPropertyChanged(); } }
         private ObservableCollection<NhanVienDTO> _dsNV { get; set; }
         public ObservableCollection<NhanVienDTO> dsNV { get { return _dsNV; } set { _dsNV = value; OnPropertyChanged(); } }
-        private bool IsSaving { get; set; }
-        private bool IsLoading { get; set; }
+        public bool IsSaving { get; set; }
+        public bool IsLoading { get; set; }
         private ObservableCollection<string> _dschucvu { get; set; }
         public ObservableCollection<string> dsChucVu { get { return _dschucvu; } set { _dschucvu = value; OnPropertyChanged(); } }
         #endregion
         public QuanLyNhanVienVM()
         {
-            GetQLNVWindowCM = new RelayCommand<Window>((p) => { return true; }, (p) =>
+            GetQLNVPageCM = new RelayCommand<Page>((p) => { return true; }, (p) =>
             {
-                QuanLyNVWindow = p;
+                QuanLyNVPage = p;
             });
             GetCurrentWindow = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {

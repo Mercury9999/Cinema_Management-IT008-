@@ -18,10 +18,10 @@ namespace CinemaManagement.ViewModel.AdminVM
     {
         public bool CheckNonEmpty()
         {
-            return !string.IsNullOrEmpty(TenPhim) &&!string.IsNullOrEmpty(TheLoai)
-            && !string.IsNullOrEmpty(ThoiLuong) && !string.IsNullOrEmpty(NuocSX) 
+            return !string.IsNullOrEmpty(TenPhim) && !string.IsNullOrEmpty(TheLoai)
+            && !string.IsNullOrEmpty(Convert.ToString(ThoiLuong)) && !string.IsNullOrEmpty(NuocSX)
             && !string.IsNullOrEmpty(DaoDien) && !string.IsNullOrEmpty(GioiHanTuoi)
-            && !string.IsNullOrEmpty(NoiDung) && Poster != null;
+            && !string.IsNullOrEmpty(NoiDung) && Poster != null && NgayPH != null;
         }
         public async Task SaveNewFilm(Window w1)
         {
@@ -36,7 +36,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     DaoDien = DaoDien,
                     NoiDung = NoiDung,
                     GioiHanTuoi = Convert.ToByte(GioiHanTuoi),
-                    //NgayPH = Convert.ToDateTime(NgayPH),
+                    NgayPH = Convert.ToDateTime(NgayPH),
                     Poster = Poster
                 };
                 (bool trangthai, string messages) = await PhimDAL.Instance.AddMovie(Phim);

@@ -35,7 +35,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     NoiDung = NoiDung,
                     GioiHanTuoi = Convert.ToByte(GioiHanTuoi),
                     Poster = Poster,
-//                    NgayPH = Convert.ToDateTime(NgayPH)
+                    NgayPH = Convert.ToDateTime(NgayPH)
                 };
                 (bool trangthai, string messages) = await PhimDAL.Instance.UpdateMovie(Phim);
                 if (trangthai)

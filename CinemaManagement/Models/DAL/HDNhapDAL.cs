@@ -28,47 +28,24 @@ namespace CinemaManagement.Models.DAL
             using(var context = new CinemaManagementEntities())
             {
                 var dshdnhap = (from hdnhap in context.HDNhapHangs
+                                join sanpham in context.SanPhams
+                                on hdnhap.MaSPNhap equals sanpham.MaSP
+                                join nhanvien in context.NhanViens
+                                on hdnhap.MaNVNhap equals nhanvien.MaNV
                                 select new HDNhapHangDTO
                                 {
                                     SoHDNhap = hdnhap.SoHDNhap,
                                     MaNVNhap = hdnhap.MaNVNhap,
                                     NgayNhap = hdnhap.NgayNhap,
+                                    MaSPNhap = (int)hdnhap.MaSPNhap,
+                                    DonGiaNhap = (decimal)hdnhap.DonGiaNhap,
+                                    TenSPNhap = sanpham.TenSP, 
+                                    TenNVNhap = nhanvien.TenNV,
                                     ThanhTien = hdnhap.ThanhTien
                                 }).ToListAsync();
-                return await dshdnhap;
-            }
-        }
-        public async Task<HDNhapHangDTO> GetReceiptDetail(int soHDNhap)
-        {
-            try
-            {
-                using (var context = new CinemaManagementEntities())
-                {
-                    var hdnhap = await context.HDNhapHangs.FindAsync(soHDNhap);
 
-                    HDNhapHangDTO CTNHAP = new HDNhapHangDTO
-                    {
-                        SoHDNhap = hdnhap.SoHDNhap,
-                        MaNVNhap = hdnhap.MaNVNhap,
-                        TenNVNhap = hdnhap.NhanVien.TenNV,
-                        NgayNhap = hdnhap.NgayNhap,
-                        ThanhTien = hdnhap.ThanhTien,
-                        CTHDNhap = (from ct in hdnhap.CTHDNhaps
-                                select new CTHDNhapDTO
-                                {
-                                    SoHDNhap = ct.SoHDNhap,
-                                    MaSPNhap = ct.MaSPNhap,
-                                    TenSPNhap = ct.SanPham.TenSP,
-                                    DonGiaNhap = ct.DonGiaNhap, 
-                                    SoLuong = ct.SoLuong,
-                                }).ToList(),
-                    };
-                    return CTNHAP;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
+                return await dshdnhap;
+
             }
         }
     }

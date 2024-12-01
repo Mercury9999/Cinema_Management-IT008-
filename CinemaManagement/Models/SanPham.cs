@@ -17,8 +17,8 @@ namespace CinemaManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public SanPham()
         {
-            this.CTHDNhaps = new HashSet<CTHDNhap>();
             this.CTHDSanPhams = new HashSet<CTHDSanPham>();
+            this.HDNhapHangs = new HashSet<HDNhapHang>();
         }
     
         public int MaSP { get; set; }
@@ -30,8 +30,8 @@ namespace CinemaManagement.Models
         public Nullable<bool> IsDeleted { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<CTHDNhap> CTHDNhaps { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<CTHDSanPham> CTHDSanPhams { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<HDNhapHang> HDNhapHangs { get; set; }
     }
 }

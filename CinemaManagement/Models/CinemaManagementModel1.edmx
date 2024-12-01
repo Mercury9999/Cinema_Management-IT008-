@@ -14,17 +14,6 @@
           <Property Name="MaGhe" Type="int" Nullable="false" />
           <Property Name="DaBan" Type="bit" Nullable="false" />
         </EntityType>
-        <EntityType Name="CTHDNhap">
-          <Key>
-            <PropertyRef Name="SoHDNhap" />
-            <PropertyRef Name="MaSPNhap" />
-          </Key>
-          <Property Name="SoHDNhap" Type="int" Nullable="false" />
-          <Property Name="MaSPNhap" Type="int" Nullable="false" />
-          <Property Name="DonGiaNhap" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="SoLuong" Type="int" Nullable="false" />
-          <Property Name="TongTien" Type="decimal" Precision="18" Scale="0" Nullable="false" />
-        </EntityType>
         <EntityType Name="CTHDSanPham">
           <Key>
             <PropertyRef Name="SoHD" />
@@ -52,6 +41,9 @@
           <Property Name="NgayNhap" Type="datetime" Nullable="false" />
           <Property Name="ThanhTien" Type="decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="MaNVNhap" Type="int" Nullable="false" />
+          <Property Name="MaSPNhap" Type="int" />
+          <Property Name="DonGiaNhap" Type="money" />
+          <Property Name="SoLuong" Type="int" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -190,18 +182,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_HDNHAP__MaSPN__59FA5E80">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-          <End Role="CTHDNhap" Type="Self.CTHDNhap" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="CTHDNhap">
-              <PropertyRef Name="MaSPNhap" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CTHD_SP__MaSP__5535A963">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
           <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
@@ -334,15 +314,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_CTHDNhap_CTHD">
-          <End Role="HDNhapHang" Type="Self.HDNhapHang" Multiplicity="1" />
-          <End Role="CTHDNhap" Type="Self.CTHDNhap" Multiplicity="*" />
+        <Association Name="fk_MASPNhap_MaSP">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="HDNhapHang" Type="Self.HDNhapHang" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="HDNhapHang">
-              <PropertyRef Name="SoHDNhap" />
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
             </Principal>
-            <Dependent Role="CTHDNhap">
-              <PropertyRef Name="SoHDNhap" />
+            <Dependent Role="HDNhapHang">
+              <PropertyRef Name="MaSPNhap" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -360,7 +340,6 @@
         </Association>
         <EntityContainer Name="CinemaManagementModelStoreContainer">
           <EntitySet Name="BanVe" EntityType="Self.BanVe" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="CTHDNhap" EntityType="Self.CTHDNhap" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="CTHDSanPham" EntityType="Self.CTHDSanPham" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Ghe" EntityType="Self.Ghe" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="HDNhapHang" EntityType="Self.HDNhapHang" Schema="dbo" store:Type="Tables" />
@@ -380,10 +359,6 @@
           <AssociationSet Name="FK__BanVe__MaSC__160F4887" Association="Self.FK__BanVe__MaSC__160F4887">
             <End Role="SuatChieu" EntitySet="SuatChieu" />
             <End Role="BanVe" EntitySet="BanVe" />
-          </AssociationSet>
-          <AssociationSet Name="FK__CT_HDNHAP__MaSPN__59FA5E80" Association="Self.FK__CT_HDNHAP__MaSPN__59FA5E80">
-            <End Role="SanPham" EntitySet="SanPham" />
-            <End Role="CTHDNhap" EntitySet="CTHDNhap" />
           </AssociationSet>
           <AssociationSet Name="FK__CTHD_SP__MaSP__5535A963" Association="Self.FK__CTHD_SP__MaSP__5535A963">
             <End Role="SanPham" EntitySet="SanPham" />
@@ -429,9 +404,9 @@
             <End Role="SuatChieu" EntitySet="SuatChieu" />
             <End Role="Ve" EntitySet="Ve" />
           </AssociationSet>
-          <AssociationSet Name="FK_CTHDNhap_CTHD" Association="Self.FK_CTHDNhap_CTHD">
+          <AssociationSet Name="fk_MASPNhap_MaSP" Association="Self.fk_MASPNhap_MaSP">
+            <End Role="SanPham" EntitySet="SanPham" />
             <End Role="HDNhapHang" EntitySet="HDNhapHang" />
-            <End Role="CTHDNhap" EntitySet="CTHDNhap" />
           </AssociationSet>
           <AssociationSet Name="FK_Ve_HoaDon" Association="Self.FK_Ve_HoaDon">
             <End Role="HoaDon" EntitySet="HoaDon" />
@@ -453,19 +428,6 @@
           <Property Name="DaBan" Type="Boolean" Nullable="false" />
           <NavigationProperty Name="Ghe" Relationship="Self.FK__BanVe__MaGhe__17036CC0" FromRole="BanVe" ToRole="Ghe" />
           <NavigationProperty Name="SuatChieu" Relationship="Self.FK__BanVe__MaSC__160F4887" FromRole="BanVe" ToRole="SuatChieu" />
-        </EntityType>
-        <EntityType Name="CTHDNhap">
-          <Key>
-            <PropertyRef Name="SoHDNhap" />
-            <PropertyRef Name="MaSPNhap" />
-          </Key>
-          <Property Name="SoHDNhap" Type="Int32" Nullable="false" />
-          <Property Name="MaSPNhap" Type="Int32" Nullable="false" />
-          <Property Name="DonGiaNhap" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <Property Name="SoLuong" Type="Int32" Nullable="false" />
-          <Property Name="TongTien" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
-          <NavigationProperty Name="SanPham" Relationship="Self.FK__CT_HDNHAP__MaSPN__59FA5E80" FromRole="CTHDNhap" ToRole="SanPham" />
-          <NavigationProperty Name="HDNhapHang" Relationship="Self.FK_CTHDNhap_CTHD" FromRole="CTHDNhap" ToRole="HDNhapHang" />
         </EntityType>
         <EntityType Name="CTHDSanPham">
           <Key>
@@ -499,8 +461,11 @@
           <Property Name="NgayNhap" Type="DateTime" Nullable="false" />
           <Property Name="ThanhTien" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="MaNVNhap" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="CTHDNhaps" Relationship="Self.FK_CTHDNhap_CTHD" FromRole="HDNhapHang" ToRole="CTHDNhap" />
+          <Property Name="MaSPNhap" Type="Int32" />
+          <Property Name="DonGiaNhap" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="SoLuong" Type="Int32" />
           <NavigationProperty Name="NhanVien" Relationship="Self.FK__HDNHAPHAN__MaNVN__59063A47" FromRole="HDNhapHang" ToRole="NhanVien" />
+          <NavigationProperty Name="SanPham" Relationship="Self.fk_MASPNhap_MaSP" FromRole="HDNhapHang" ToRole="SanPham" />
         </EntityType>
         <EntityType Name="HoaDon">
           <Key>
@@ -590,8 +555,8 @@
           <Property Name="GiaSP" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
           <Property Name="HinhAnhSP" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="IsDeleted" Type="Boolean" />
-          <NavigationProperty Name="CTHDNhaps" Relationship="Self.FK__CT_HDNHAP__MaSPN__59FA5E80" FromRole="SanPham" ToRole="CTHDNhap" />
           <NavigationProperty Name="CTHDSanPhams" Relationship="Self.FK__CTHD_SP__MaSP__5535A963" FromRole="SanPham" ToRole="CTHDSanPham" />
+          <NavigationProperty Name="HDNhapHangs" Relationship="Self.fk_MASPNhap_MaSP" FromRole="SanPham" ToRole="HDNhapHang" />
         </EntityType>
         <EntityType Name="SuatChieu">
           <Key>
@@ -660,30 +625,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK__CT_HDNHAP__MaSPN__59FA5E80">
-          <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
-          <End Role="CTHDNhap" Type="Self.CTHDNhap" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="SanPham">
-              <PropertyRef Name="MaSP" />
-            </Principal>
-            <Dependent Role="CTHDNhap">
-              <PropertyRef Name="MaSPNhap" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_CTHDNhap_CTHD">
-          <End Role="HDNhapHang" Type="Self.HDNhapHang" Multiplicity="1" />
-          <End Role="CTHDNhap" Type="Self.CTHDNhap" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="HDNhapHang">
-              <PropertyRef Name="SoHDNhap" />
-            </Principal>
-            <Dependent Role="CTHDNhap">
-              <PropertyRef Name="SoHDNhap" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK__CTHD_SP__MaSP__5535A963">
           <End Role="SanPham" Type="Self.SanPham" Multiplicity="1" />
           <End Role="CTHDSanPham" Type="Self.CTHDSanPham" Multiplicity="*" />
@@ -741,6 +682,18 @@
             </Principal>
             <Dependent Role="HDNhapHang">
               <PropertyRef Name="MaNVNhap" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="fk_MASPNhap_MaSP">
+          <End Role="SanPham" Type="Self.SanPham" Multiplicity="0..1" />
+          <End Role="HDNhapHang" Type="Self.HDNhapHang" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SanPham">
+              <PropertyRef Name="MaSP" />
+            </Principal>
+            <Dependent Role="HDNhapHang">
+              <PropertyRef Name="MaSPNhap" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -830,7 +783,6 @@
         </Association>
         <EntityContainer Name="CinemaManagementEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BanVes" EntityType="Self.BanVe" />
-          <EntitySet Name="CTHDNhaps" EntityType="Self.CTHDNhap" />
           <EntitySet Name="CTHDSanPhams" EntityType="Self.CTHDSanPham" />
           <EntitySet Name="Ghes" EntityType="Self.Ghe" />
           <EntitySet Name="HDNhapHangs" EntityType="Self.HDNhapHang" />
@@ -851,14 +803,6 @@
             <End Role="SuatChieu" EntitySet="SuatChieux" />
             <End Role="BanVe" EntitySet="BanVes" />
           </AssociationSet>
-          <AssociationSet Name="FK__CT_HDNHAP__MaSPN__59FA5E80" Association="Self.FK__CT_HDNHAP__MaSPN__59FA5E80">
-            <End Role="SanPham" EntitySet="SanPhams" />
-            <End Role="CTHDNhap" EntitySet="CTHDNhaps" />
-          </AssociationSet>
-          <AssociationSet Name="FK_CTHDNhap_CTHD" Association="Self.FK_CTHDNhap_CTHD">
-            <End Role="HDNhapHang" EntitySet="HDNhapHangs" />
-            <End Role="CTHDNhap" EntitySet="CTHDNhaps" />
-          </AssociationSet>
           <AssociationSet Name="FK__CTHD_SP__MaSP__5535A963" Association="Self.FK__CTHD_SP__MaSP__5535A963">
             <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="CTHDSanPham" EntitySet="CTHDSanPhams" />
@@ -877,6 +821,10 @@
           </AssociationSet>
           <AssociationSet Name="FK__HDNHAPHAN__MaNVN__59063A47" Association="Self.FK__HDNHAPHAN__MaNVN__59063A47">
             <End Role="NhanVien" EntitySet="NhanViens" />
+            <End Role="HDNhapHang" EntitySet="HDNhapHangs" />
+          </AssociationSet>
+          <AssociationSet Name="fk_MASPNhap_MaSP" Association="Self.fk_MASPNhap_MaSP">
+            <End Role="SanPham" EntitySet="SanPhams" />
             <End Role="HDNhapHang" EntitySet="HDNhapHangs" />
           </AssociationSet>
           <AssociationSet Name="FK__HoaDon__MaKH__03F0984C" Association="Self.FK__HoaDon__MaKH__03F0984C">
@@ -923,17 +871,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="CTHDNhaps">
-            <EntityTypeMapping TypeName="CinemaManagementModel.CTHDNhap">
-              <MappingFragment StoreEntitySet="CTHDNhap">
-                <ScalarProperty Name="SoHDNhap" ColumnName="SoHDNhap" />
-                <ScalarProperty Name="MaSPNhap" ColumnName="MaSPNhap" />
-                <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
-                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
-                <ScalarProperty Name="TongTien" ColumnName="TongTien" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="CTHDSanPhams">
             <EntityTypeMapping TypeName="CinemaManagementModel.CTHDSanPham">
               <MappingFragment StoreEntitySet="CTHDSanPham">
@@ -961,6 +898,9 @@
                 <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
                 <ScalarProperty Name="ThanhTien" ColumnName="ThanhTien" />
                 <ScalarProperty Name="MaNVNhap" ColumnName="MaNVNhap" />
+                <ScalarProperty Name="MaSPNhap" ColumnName="MaSPNhap" />
+                <ScalarProperty Name="DonGiaNhap" ColumnName="DonGiaNhap" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
