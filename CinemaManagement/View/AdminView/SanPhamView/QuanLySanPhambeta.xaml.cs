@@ -14,26 +14,24 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.SanPhamView
 {
     /// <summary>
-    /// Interaction logic for QuanLySanPham.xaml
+    /// Interaction logic for QuanLySanPhambeta.xaml
     /// </summary>
-    /// 
-
-    public partial class QuanLySanPham : Page
+    public partial class QuanLySanPhambeta : Page
     {
-
         ObservableCollection<MyItem> items = new ObservableCollection<MyItem>();
 
         public class MyItem
         {
+            public string ImagePath { get; set; }
             public string Name { get; set; }
             public string Count { get; set; }
             public string Price { get; set; }
         }
 
-        public QuanLySanPham()
+        public QuanLySanPhambeta()
         {
             InitializeComponent();
             listBox.ItemsSource = items;
@@ -43,6 +41,7 @@ namespace CinemaManagement.View
         {
             var newItem = new MyItem()
             {
+                ImagePath = "/CinemaManagement;component/Resource/Poster/1.jpg",
                 Name = "Banh mi",
                 Count = "1000",
                 Price = "40000"
@@ -50,6 +49,7 @@ namespace CinemaManagement.View
 
             items.Add(newItem);
         }
+
 
     }
 }

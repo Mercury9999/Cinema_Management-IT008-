@@ -26,7 +26,7 @@ namespace CinemaManagement
         public MainNavigation()
         {
             InitializeComponent();
-            mainFrame.Navigate(new QuanLyPhim());
+            mainFrame.Navigate(new QuanLySanPham());
         }
         private void Closebutton_Click(object sender, RoutedEventArgs e)
         {
