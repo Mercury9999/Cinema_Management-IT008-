@@ -1,7 +1,5 @@
 ﻿using CinemaManagement.DTOs;
 using CinemaManagement.Models.DAL;
-using CinemaManagement.View;
-using CinemaManagement.View.LoginWindow;
 using System;
 using System.Windows;
 using System.Windows.Controls;
@@ -63,7 +61,7 @@ namespace CinemaManagement.ViewModel.LoginVM
                 IsLoading = false;
             });
 
-            PassChangedCM= new RelayCommand<PasswordBox>((p) => { return true; }, (p) =>
+            PassChangedCM = new RelayCommand<PasswordBox>((p) => { return true; }, (p) =>
             {
                 Password = p.Password;
             });
@@ -78,7 +76,7 @@ namespace CinemaManagement.ViewModel.LoginVM
         {
             if(string.IsNullOrEmpty(user) || string.IsNullOrEmpty(pass))
             {
-                MessageBox.Show("Vui lòng nhập đủ thông tin");
+                CustomControls.MyMessageBox.Show("Vui lòng nhập đủ thông tin");
                 return;
             }
 
@@ -87,17 +85,14 @@ namespace CinemaManagement.ViewModel.LoginVM
             if(loginStatus)
             {
                 LoginWindow.Hide();
-                if(nhanvien.Staff_Level == 1)
-                {
-                    NavigationWindow w1 = new NavigationWindow();
-                    w1.Show();
-                    LoginWindow.Close();
-                    return;
-                }
+                MainNavigation w1 = new MainNavigation();
+                w1.Show();
+                LoginWindow.Close();
+                return;
             }
             else
             {
-                MessageBox.Show(messages);
+                CustomControls.MyMessageBox.Show(messages);
                 return;
             }
         }

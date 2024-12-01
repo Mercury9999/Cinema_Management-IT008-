@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 
 namespace CinemaManagement.DTOs
@@ -13,7 +13,11 @@ namespace CinemaManagement.DTOs
         {
             get
             {
-                return SoGhe.ToString();
+                if (SoGhe < 1) return string.Empty; 
+                int charIndex = (SoGhe - 1) / 10;
+                int numIndex = (SoGhe - 1) % 10 + 1;
+                char letter = (char)('A' + charIndex);
+                return $"{letter}{numIndex:000}";
             }
         }
     }

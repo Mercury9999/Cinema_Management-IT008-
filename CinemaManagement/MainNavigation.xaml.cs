@@ -1,5 +1,6 @@
 ﻿using CinemaManagement.View;
 using CinemaManagement.ViewModel.AdminVM;
+using CinemaManagement.ViewModel.NavigationVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,15 +26,16 @@ namespace CinemaManagement
         public MainNavigation()
         {
             InitializeComponent();
-            MainFrame.Navigate(new QuanLyPhim());
+            mainFrame.Navigate(new QuanLySanPham());
         }
-
         private void Closebutton_Click(object sender, RoutedEventArgs e)
         {
             Close();
         }
 
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
 
-
+        }
     }
 }

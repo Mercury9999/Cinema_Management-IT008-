@@ -61,14 +61,11 @@ namespace CinemaManagement.Models.DAL
                 using (var context = new CinemaManagementEntities())
                 {
                     var nv = await context.NhanViens.FindAsync(maNvXoa);
-                    if (nv == null || nv.IsDeleted == true)
+                    if (nv == null)
                     {
                         return (false, "Nhân viên không tồn tại");
                     }
-                    nv.IsDeleted = true;
-                    nv.acc_username = null;
-                    nv.SDT_NV = null;
-                    nv.email_NV = null;
+                    context.NhanViens.Remove(nv);
                     await context.SaveChangesAsync();
                     return (true, "Đã xoá nhân viên");
                 }
@@ -164,8 +161,8 @@ namespace CinemaManagement.Models.DAL
                     }
                     nv.MaNV = newStaffId;
                     nv.TenNV = nhanvien.TenNV;
-                    nv.acc_username = "NHANVIEN" + newStaffId.ToString();
-                    nv.acc_password = "12345678";
+                    nv.acc_username = nhanvien.acc_username;
+                    nv.acc_password = nhanvien.acc_password;
                     nv.SDT_NV = nhanvien.SDT_NV;
                     nv.email_NV = nhanvien.email_NV;
                     nv.NgaySinh = nhanvien.NgaySinh;

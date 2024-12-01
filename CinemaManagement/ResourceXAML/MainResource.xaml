@@ -4,6 +4,7 @@
                     xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
                     xmlns:viewmodel1="clr-namespace:CinemaManagement.ViewModel.LoginVM"
                     xmlns:viewmodel2="clr-namespace:CinemaManagement.ViewModel.AdminVM"
+                    xmlns:viewmodel3="clr-namespace:CinemaManagement.ViewModel.NavigationVM"
                     xmlns:view="clr-namespace:CinemaManagement.View"
                     xmlns:local="clr-namespace:MaterialDesignThemes.Wpf;assembly=MaterialDesignThemes.Wpf"
                     xmlns:converters="clr-namespace:MaterialDesignThemes.Wpf.Converters;assembly=MaterialDesignThemes.Wpf"
@@ -11,8 +12,11 @@
 
     <viewmodel1:LoginViewModel x:Key="LoginVM"/>
     <viewmodel2:QuanLyKhachHangVM x:Key="CustomerVM"/>
-    <viewmodel2:MainNavigationVM x:Key="NavigationVM"/>
     <viewmodel2:QuanLyPhimVM x:Key="FilmVM"/>
+    <viewmodel3:MainNavigationVM x:Key="NavigationVM"/>
+    <viewmodel2:QuanLyNhanVienVM x:Key="StaffVM"/>
+    <viewmodel2:QuanLySanPhamVM x:Key="ProductVM"/>
+    <viewmodel2:QuanLySuatChieuVM x:Key="ShowtimeVM"/>
     <BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
     <!--Navigation Control-->
     
@@ -38,6 +42,9 @@
 
 
     <!-- Style Template-->
+
+    
+    
     <Style x:Key="menuButton" TargetType="Button">
         <Setter Property="Height" Value="60"/>
         <Setter Property="Width" Value="260"/>
@@ -161,9 +168,9 @@
                             <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
                         </Border>
                         <ControlTemplate.Triggers>
-                            <Trigger Property="IsEnabled" Value="False">
+                            <!--<Trigger Property="IsEnabled" Value="False">
                                 <Setter Property="Opacity" Value="0.3"/>
-                            </Trigger>
+                            </Trigger>-->
                             <Trigger Property="IsMouseOver" Value="True">
                                 <Setter Property="Opacity" Value="1"/>
                                 <Setter Property="FontSize" Value="25"/>
@@ -173,43 +180,61 @@
                 </Setter.Value>
             </Setter>
         </Style>
+    
+    <Style x:Key="buttonNo" TargetType="Button">
+        <Setter Property="FontSize" Value="25"/>
+        <Setter Property="Cursor" Value="Hand"/>
+        <Setter Property="Opacity" Value="0.8"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Border CornerRadius="20,20,20,20" Background="{TemplateBinding Background}" BorderThickness="0">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <!--<Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value="0.3"/>
+                        </Trigger>-->
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Opacity" Value="1"/>
+                            <Setter Property="FontSize" Value="25"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="textboxSearch" TargetType="TextBox">
             <Setter Property="Background" Value="#ffffff"/>
             <Setter Property="Foreground" Value="#b0b9c6"/>
             <!--<Setter Property="BorderThickness" Value="0"/>-->
             <Setter Property="FontSize" Value="12"/>
-            <Setter Property="Padding" Value="15 10"/>
+            <Setter Property="Padding" Value="15 5"/>
             <Setter Property="VerticalAlignment" Value="Center"/>
-            <Setter Property="Margin" Value="0 10"/>
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="TextBoxBase">
-                        <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
+            <Setter Property="Margin" Value="0 5 0 0"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TextBoxBase">
+                    <Border x:Name="border" CornerRadius="20" Background="{TemplateBinding Background}" SnapsToDevicePixels="True"
                                 BorderThickness="1" BorderBrush="#e0e6ed">
-                            <ScrollViewer x:Name="Part_ContentHost" Focusable="False" HorizontalScrollBarVisibility="Hidden"
+                        <ScrollViewer x:Name="PART_ContentHost" Focusable="False" 
+                                          HorizontalScrollBarVisibility="Hidden"
                                           VerticalScrollBarVisibility="Hidden"/>
-                        </Border>
+                    </Border>
 
-                        <ControlTemplate.Triggers>
-                            <Trigger Property="IsMouseOver" Value="True">
-                                <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
-                            </Trigger>
-                            <Trigger Property="IsKeyboardFocused" Value="True">
-                                <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
-                            </Trigger>
-                        </ControlTemplate.Triggers>
-                    
-                    </ControlTemplate>
-                </Setter.Value>
-            
-            
-            </Setter>
-
-
-
-
-        </Style>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
+                        </Trigger>
+                        <Trigger Property="IsKeyboardFocused" Value="True">
+                            <Setter Property="BorderBrush" Value="#d9d9d9" TargetName="border"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
     <Style x:Key="ultisButton" TargetType="Button">
         <Setter Property="Background" Value="#6741d9"/>
@@ -309,6 +334,81 @@
     </Style>
 
 
+    <!-- Check box style -->
+
+    <SolidColorBrush x:Key="OptionMark.Static.Background" Color="#FFFFFFFF"/>
+    <SolidColorBrush x:Key="OptionMark.Static.Border" Color="#FF707070"/>
+    <SolidColorBrush x:Key="OptionMark.Static.Glyph" Color="#FF212121"/>
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Background" Color="#FFF3F9FF"/>
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Border" Color="#FF5593FF"/>
+    <SolidColorBrush x:Key="OptionMark.MouseOver.Glyph" Color="#FF212121"/>
+    <SolidColorBrush x:Key="OptionMark.Pressed.Background" Color="#FFD9ECFF"/>
+    <SolidColorBrush x:Key="OptionMark.Pressed.Border" Color="#FF3C77DD"/>
+    <SolidColorBrush x:Key="OptionMark.Pressed.Glyph" Color="#FF212121"/>
+    <SolidColorBrush x:Key="OptionMark.Disabled.Background" Color="#FFE6E6E6"/>
+    <SolidColorBrush x:Key="OptionMark.Disabled.Border" Color="#FFBCBCBC"/>
+    <SolidColorBrush x:Key="OptionMark.Disabled.Glyph" Color="#FF707070"/>
+    <Style x:Key="CheckBoxStyle1" TargetType="{x:Type CheckBox}">
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="Background" Value="{StaticResource OptionMark.Static.Background}"/>
+        <Setter Property="BorderBrush" Value="#DAE2EA"/>
+        <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type CheckBox}">
+                    <Grid x:Name="templateRoot" Background="Transparent" SnapsToDevicePixels="True">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Border x:Name="checkBoxBorder" CornerRadius="3" Padding="1" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="1" VerticalAlignment="{TemplateBinding VerticalContentAlignment}">
+                            <Grid x:Name="markGrid">
+                                <Path x:Name="optionMark" Data="F1 M 9.97498,1.22334L 4.6983,9.09834L 4.52164,9.09834L 0,5.19331L 1.27664,3.52165L 4.255,6.08833L 8.33331,1.52588e-005L 9.97498,1.22334 Z " Fill="{StaticResource OptionMark.Static.Glyph}" Margin="1" Opacity="0" Stretch="None"/>
+                                <Rectangle x:Name="indeterminateMark" Fill="{StaticResource OptionMark.Static.Glyph}" Margin="2" Opacity="0"/>
+                            </Grid>
+                        </Border>
+                        <ContentPresenter x:Name="contentPresenter" Grid.Column="1" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HasContent" Value="true">
+                            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+                            <Setter Property="Padding" Value="4,-1,0,0"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.MouseOver.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#9575CD"/>
+                            <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                            <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.MouseOver.Glyph}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Disabled.Border}"/>
+                            <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                            <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Disabled.Glyph}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="checkBoxBorder" Value="{StaticResource OptionMark.Pressed.Background}"/>
+                            <Setter Property="BorderBrush" TargetName="checkBoxBorder" Value="#9575CD"/>
+                            <Setter Property="Fill" TargetName="optionMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                            <Setter Property="Fill" TargetName="indeterminateMark" Value="{StaticResource OptionMark.Pressed.Glyph}"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Opacity" TargetName="optionMark" Value="1"/>
+                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="0"/>
+                        </Trigger>
+                        <Trigger Property="IsChecked" Value="{x:Null}">
+                            <Setter Property="Opacity" TargetName="optionMark" Value="0"/>
+                            <Setter Property="Opacity" TargetName="indeterminateMark" Value="1"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!-- end region -->
+
     <!-- DataGrid design template region-->
     <Style x:Key="{ComponentResourceKey ResourceId=DataGridSelectAllButtonStyle, TypeInTargetAssembly={x:Type DataGrid}}" TargetType="{x:Type Button}">
         <Setter Property="BorderBrush" Value="{Binding HorizontalGridLinesBrush, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
@@ -393,7 +493,7 @@
             </Setter.Value>
         </Setter>
         <Setter Property="VerticalGridLinesBrush" Value="{Binding HorizontalGridLinesBrush, RelativeSource={RelativeSource Mode=Self}}"/>
-        <Setter Property="local:DataGridAssist.ApplyMaterialDesignColumnStyles" Value="true"/>
+        <!--<Setter Property="local:DataGridAssist.ApplyMaterialDesignColumnStyles" Value="true"/>
         <Setter Property="local:DataGridAssist.AutoGeneratedCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnStyle}"/>
         <Setter Property="local:DataGridAssist.AutoGeneratedComboBoxStyle" Value="{x:Static local:DataGridComboBoxColumn.DefaultElementStyle}"/>
         <Setter Property="local:DataGridAssist.AutoGeneratedEditingCheckBoxStyle" Value="{StaticResource MaterialDesignDataGridCheckBoxColumnEditingStyle}"/>
@@ -401,7 +501,7 @@
         <Setter Property="local:DataGridAssist.AutoGeneratedEditingTextStyle" Value="{StaticResource MaterialDesignDataGridTextColumnEditingStyle}"/>
         <Setter Property="local:DataGridAssist.AutoGeneratedTextStyle" Value="{StaticResource MaterialDesignDataGridTextColumnStyle}"/>
         <Setter Property="local:DataGridAssist.EnableEditBoxAssist" Value="True"/>
-        <Setter Property="local:DataGridAssist.SelectedCellBorderBrush" Value="{DynamicResource MaterialDesign.Brush.ForegroundLight}"/>
+        <Setter Property="local:DataGridAssist.SelectedCellBorderBrush" Value="{DynamicResource MaterialDesign.Brush.ForegroundLight}"/>-->
         <Style.Triggers>
             <MultiTrigger>
                 <MultiTrigger.Conditions>
@@ -421,14 +521,14 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type DataGridCell}">
                     <Grid>
-                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="True"/>
+                        <Border Background="{TemplateBinding Background}" BorderThickness="0" SnapsToDevicePixels="True"/>
                         <ContentPresenter Margin="{TemplateBinding Padding}" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
                     </Grid>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
         <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
-        <Style.Triggers>
+        <!--<Style.Triggers>
             <Trigger Property="IsKeyboardFocusWithin" Value="True">
                 <Setter Property="BorderBrush" Value="{Binding (local:DataGridAssist.SelectedCellBorderBrush), RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"/>
             </Trigger>
@@ -442,7 +542,7 @@
             <Trigger Property="IsEnabled" Value="False">
                 <Setter Property="Opacity" Value=".56"/>
             </Trigger>
-        </Style.Triggers>
+        </Style.Triggers>-->
     </Style>
     <Style x:Key="MaterialDesignGridColumnHeaderGripper" BasedOn="{StaticResource MaterialDesignThumb}" TargetType="{x:Type Thumb}">
         <Setter Property="Cursor" Value="SizeWE"/>
@@ -555,14 +655,14 @@
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
-        <Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
+        <!--<Setter Property="Validation.ErrorTemplate" Value="{x:Null}"/>
         <Setter Property="ValidationErrorTemplate">
             <Setter.Value>
                 <ControlTemplate>
                     <TextBlock Foreground="#d50000" Margin="2,0,0,0" Text="!" VerticalAlignment="Center"/>
                 </ControlTemplate>
             </Setter.Value>
-        </Setter>
+        </Setter>-->
         <Style.Triggers>
             <Trigger Property="IsSelected" Value="True">
                 <Setter Property="Background" Value="#623ed0"/>
@@ -586,7 +686,31 @@
     
     <!-- end region -->
     
-    
+    <Style x:Key="InvisibleScrollViewer" TargetType="ScrollViewer">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ScrollViewer">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <ScrollContentPresenter Grid.Column="0" Grid.Row="0"/>
+                        <ScrollBar Name="PART_VerticalScrollBar" Grid.Column="1" Grid.Row="0" Orientation="Vertical" Visibility="Collapsed" />
+                        <ScrollBar Name="PART_HorizontalScrollBar" Grid.Column="0" Grid.Row="1" Orientation="Horizontal" Visibility="Collapsed" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+
 </ResourceDictionary>
     
     
