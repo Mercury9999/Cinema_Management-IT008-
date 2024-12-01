@@ -31,53 +31,61 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Họ và tên" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
+                          Padding="0"
                           Margin="39 0 0 0"
                           />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Số điện thoại" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="20 0 0 0"
+                             Padding="0"
                           />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Ngày sinh" Margin="10 10 0 0"/>
                     <DatePicker
-                              Width="100"
+                              Width="130"
                               materialDesign:HintAssist.Hint=""
                               materialDesign:TextFieldAssist.HasClearButton="True"
                               Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
                               Margin="35 0 0 0" Height="26"
+                              Padding="5"
+                              FontSize="15"
                     />    
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Giới tính" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
                           Margin="45 0 0 0"
+                          Padding="0"
+                             TextAlignment="Center"
                           />
                 </StackPanel>
 
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Email" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="59 0 0 0"
+                             Padding="0"
                           />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Chức vụ" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="45 0 0 0"
+                             Padding="0"
                           />
                 </StackPanel>
 
@@ -85,9 +93,10 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Tên đăng nhập" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                     Margin="19 0 0 0"
+                             Padding="0"
                     />
                 </StackPanel>
 
@@ -96,6 +105,7 @@
                     <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                              Margin="47 0 0 0"
+                             Padding="0"
                              />
                 </StackPanel>
 

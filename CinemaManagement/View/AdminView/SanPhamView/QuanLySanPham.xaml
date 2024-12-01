@@ -7,7 +7,23 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       mc:Ignorable="d" 
       d:DesignHeight="810" d:DesignWidth="900"
-      Title="QuanLySanPham">
+      Title="QuanLySanPham"
+      x:Name="quanlysanphamPage"
+      >
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="quanlysanphamPage"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0"
+                                 To="1"
+                                 Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
 
 
     <Border CornerRadius="30" Background="#eff2f7">

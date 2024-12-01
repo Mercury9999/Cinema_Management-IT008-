@@ -12,11 +12,26 @@
       d:DesignWidth="900"
       Title="QuanLySuatChieu"
       Background="Transparent"
+      x:Name="quanlysuatchieuPage"
       >
 
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="quanlysuatchieuPage"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0"
+                                 To="1"
+                                 Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
 
     <Border Background="#eff2f7" CornerRadius="30">
         <Grid>
