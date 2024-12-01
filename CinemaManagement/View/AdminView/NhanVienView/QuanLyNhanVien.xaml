@@ -5,9 +5,9 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
     xmlns:local="clr-namespace:CinemaManagement.View"
     xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
-    xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyNhanVienVM}"
-    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-    mc:Ignorable="d"
+    xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+    xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyNhanVienVM}"
+      mc:Ignorable="d"
     DataContext="{StaticResource StaffVM}"
     d:DesignHeight="810" 
     d:DesignWidth="900"
@@ -56,7 +56,8 @@
                     </StackPanel>
                 </Button>
 
-                <Button Margin="544,24,203,25" Background="#FF2A35BF" BorderBrush="#FFEDE7F8">
+                <Button Margin="544,24,203,25" Background="#FF2A35BF" BorderBrush="#FFEDE7F8"
+                        Command="{Binding AddStaffCM}">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                         <TextBlock Text="Thêm nhân viên"/>
@@ -67,11 +68,16 @@
 
             <!-- Data grid -->
             <DataGrid Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
-                      x:Name="customerGrid" 
+                      x:Name="staffGrid" 
                       AutoGenerateColumns="False" IsReadOnly="True"
                       Grid.Row="1"
                       ItemsSource="{Binding dsNV}"
-                    >
+                      SelectedItem="{Binding NVSelected}">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding ViewStaffCM}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
                 <DataGrid.Columns>
                     <DataGridCheckBoxColumn CanUserResize="False" Width="Auto" ElementStyle="{StaticResource CheckBoxStyle1}">
                         <DataGridCheckBoxColumn.HeaderTemplate>
@@ -92,11 +98,12 @@
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel Orientation="Horizontal">
-                                    <Button Style="{StaticResource gridEditButton}">
+                                    <Button Style="{StaticResource gridEditButton}"
+                                            Command="{Binding ElementName=staffGrid, Path=DataContext.UpdateStaffCM}">
                                         <icon:PackIconMaterial Kind="PencilOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                     <Button Style="{StaticResource gridRemoveButton}" Margin="5 0 0 0"
-                                          >
+                                            Command="{Binding ElementName=staffGrid, Path=DataContext.DeleteStaffCM}">
                                         <icon:PackIconMaterial Kind="DeleteOutline" Style="{StaticResource gridButtonIcon}"/>
                                     </Button>
                                 </StackPanel>
