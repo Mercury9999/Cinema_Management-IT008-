@@ -81,11 +81,11 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Chức vụ" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                          Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
-                          Margin="45 0 0 0"
-                             Padding="0"
-                          />
+                    <ComboBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
+          Width="253" Height="21"
+          Margin="45 0 0 0"
+          ItemsSource="{Binding dsChucVu}"
+          Padding="0"/>
                 </StackPanel>
 
 
