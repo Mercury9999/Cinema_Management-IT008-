@@ -14,10 +14,10 @@ namespace CinemaManagement.DTOs
             get
             {
                 if (SoGhe < 1) return string.Empty; 
-                int charIndex = (x - 1) / 10;
-                int numIndex = (x - 1) % 10 + 1;
-                char letter = (char)('A' + charIndex); 
-                return $"{letter}{numIndex:000}"
+                int charIndex = (SoGhe - 1) / 10;
+                int numIndex = (SoGhe - 1) % 10 + 1;
+                char letter = (char)('A' + charIndex);
+                return $"{letter}{numIndex:000}";
             }
         }
     }
