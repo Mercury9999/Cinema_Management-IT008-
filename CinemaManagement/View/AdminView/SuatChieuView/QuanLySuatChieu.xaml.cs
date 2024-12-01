@@ -29,7 +29,7 @@ namespace CinemaManagement.View
                 new SuatChieu { Ten = "Hoang ha Dao Chu", TheLoai = "Tien hiep", ThoiLuong = "130" }
             };
 
-            filmGrid2.ItemsSource = testData;
+            showtimeGrid.ItemsSource = testData;
 
         }
         public class SuatChieu
