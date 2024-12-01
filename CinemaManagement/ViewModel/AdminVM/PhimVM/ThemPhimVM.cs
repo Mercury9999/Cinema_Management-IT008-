@@ -19,7 +19,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         public bool CheckNonEmpty()
         {
             return !string.IsNullOrEmpty(TenPhim) && !string.IsNullOrEmpty(TheLoai)
-            && !string.IsNullOrEmpty(Convert.ToString(ThoiLuong)) && !string.IsNullOrEmpty(NuocSX)
+            && ThoiLuong != null && !string.IsNullOrEmpty(NuocSX)
             && !string.IsNullOrEmpty(DaoDien) && !string.IsNullOrEmpty(GioiHanTuoi)
             && !string.IsNullOrEmpty(NoiDung) && Poster != null && NgayPH != null;
         }
@@ -39,7 +39,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     NgayPH = Convert.ToDateTime(NgayPH),
                     Poster = Poster
                 };
-                (bool trangthai, string messages) = await PhimDAL.Instance.AddMovie(Phim);
+                (bool trangthai, string messages, int newId) = await PhimDAL.Instance.AddMovie(Phim);
                 if (trangthai)
                 {
                     MessageBox.Show(messages);

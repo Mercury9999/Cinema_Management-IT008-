@@ -37,17 +37,18 @@ namespace CinemaManagement.ViewModel.AdminVM
                 if (trangthai)
                 {
                     MessageBox.Show(messages);
+                    IsSaving = true;
+                    var NhanVienUpdated = dsNV.FirstOrDefault(s => s.MaNV == NhanVien.MaNV);
+                    if (NhanVienUpdated != null)
+                    {
+                        NhanVienUpdated = NhanVien;
+                    }
+                    IsSaving = false;
                     CurrentWindow.Close();
-                    IsLoading = true;
-                    var data = await Task.Run(async () => await NhanVienDAL.Instance.GetAllStaff());
-                    dsNV = new ObservableCollection<NhanVienDTO>(data);
-                    IsLoading = false;
-                    return;
                 }
                 else
                 {
                     CustomControls.MyMessageBox.Show("Lỗi hệ thống" + messages);
-                    return;
                 }
             }
             else

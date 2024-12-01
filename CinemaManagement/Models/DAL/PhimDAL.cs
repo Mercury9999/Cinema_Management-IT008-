@@ -116,14 +116,17 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã cập nhật");
         }
-        public async Task<(bool, string)> AddMovie(PhimDTO phim)
+        public async Task<(bool, string, int)> AddMovie(PhimDTO phim)
         {
+            int newMovieId = -1;
             try
             {
                 using (var context = new CinemaManagementEntities())
                 {
-                    int maxMovieId = await context.Phims.MaxAsync(s => s.MaPhim);
-                    int newMovieId = maxMovieId + 1;
+                    int maxMovieId;
+                    if (await context.Phims.AnyAsync()) maxMovieId = await context.Phims.MaxAsync(s => s.MaPhim);
+                    else maxMovieId = 0;
+                    newMovieId = maxMovieId + 1;
 
                     var p = new Phim()
                     {
@@ -145,13 +148,13 @@ namespace CinemaManagement.Models.DAL
             }
             catch (DbUpdateException e)
             {
-                return (false, "Lỗi CSDL");
+                return (false, "Lỗi CSDL", newMovieId);
             }
             catch (Exception ex)
             {
-                return (false, ex.ToString());
+                return (false, ex.ToString(), newMovieId);
             }
-            return (true, "Thêm phim thành công");
+            return (true, "Thêm phim thành công", newMovieId);
         }
     }
 }

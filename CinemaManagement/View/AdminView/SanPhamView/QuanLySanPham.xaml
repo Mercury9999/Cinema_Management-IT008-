@@ -49,14 +49,14 @@
                         Margin="50,30,50,0" VerticalAlignment="Top" Width="208"
                 />
 
-                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Click="Button_Click">
+                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding AddProductCM}">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                         <TextBlock Text="Thêm sản phẩm"/>
                     </StackPanel>
                 </Button>
 
-                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Click="Button_Click">
+                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding DeleteProductCM}">
                     <StackPanel Orientation="Horizontal">
                         <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                         <TextBlock Text="Nhập hàng"/>

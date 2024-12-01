@@ -27,28 +27,27 @@ namespace CinemaManagement.Models.DAL
             }
             private set => _instance = value;
         }
-        public async Task<(bool, string)> CreateBooking(HoaDonDTO hoadon, List<VeDTO> dsVe, List<CTHDSanPham> dsSanPham)
+        public async Task<(bool, string, int)> CreateBooking(HoaDonDTO hoadon, List<VeDTO> dsVe, List<CTHDSanPham> dsSanPham)
         {
+            int newBillId = 0;
             try
             {
                 using (var context = new CinemaManagementEntities())
                 {
                     //Tạo hoá đơn mới
-                    int newBillId;
                     newBillId = await CreateNewBill(context, hoadon);
-
                     //Thêm vé nếu có
                     if (dsVe.Any())
                     {
                         string ex = await UpdateTicketSell(context, dsVe);
                         if (ex != null)
                         {
-                            return (false, ex);
+                            return (false, ex, newBillId);
                         }
                         ex = await AddNewTicket(context, dsVe, newBillId);
                         if (ex != null)
                         {
-                            return (false, ex);
+                            return (false, ex, newBillId);
                         }
                     }
 
@@ -58,7 +57,7 @@ namespace CinemaManagement.Models.DAL
                         string ex = await AddNewProductBillInfo(context, dsSanPham, newBillId);
                         if (ex != null)
                         {
-                            return (false, ex);
+                            return (false, ex, newBillId);
                         }
                     }
                     await context.SaveChangesAsync();
@@ -67,9 +66,9 @@ namespace CinemaManagement.Models.DAL
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                return (false, "Lỗi hệ thống");
+                return (false, "Lỗi hệ thống", newBillId);
             }
-            return (true, "Giao dịch thành công");
+            return (true, "Giao dịch thành công", newBillId);
         }
         public async Task<int> CreateNewBill(CinemaManagementEntities context, HoaDonDTO hoadon)
         {

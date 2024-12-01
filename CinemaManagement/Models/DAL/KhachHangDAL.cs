@@ -122,14 +122,17 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã cập nhật");
         }
-        public async Task<(bool, string)> Addcustomer(KhachHangDTO KhachHang)
+        public async Task<(bool, string, int)> Addcustomer(KhachHangDTO KhachHang)
         {
+            int newcustomerId = -1;
             try
             {
                 using (var context = new CinemaManagementEntities())
                 {
-                    int maxcustomerId = await context.KhachHangs.MaxAsync(s => s.MaKH);
-                    int newcustomerId = maxcustomerId + 1;
+                    int maxcustomerId;
+                    if (await context.KhachHangs.AnyAsync()) maxcustomerId = await context.KhachHangs.MaxAsync(s => s.MaKH);
+                    else maxcustomerId = 0;
+                    newcustomerId = maxcustomerId + 1;
 
                     var kh = new KhachHang();
 
@@ -138,11 +141,11 @@ namespace CinemaManagement.Models.DAL
                     bool checkEmail = await context.KhachHangs.AnyAsync(s => s.email_KH == KhachHang.email_KH && s.MaKH != KhachHang.MaKH);
                     if (checkSDT)
                     {
-                        return (false, "Số điện thoại đã được đăng ký");
+                        return (false, "Số điện thoại đã được đăng ký", newcustomerId);
                     }
                     if (checkEmail)
                     {
-                        return (false, "Email đã được đăng ký");
+                        return (false, "Email đã được đăng ký", newcustomerId);
                     }
 
                     kh.MaKH = newcustomerId;
@@ -160,13 +163,13 @@ namespace CinemaManagement.Models.DAL
             }
             catch (DbUpdateException e)
             {
-                return (false, "Lỗi CSDL");
+                return (false, "Lỗi CSDL", newcustomerId);
             }
             catch (Exception ex)
             {
-                return (false, ex.ToString());
+                return (false, ex.ToString(), newcustomerId);
             }
-            return (true, "Đăng ký khách hàng thành công");
+            return (true, "Đăng ký khách hàng thành công", newcustomerId);
         }
 
         //Dùng cho thống kê

@@ -41,8 +41,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public string TenPhim { get { return _tenPhim; } set { _tenPhim = value; OnPropertyChanged(); } }
         private string _theLoai {  get; set; }
         public string TheLoai { get { return _theLoai; } set { _theLoai = value; OnPropertyChanged(); } }   
-        private int _thoiLuong { get; set; }
-        public int ThoiLuong { get { return _thoiLuong; } set { _thoiLuong = value; OnPropertyChanged(); } }
+        private int? _thoiLuong { get; set; }
+        public int? ThoiLuong { get { return _thoiLuong; } set { _thoiLuong = value; OnPropertyChanged(); } }
         private string _nuocSX {  get; set; }
         public string NuocSX { get { return _nuocSX; } set { _nuocSX = value; OnPropertyChanged(); } }  
         private string _ngayPH { get; set; }
@@ -176,7 +176,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         {
             TenPhim = null;
             TheLoai = null;
-            ThoiLuong = 0;
+            ThoiLuong = null;
             NuocSX = null;
             NgayPH = null;
             DaoDien = null;
