@@ -31,36 +31,40 @@
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Họ và tên" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                              Margin="40 0 0 0"
+                             Padding="0"
                              />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Số điện thoại" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                              Margin="20 0 0 0"
+                             Padding="0"
                              />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Email" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="60 0 10 0" FontSize="15"
+                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                              Margin="60 0 0 0"
+                             Padding="0"
                              />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Ngày đăng ký" Margin="10 10 0 0"/>
                     <DatePicker
-                              Width="100"
+                              Width="130"
                               materialDesign:HintAssist.Hint=""
                               materialDesign:TextFieldAssist.HasClearButton="True"
                               Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
                               Margin="17 0 0 0" Height="26"
+                        Padding="0"
                     />
                 </StackPanel>
 

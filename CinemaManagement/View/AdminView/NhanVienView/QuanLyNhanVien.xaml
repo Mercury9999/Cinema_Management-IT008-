@@ -12,7 +12,8 @@
     d:DesignHeight="810" 
     d:DesignWidth="900"
     Title="QuanLyNhanVien"
-    Background="Transparent">
+    Background="Transparent"
+    x:Name="quanlynhanvienPage">
 
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -22,6 +23,20 @@
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
+
+    <Page.Triggers>
+        <EventTrigger RoutedEvent="Page.Loaded">
+            <BeginStoryboard>
+                <Storyboard>
+                    <DoubleAnimation Storyboard.TargetName="quanlynhanvienPage"
+                                 Storyboard.TargetProperty="Opacity"
+                                 From="0"
+                                 To="1"
+                                 Duration="0:0:0.3" />
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Page.Triggers>
 
     <Border Background="#eff2f7" CornerRadius="30">
         <Grid>
