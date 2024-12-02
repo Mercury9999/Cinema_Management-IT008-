@@ -47,6 +47,7 @@
                         materialDesign:HintAssist.Hint="Tìm kiếm theo tên..."
                         materialDesign:HintAssist.HintOpacity=".26"   
                         Margin="50,30,50,0" VerticalAlignment="Top" Width="208"
+                        Text="{Binding TimTenSP, Mode=TwoWay}"
                 />
 
                 <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding AddProductCM}">
@@ -55,13 +56,15 @@
                         <TextBlock Text="Thêm sản phẩm"/>
                     </StackPanel>
                 </Button>
-
-                <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding DeleteProductCM}">
-                    <StackPanel Orientation="Horizontal">
-                        <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                        <TextBlock Text="Nhập hàng"/>
-                    </StackPanel>
-                </Button>
+                <ComboBox x:Name="searchtypeComboBox" Width="200" Height="30" IsEditable="True" VerticalAlignment="Top" Margin="50"
+                          ItemsSource="{Binding dsLoaiSPTimKiem}"
+                          SelectedItem="{Binding TimLoaiSP, Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding TypeSearchProductCM}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </ComboBox>
             </StackPanel>
 
             <materialDesign:Card Grid.Row="1"
@@ -78,7 +81,12 @@
                                  materialDesign:ListBoxItemAssist.ShowSelection="False"
                                  materialDesign:ListBoxAssist.IsToggle="False"
                                  ItemsSource="{Binding dsSP}"
-                                 SelectedItem="{Binding SPSelected}">
+                                 SelectedItem="{Binding SPSelected, Mode=TwoWay}">
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="MouseDoubleClick">
+                                    <i:InvokeCommandAction Command="{Binding ViewProductCM}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                             <ListBox.ItemContainerStyle>
                                 <Style TargetType="ListBoxItem"
                                        BasedOn="{StaticResource MaterialDesignListBoxItem}">
@@ -173,10 +181,13 @@
                                                             <icon:PackIconMaterial Kind="Pencil"
                                                                    Width="30"
                                                                    Height="30"
-                                                                   Cursor="Hand"
-                                                                   />
-
-
+                                                                   Cursor="Hand">
+                                                            </icon:PackIconMaterial>
+                                                            <i:Interaction.Triggers>
+                                                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                                    <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.UpdateProductCM}"/>
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
                                                         </Border>
                                                         <Border BorderBrush="Black"
                                                                 BorderThickness="1"
@@ -200,9 +211,13 @@
                                                             <materialDesign:PackIcon Kind="GarbageCanEmpty"
                                                                                      Width="30"
                                                                                      Height="30"
-                                                                                     Cursor="Hand" />
-
+                                                                                     Cursor="Hand"/>
                                                         </Border>
+                                                        <i:Interaction.Triggers>
+                                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                                <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.DeleteProductCM}"/>
+                                                            </i:EventTrigger>
+                                                        </i:Interaction.Triggers>
                                                     </StackPanel>
                                                 </StackPanel>
                                             </Grid>

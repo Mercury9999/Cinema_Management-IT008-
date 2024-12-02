@@ -51,5 +51,9 @@ namespace CinemaManagement.View
             items.Add(newItem);
         }
 
+        private void ComboBox_SuggestionChosen(object sender, RoutedPropertyChangedEventArgs<object> e)
+        {
+
+        }
     }
 }

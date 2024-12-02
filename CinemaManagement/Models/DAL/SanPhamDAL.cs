@@ -32,6 +32,7 @@ namespace CinemaManagement.Models.DAL
                 using (var context = new CinemaManagementEntities())
                 {
                     var dssanpham = (from sp in context.SanPhams
+                                     where sp.IsDeleted == false
                                       select new SanPhamDTO
                                       {
                                           MaSP = sp.MaSP,
@@ -59,7 +60,7 @@ namespace CinemaManagement.Models.DAL
                     var sp = await context.SanPhams.FindAsync(maspXoa);
                     if (sp == null || sp.IsDeleted == true)
                     {
-                        return (false, "sản phẩm không tồn tại");
+                        return (false, "Sản phẩm không tồn tại");
                     }
                     sp.IsDeleted = true;
                     sp.SoLuong = 0;
@@ -84,9 +85,9 @@ namespace CinemaManagement.Models.DAL
                 using (var context = new CinemaManagementEntities())
                 {
                     var sp = await context.SanPhams.FindAsync(spcapnhat.MaSP);
-                    if (sp == null)
+                    if (sp == null || sp.IsDeleted == true)
                     {
-                        return (false, "Mã sản phẩm không tồn tại");
+                        return (false, "Sản phẩm không tồn tại");
                     }
 
                     sp.TenSP = spcapnhat.TenSP;
@@ -128,6 +129,7 @@ namespace CinemaManagement.Models.DAL
                         SoLuong = sanpham.SoLuong,
                         GiaSP = sanpham.GiaSP,
                         HinhAnhSP = sanpham.HinhAnhSP,
+                        IsDeleted = false
                     };
 
                     context.SanPhams.Add(sp);
