@@ -12,7 +12,7 @@ using System.Windows;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
-    public partial class QuanLySanPhamVM
+    public partial class QuanLySanPhamVM : BaseViewModel
     {
         private async Task SaveUpdatedProduct(Window w1)
         {
@@ -22,34 +22,41 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     SanPhamDTO sanPham = new SanPhamDTO()
                     {
+                        MaSP = MaSP ?? 0,
                         TenSP = TenSP,
                         GiaSP = GiaSP ?? 0m,
                         LoaiSP = LoaiSP,
                         HinhAnhSP = HinhAnhSP,
-                        SoLuong = 0
+                        SoLuong = SoLuong
                     };
-                    (bool trangthai, string messages) = await SanPhamDAL.Instance.UpdateProduct(SPSelected);
+                    (bool trangthai, string messages) = await SanPhamDAL.Instance.UpdateProduct(sanPham);
                     if (trangthai)
                     {
                         MessageBox.Show(messages);
                         IsLoading = true;
-                        var SanPhamUpdated = dsSP.FirstOrDefault(s => s.MaSP == sanPham.MaSP);
-                        if (SanPhamUpdated != null)
+                        for (int i = 0; i < dsSP.Count; i++)
+                        if (dsSP[i].MaSP == sanPham.MaSP)
                         {
-                            SanPhamUpdated = sanPham;
-                            return;
+                            dsSP[i] = sanPham;
+                            break;
+                        }
+                        for (int i = 0; i < tatcaSP.Count; i++)
+                        if (tatcaSP[i].MaSP == sanPham.MaSP)
+                        {
+                            tatcaSP[i] = sanPham;
+                            break;
                         }
                         IsLoading = false;
                         CurrentWindow.Close();
                     }
                     else
                     {
-                        CustomControls.MyMessageBox.Show("Lỗi hệ thống" + messages);
+                        CustomControls.MyMessageBox.Show("Lỗi hệ thống: " + messages);
                     }
                 }
                 catch (Exception ex)
                 {
-                    CustomControls.MyMessageBox.Show("Lỗi hệ thống" + ex.Message);
+                    CustomControls.MyMessageBox.Show("Lỗi hệ thống: " + ex.Message);
                 }
             }
             else

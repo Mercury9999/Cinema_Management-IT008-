@@ -15,6 +15,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.UI;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace CinemaManagement.ViewModel.AdminVM
@@ -34,10 +35,14 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand SaveNewProductCM { get; set; }
         public ICommand SaveProductCM { get; set; }
         public ICommand GetCurrentWindowCM { get; set; }
+        public ICommand NameSearchProductCM { get; set; }
+        public ICommand TypeSearchProductCM { get; set; }
         #endregion
         #region thuộc tính lưu dữ liệu
         private int? _masp {  get; set; }
         public int? MaSP { get { return _masp; } set { _masp = value; OnPropertyChanged(); } }
+        private string _maspstr { get; set; }
+        public string MaSPStr { get { return _maspstr; } set { _maspstr = value; OnPropertyChanged(); } }
         private string _loaisp {  get; set; }
         public string LoaiSP { get { return _loaisp; } set { _loaisp = value; OnPropertyChanged(); } }
         private string _tensp { get; set; }
@@ -50,22 +55,22 @@ namespace CinemaManagement.ViewModel.AdminVM
         public byte[] HinhAnhSP { get { return _hinhanhsp; } set { _hinhanhsp = value; OnPropertyChanged(); } }
         #endregion
         #region biến khác
-        private Page QLSanPhamPage { get; set; }
         private Window CurrentWindow { get; set; }
         private SanPhamDTO _SPSelected { get; set; }
         public SanPhamDTO SPSelected { get { return _SPSelected; } set { _SPSelected = value; OnPropertyChanged(); } }
         private ObservableCollection<SanPhamDTO> _dsSP { get; set; }
         public ObservableCollection<SanPhamDTO> dsSP { get { return _dsSP; } set { _dsSP = value; OnPropertyChanged(); } }
+        private ObservableCollection<SanPhamDTO> _tatcaSP { get; set; }
+        public ObservableCollection<SanPhamDTO> tatcaSP { get { return _tatcaSP; } set { _tatcaSP = value; OnPropertyChanged(); } }
         public ObservableCollection<string> dsLoaiSP { get; set; }
+        public ObservableCollection<string> dsLoaiSPTimKiem { get; set; }
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
+        public string TimLoaiSP { get; set; }
+        public string TimTenSP {  get; set; }
         #endregion
         public QuanLySanPhamVM()
         {
-            GetQLSPWindowCM = new RelayCommand<Page>((p) => { return true; }, (p) =>
-            {
-                QLSanPhamPage = p;
-            });
             GetCurrentWindowCM = new RelayCommand<Window>((p) => { return true; }, (p) =>
             {
                 CurrentWindow = p;
@@ -80,6 +85,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     IsLoading = true;
                     var data = await Task.Run(async () => await SanPhamDAL.Instance.GetAllProduct());
+                    tatcaSP = new ObservableCollection<SanPhamDTO>(data);
                     dsSP = new ObservableCollection<SanPhamDTO>(data);
                     IsLoading = false;
                 }
@@ -107,27 +113,41 @@ namespace CinemaManagement.ViewModel.AdminVM
             });
             DeleteProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
-                MessageBoxResult result = MessageBox.Show("Xoá sẽ mất hết dữ liệu", "Xác nhận", MessageBoxButton.YesNo, MessageBoxImage.Question);
-                if(SPSelected.SoLuong > 0)
+                if (SPSelected != null)
                 {
-                    MyMessageBox.Show("Sản phẩm còn hàng tồn trong kho, không thể xoá");
-                }
-                else if (result == MessageBoxResult.Yes)
-                {
-                    IsLoading = true;
-                    (bool trangthai, string message) = await SanPhamDAL.Instance.DeleteProduct(SPSelected.MaSP);
-                    if (trangthai)
+                    SanPhamDTO SelectedItem = SPSelected;
+                    if (SelectedItem.SoLuong > 0)
                     {
-                        for (int i = 0; i < dsSP.Count; i++)
+                        MyMessageBox.Show("Sản phẩm còn hàng tồn trong kho, không thể xoá");
+                        return;
+                    }
+                    bool result = CustomControls.MyMessageBox.ShowYesNo("Xác nhận xoá sản phẩm?");
+                    if (result == true)
+                    {
+                        IsLoading = true;
+                        (bool trangthai, string message) = await SanPhamDAL.Instance.DeleteProduct(SelectedItem.MaSP);
+                        if (trangthai)
                         {
-                            if (dsSP[i].MaSP == SPSelected.MaSP)
+                            for (int i = 0; i < dsSP.Count; i++)
                             {
-                                dsSP.Remove(dsSP[i]);
-                                break;
+                                if (dsSP[i].MaSP == SelectedItem.MaSP)
+                                {
+                                    dsSP.Remove(dsSP[i]);
+                                    break;
+                                }
+                            }
+                            for (int i = 0; i < tatcaSP.Count; i++)
+                            {
+                                if (tatcaSP[i].MaSP == SelectedItem.MaSP)
+                                {
+                                    tatcaSP.Remove(tatcaSP[i]);
+                                    break;
+                                }
                             }
                         }
+                        CustomControls.MyMessageBox.Show(message);
+                        IsLoading = false;
                     }
-                    CustomControls.MyMessageBox.Show(message);
                 }
             });
             ViewProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
@@ -136,9 +156,9 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     IsLoading = true;
                     ClearData();
-                    //ThongTinSanPham w1 = new ThongTinSanPham();
+                    ThongTinSanPham w1 = new ThongTinSanPham();
                     GetDataProduct();
-                    //w1.ShowDialog();
+                    w1.ShowDialog();
                     IsLoading = false;
                 }
             });
@@ -164,6 +184,46 @@ namespace CinemaManagement.ViewModel.AdminVM
                 "Đồ chơi",
                 "Khăn giấy"
             };
+            dsLoaiSPTimKiem = new ObservableCollection<string>
+            {
+                "Tất cả",
+                "Thức ăn",
+                "Nước uống",
+                "Đồ chơi",
+                "Khăn giấy"
+            };
+            TypeSearchProductCM = new RelayCommand<ComboBox>((p) => { return true; }, (p) =>
+            {
+                try
+                {
+                    dsSP = new ObservableCollection<SanPhamDTO>();
+                    if (TimLoaiSP == "Tất cả")
+                    {
+                        dsSP = new ObservableCollection<SanPhamDTO>(tatcaSP);
+                    }
+                    else
+                    {
+                        for (int i = 0; i < tatcaSP.Count; i++)
+                        {
+                            if (tatcaSP[i].LoaiSP == TimLoaiSP)
+                            {
+                                dsSP.Add(tatcaSP[i]);
+                            }
+                        }
+                    }
+                }
+                catch (System.Data.Entity.Core.EntityException e)
+                {
+                    Console.WriteLine(e);
+                    MyMessageBox.Show("Lỗi: Mất kết nối cơ sở dữ liệu");
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e);
+                    MyMessageBox.Show("Lỗi hệ thống");
+                }
+
+            });
         }
         private void ClearData()
         {
@@ -172,22 +232,25 @@ namespace CinemaManagement.ViewModel.AdminVM
             GiaSP = null;
             HinhAnhSP = null;
             SoLuong = 0;
+            LoaiSP = null;
         }
         private void GetDataProduct()
         {
             if(SPSelected != null)
             {
+                MaSPStr = SPSelected.MaSPStr;
                 MaSP = SPSelected.MaSP;
                 TenSP = SPSelected.TenSP;
                 GiaSP = SPSelected.GiaSP;
                 HinhAnhSP = SPSelected.HinhAnhSP;
                 SoLuong = SPSelected.SoLuong;
+                LoaiSP = SPSelected.LoaiSP;
             }
         }
         private bool CheckNonEmpty()
         {
             return !string.IsNullOrEmpty(TenSP)
-                   && !(GiaSP is null) && !(HinhAnhSP is null) && !string.IsNullOrEmpty(LoaiSP);
+            && !(GiaSP is null) && !(HinhAnhSP is null) && !string.IsNullOrEmpty(LoaiSP);
         }
     }
 }
