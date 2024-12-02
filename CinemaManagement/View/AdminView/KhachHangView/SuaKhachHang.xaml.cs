@@ -12,21 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.KhachHangView
 {
     /// <summary>
-    /// Interaction logic for ThemKH.xaml
+    /// Interaction logic for SuaKhachHang.xaml
     /// </summary>
-    public partial class ThemKH : Window
+    public partial class SuaKhachHang : Window
     {
-        public ThemKH()
+        public SuaKhachHang()
         {
             InitializeComponent();
-        }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
         }
     }
 }
