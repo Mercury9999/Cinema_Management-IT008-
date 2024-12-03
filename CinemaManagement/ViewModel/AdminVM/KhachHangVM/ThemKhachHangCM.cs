@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Collections.ObjectModel;
 using CinemaManagement.Models;
+using CinemaManagement.CustomControls;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -43,12 +44,12 @@ namespace CinemaManagement.ViewModel.AdminVM
 
                 if (trangthai)
                 {
-                    MessageBox.Show("Thêm khách hàng thành công!", "Thông báo", MessageBoxButton.OK, MessageBoxImage.Information);
+                    MyMessageBox.Show("Thêm khách hàng thành công!");
 
                     // Cập nhật danh sách khách hàng sau khi thêm
-                    var updatedData = await KhachHangDAL.Instance.GetAllcustomer();
-                    dsKH = new ObservableCollection<KhachHangDTO>(updatedData);
-
+                    khachHang.MaKH = newMaKH;
+                    dsKH.Add(khachHang);
+                    tatcaKH.Add(khachHang);
                     currentWindow.Close();
                 }
                 else

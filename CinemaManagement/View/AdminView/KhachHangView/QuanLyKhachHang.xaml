@@ -7,7 +7,7 @@
      xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
      xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
       
-     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyKhachHangVM}"
      mc:Ignorable="d"
      
      d:DesignHeight="810" 
@@ -15,7 +15,7 @@
      Title="QuanLyPhim"
      Background="Transparent"
      x:Name="quanlykhachhangPage"
-      DataContext="{StaticResource CustomerVM}"
+    DataContext="{StaticResource CustomerVM}"
      >
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
@@ -53,17 +53,26 @@
             <Grid Grid.Row="0" Margin="0,40,0,0">
                 <!-- Search TextBox-->
                 <Grid Margin="30,0,0,0" VerticalAlignment="Center" Width="300" HorizontalAlignment="Left">
-                    <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False" Text="Tìm khách hàng"
-                   Panel.ZIndex="1"
-                   Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BooltoVis}}"/>
-                    <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}" Height="31"/>
+                    <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}" Height="31" Text="{Binding Path=SearchText, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="TextChanged">
+                                <i:InvokeCommandAction Command="{Binding SearchData}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </TextBox>
 
                     <icon:PackIconMaterial Kind="Magnify"  Width="15" Height="15" VerticalAlignment="Center"
                                           Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>
                 </Grid>
 
                 <ComboBox materialDesign:ComboBoxAssist.MaxLength="2" materialDesign:HintAssist.Hint="Tìm theo..." materialDesign:HintAssist.HintOpacity=".26"
-                IsEditable="True" Margin="358,21,394,0" VerticalAlignment="Top" Height="30">
+                          IsEditable="True" Margin="358,21,394,0" VerticalAlignment="Top" Height="30"
+                          ItemsSource="{Binding SearchList}" SelectedItem="{Binding SearchProperties, Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding ResetData}"/>
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
                 </ComboBox>
 
                 <!-- Add button-->

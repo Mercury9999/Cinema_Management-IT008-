@@ -102,9 +102,22 @@ namespace CinemaManagement.ViewModel.AdminVM
             get { return _dskh; }
             set { _dskh = value; OnPropertyChanged(); }
         }
+        private ObservableCollection<KhachHangDTO> _tatcakh;
+        public ObservableCollection<KhachHangDTO> tatcaKH
+        {
+
+            get { return _tatcakh; }
+            set { _tatcakh = value; OnPropertyChanged(); }
+        }
+        public ObservableCollection<string> SearchList { get; set; }
+        private string _searchtext { get; set; }
+        public string SearchText { get { return _searchtext; } set { _searchtext = value; OnPropertyChanged(); } }
+        private string _searchproperties {  get; set; }
+        public string SearchProperties { get { return _searchproperties; } set { _searchproperties = value; OnPropertyChanged(); } }
         private Window CurrentWindow { get; set; }
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
+
         #endregion
 
         #region ICommand
@@ -123,10 +136,13 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand ViewCustomerCM { get; set; }
         public ICommand SaveCustomerCM { get; set; }
         public ICommand GetCurrentWindow { get; set; }
+        public ICommand SearchData {  get; set; }
+        public ICommand ResetData { get; set; }
         #endregion
         public QuanLyKhachHangVM()
         {
             GenderOptions = new ObservableCollection<string> { "Nam", "Nữ", "Khác" };
+            SearchList = new ObservableCollection<string> { "Tên", "Email", "SĐT", "Tất cả" };
             KhGioiTinh = GenderOptions.First(); // Gán giá trị mặc định
 
             LoadDataCustomerCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
@@ -136,6 +152,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     IsLoading = true;
                     var data = await Task.Run(async () => await KhachHangDAL.Instance.GetAllcustomer());
                     dsKH = new ObservableCollection<KhachHangDTO>(data);
+                    tatcaKH = new ObservableCollection<KhachHangDTO>(data);
                     IsLoading = false;
                 }
                 catch (Exception ex)
@@ -185,6 +202,14 @@ namespace CinemaManagement.ViewModel.AdminVM
                     (bool trangthai, string message) = await KhachHangDAL.Instance.Deletecustomer(KHSelected.MaKH);
                     if (trangthai)
                     {
+                        for (int i = 0; i < tatcaKH.Count; i++)
+                        {
+                            if (tatcaKH[i].MaKH == KHSelected.MaKH)
+                            {
+                                tatcaKH.Remove(tatcaKH[i]);
+                                break;
+                            }
+                        }
                         for (int i = 0; i < dsKH.Count; i++)
                         {
                             if (dsKH[i].MaKH == KHSelected.MaKH)
@@ -212,16 +237,55 @@ namespace CinemaManagement.ViewModel.AdminVM
                 await SaveUpdateCustomer(p);
                 IsSaving = false;
             });
+            SearchData = new RelayCommand<object>((p) => { return true; }, (p) =>
+            {
+                if (SearchText != null)
+                {
+                    if (SearchProperties == "Tất cả") dsKH = tatcaKH;
+                    if (SearchProperties == "Tên")
+                    {
+                        dsKH = new ObservableCollection<KhachHangDTO>();
+                        for (int i = 0; i < tatcaKH.Count; i++)
+                        {
+                            bool check = tatcaKH[i].TenKH.Contains(SearchText);
+                            if (check) dsKH.Add(tatcaKH[i]);
+                        }
+                    }
+                    if (SearchProperties == "Email")
+                    {
+                        dsKH = new ObservableCollection<KhachHangDTO>();
+                        for (int i = 0; i < tatcaKH.Count; i++)
+                        {
+                            bool check = tatcaKH[i].email_KH.Contains(SearchText);
+                            if (check) dsKH.Add(tatcaKH[i]);
+                        }
+                    }
+                    if (SearchProperties == "SĐT")
+                    {
+                        dsKH = new ObservableCollection<KhachHangDTO>();
+                        for (int i = 0; i < tatcaKH.Count; i++)
+                        {
+                            bool check = tatcaKH[i].SDT_KH.Contains(SearchText);
+                            if (check) dsKH.Add(tatcaKH[i]);
+                        }
+                    }
+                }
+                else dsKH = tatcaKH;
+            });
+            ResetData = new RelayCommand<object>((p) => { return true; }, (p) =>
+            {
+                dsKH = new ObservableCollection<KhachHangDTO>(tatcaKH);
+                SearchText = null;
+            });
         }
         private void ClearData()
         {
-            
+            KhMaKH = null;
             KhEmail = null;
             KhGioiTinh = null;
             KhNgaySinh = null;
             KhSDT = null;
             KhTen = null;
-            
         }
     }
 }
