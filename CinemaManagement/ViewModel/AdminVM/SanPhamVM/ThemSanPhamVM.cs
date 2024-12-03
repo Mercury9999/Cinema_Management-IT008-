@@ -10,7 +10,7 @@ using System.Windows;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
-    public partial class QuanLySanPhamVM
+    public partial class QuanLySanPhamVM : BaseViewModel
     {
         private async Task SaveNewProduct(Window w1)
         {
@@ -31,6 +31,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     IsLoading = true;
                     sanPham.MaSP = newid;
                     dsSP.Add(sanPham);
+                    tatcaSP.Add(sanPham);
                     IsLoading = false;
                     CurrentWindow.Close();
                 }

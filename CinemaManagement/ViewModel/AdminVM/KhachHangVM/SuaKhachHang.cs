@@ -37,10 +37,13 @@ namespace CinemaManagement.ViewModel.AdminVM
                 {
                     MessageBox.Show(messages);
                     IsSaving = true;
-                    var KhachHangUpdated = dsKH.FirstOrDefault(s => s.MaKH == KhachHang.MaKH);
-                    if (KhachHangUpdated != null)
+                    for(int i = 0; i < dsKH.Count; i++)
                     {
-                        KhachHangUpdated = KhachHang;
+                        if (dsKH[i].MaKH == KhachHang.MaKH) dsKH[i] = KhachHang;
+                    }
+                    for (int i = 0; i < tatcaKH.Count; i++)
+                    {
+                        if (tatcaKH[i].MaKH == KhachHang.MaKH) tatcaKH[i] = KhachHang;
                     }
                     IsSaving = false;
                     CurrentWindow.Close();

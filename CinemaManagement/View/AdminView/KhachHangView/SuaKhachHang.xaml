@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:CinemaManagement.View.AdminView.KhachHangView"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
         x:Name="SuaKhachHangWindow"
@@ -12,7 +13,12 @@
         WindowStyle="None" AllowsTransparency="True" Background="Transparent"
         DataContext="{StaticResource CustomerVM}"
         >
-
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetCurrentWindow}"
+                           CommandParameter="{Binding ElementName=SuaKhachHangWindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Border CornerRadius="20" Background="#f5f5f5" Padding="20">
         <Grid>
             <StackPanel>

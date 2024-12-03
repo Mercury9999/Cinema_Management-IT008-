@@ -20,7 +20,7 @@
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
             <i:InvokeCommandAction Command="{Binding GetCurrentWindow}"
-                               CommandParameter="{Binding ElementName=themPhimWindow}"/>
+                               CommandParameter="{Binding ElementName=themKhachHangWindow}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Border CornerRadius="30" Background="#ffffff">
