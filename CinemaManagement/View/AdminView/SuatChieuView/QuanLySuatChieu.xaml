@@ -156,18 +156,25 @@
                         <DataGridTemplateColumn Header="Giờ chiếu" IsReadOnly="True" Width="*">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
-                                    <StackPanel Orientation="Vertical">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Width="60" Background="DarkGray" BorderThickness="0"/>
-                                            <Button Width="60" Margin="5 0 0 0" Background="DarkGray" BorderThickness="0"/>
-                                        </StackPanel>
+                                    <ListBox x:Name="giochieuListBox"           
+                                             materialDesign:ListBoxItemAssist.ShowSelection="False"
+                                             materialDesign:ListBoxAssist.IsToggle="False"
+                                             ItemsSource="{Binding testData}"
+                                             DisplayMemberPath="ThoiLuong">
+                                        <ListBox.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <UniformGrid Columns="2"/>
+                                            </ItemsPanelTemplate>
+                                        </ListBox.ItemsPanel>
 
-                                        <WrapPanel Margin="0 5 0 0" Orientation="Horizontal">
-                                            <Button Width="60" Background="DarkGray" BorderThickness="0"/>
-                                            <Button Width="60" Margin="5 0 0 0" Background="DarkGray" BorderThickness="0"/>
-                                        </WrapPanel>
-                                    </StackPanel>
-                                    
+                                        <ListBox.ItemTemplate>
+                                            <DataTemplate>
+                                                <Button Width="60" Background="DarkGray" BorderThickness="0">
+                                                    <TextBlock HorizontalAlignment="Center" Text="{Binding ThoiLuong}"/>
+                                                </Button>
+                                            </DataTemplate>
+                                        </ListBox.ItemTemplate>
+                                    </ListBox>
                                 </DataTemplate>
                                 
                             </DataGridTemplateColumn.CellTemplate>

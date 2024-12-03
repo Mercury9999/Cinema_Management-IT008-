@@ -31,7 +31,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var dsnhanvien = (from nv in context.NhanViens
                                       select new NhanVienDTO
@@ -58,7 +58,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var nv = await context.NhanViens.FindAsync(maNvXoa);
                     if (nv == null)
@@ -84,7 +84,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var nv = await context.NhanViens.FindAsync(nvcapnhat.MaNV);
                     if(nv == null)
@@ -138,7 +138,7 @@ namespace CinemaManagement.Models.DAL
             int newStaffId = -1;
             try
             {
-                using(var context = new CinemaManagementEntities())
+                using(var context = new CinemaManagementEntities1())
                 {
                     int maxStaffId = await context.NhanViens.MaxAsync(s => s.MaNV);
                     newStaffId = maxStaffId + 1;
@@ -190,7 +190,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var staff = await (from nv in context.NhanViens.AsNoTracking()
                                        where nv.acc_username == username && nv.acc_password == password
@@ -225,7 +225,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using(var context = new CinemaManagementEntities())
+                using(var context = new CinemaManagementEntities1())
                 {
                     var nv = context.NhanViens.FirstOrDefault(s => s.acc_username == username);
                     if(nv == null)

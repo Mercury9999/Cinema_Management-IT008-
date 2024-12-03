@@ -23,16 +23,6 @@ namespace CinemaManagement.View
 
     public partial class QuanLySanPham : Page
     {
-
-        ObservableCollection<MyItem> items = new ObservableCollection<MyItem>();
-
-        public class MyItem
-        {
-            public string Name { get; set; }
-            public string Count { get; set; }
-            public string Price { get; set; }
-        }
-
         public QuanLySanPham()
         {
             InitializeComponent();

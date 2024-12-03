@@ -31,7 +31,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var dsKhachHang = (from kh in context.KhachHangs
                                        select new KhachHangDTO
@@ -58,7 +58,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var kh = await context.KhachHangs.FindAsync(maKhXoa);
                     if (kh == null)
@@ -84,7 +84,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var kh = await context.KhachHangs.FindAsync(khcapnhat.MaKH);
                     if (kh == null)
@@ -128,7 +128,7 @@ namespace CinemaManagement.Models.DAL
             int newcustomerId = -1;
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     int maxcustomerId;
                     if (await context.KhachHangs.AnyAsync()) maxcustomerId = await context.KhachHangs.MaxAsync(s => s.MaKH);
@@ -178,7 +178,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var dsKhachHang = (from kh in context.KhachHangs
                                        orderby kh.HDTichLuy descending
