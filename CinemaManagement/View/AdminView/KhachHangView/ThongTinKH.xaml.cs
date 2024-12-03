@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,23 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.KhachHangView
 {
     /// <summary>
-    /// Interaction logic for QuanLySanPham.xaml
+    /// Interaction logic for ThongTinKH.xaml
     /// </summary>
-    /// 
-
-    public partial class QuanLySanPham : Page
+    public partial class ThongTinKH : Window
     {
-        public QuanLySanPham()
+        public ThongTinKH()
         {
             InitializeComponent();
-
         }
-
     }
 }

@@ -28,7 +28,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var dsphim = (from p in context.Phims
                                   select new PhimDTO
@@ -58,7 +58,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var p = await context.Phims.FindAsync(maPhimXoa);
                     if (p == null)
@@ -84,7 +84,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var p = await context.Phims.FindAsync(pcapnhat.MaPhim);
                     if (p == null)
@@ -121,7 +121,7 @@ namespace CinemaManagement.Models.DAL
             int newMovieId = -1;
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     int maxMovieId;
                     if (await context.Phims.AnyAsync()) maxMovieId = await context.Phims.MaxAsync(s => s.MaPhim);

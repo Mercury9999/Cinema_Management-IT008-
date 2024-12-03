@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,20 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.SanPhamView
 {
     /// <summary>
-    /// Interaction logic for QuanLySanPham.xaml
+    /// Interaction logic for QuanLyNhapHang.xaml
     /// </summary>
-    /// 
-
-    public partial class QuanLySanPham : Page
+    public partial class QuanLyNhapHang : Page
     {
-        public QuanLySanPham()
+        public QuanLyNhapHang()
         {
             InitializeComponent();
-
         }
-
     }
 }

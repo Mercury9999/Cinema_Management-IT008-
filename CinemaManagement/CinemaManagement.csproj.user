@@ -16,13 +16,25 @@
     <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="View\AdminView\AccountView\AccountView.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Update="View\AdminView\HoaDonView\ChiTietHoaDon.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\KhachHangView\SuaKH.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\KhachHangView\ThongTinKH.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AdminView\NhanVienView\SuaNhanVien.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AdminView\NhanVienView\ThongTinNhanVien.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="View\AdminView\SanPhamView\QuanLyNhapHang.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Update="View\AdminView\SanPhamView\SuaSanPham.xaml.cs">
@@ -84,13 +96,25 @@
     <Page Update="ResourceXAML\MainResource.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="View\AdminView\AccountView\AccountView.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="View\AdminView\HoaDonView\ChiTietHoaDon.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\KhachHangView\SuaKH.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\KhachHangView\ThongTinKH.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AdminView\NhanVienView\SuaNhanVien.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AdminView\NhanVienView\ThongTinNhanVien.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="View\AdminView\SanPhamView\QuanLyNhapHang.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="View\AdminView\SanPhamView\SuaSanPham.xaml">

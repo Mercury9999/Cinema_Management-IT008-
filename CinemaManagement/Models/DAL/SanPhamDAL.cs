@@ -29,7 +29,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var dssanpham = (from sp in context.SanPhams
                                       select new SanPhamDTO
@@ -54,7 +54,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var sp = await context.SanPhams.FindAsync(maspXoa);
                     if (sp == null || sp.IsDeleted == true)
@@ -81,7 +81,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     var sp = await context.SanPhams.FindAsync(spcapnhat.MaSP);
                     if (sp == null)
@@ -113,7 +113,7 @@ namespace CinemaManagement.Models.DAL
             int newProductId = -1;
             try
             {
-                using (var context = new CinemaManagementEntities())
+                using (var context = new CinemaManagementEntities1())
                 {
                     int maxProductId;
                     if (await context.SanPhams.AnyAsync()) maxProductId = await context.SanPhams.MaxAsync(s => s.MaSP); 
