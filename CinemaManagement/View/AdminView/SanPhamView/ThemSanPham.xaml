@@ -14,6 +14,7 @@
         Background="Transparent"
         AllowsTransparency="True"
         WindowStyle="None"
+        WindowStartupLocation="CenterScreen"
         DataContext="{StaticResource ProductVM}">
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">

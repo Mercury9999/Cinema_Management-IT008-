@@ -40,6 +40,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                             dsSP[i] = sanPham;
                             break;
                         }
+                        SpForSearch = dsSP;
                         for (int i = 0; i < tatcaSP.Count; i++)
                         if (tatcaSP[i].MaSP == sanPham.MaSP)
                         {

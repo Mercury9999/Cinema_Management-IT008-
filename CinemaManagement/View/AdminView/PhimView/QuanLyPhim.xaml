@@ -7,6 +7,7 @@
       xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks" 
       xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" xmlns:i="http://schemas.microsoft.com/xaml/behaviors" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyPhimVM}"
       mc:Ignorable="d"
+      
       DataContext="{StaticResource FilmVM}"
       d:DesignHeight="810" 
       d:DesignWidth="900"
@@ -55,7 +56,13 @@
                     <TextBlock Margin="20 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="False" Text="Tìm tên phim"
                     Panel.ZIndex="1"
                     Visibility="{Binding ElementName=txtSearch, Path=Text.IsEmpty, Converter={StaticResource BooltoVis}}"/>
-                    <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}" Height="31"/>
+                    <TextBox x:Name="txtSearch" Style="{StaticResource textboxSearch}" Text="{Binding Path = SearchText, UpdateSourceTrigger = PropertyChanged, Mode=TwoWay}" Height="31" >
+                        <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="TextChanged">
+                            <i:InvokeCommandAction Command="{Binding SearchData}"/>
+                        </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                       </TextBox>
 
                     <icon:PackIconMaterial Kind="Magnify"  Width="15" Height="15" VerticalAlignment="Center"
                                            Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>

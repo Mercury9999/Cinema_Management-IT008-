@@ -247,7 +247,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                         dsKH = new ObservableCollection<KhachHangDTO>();
                         for (int i = 0; i < tatcaKH.Count; i++)
                         {
-                            bool check = tatcaKH[i].TenKH.Contains(SearchText);
+                            bool check = tatcaKH[i].TenKH.ToLower().Contains(SearchText.ToLower());
                             if (check) dsKH.Add(tatcaKH[i]);
                         }
                     }
@@ -256,7 +256,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                         dsKH = new ObservableCollection<KhachHangDTO>();
                         for (int i = 0; i < tatcaKH.Count; i++)
                         {
-                            bool check = tatcaKH[i].email_KH.Contains(SearchText);
+                            bool check = tatcaKH[i].email_KH.ToLower().Contains(SearchText.ToLower());
                             if (check) dsKH.Add(tatcaKH[i]);
                         }
                     }
@@ -265,7 +265,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                         dsKH = new ObservableCollection<KhachHangDTO>();
                         for (int i = 0; i < tatcaKH.Count; i++)
                         {
-                            bool check = tatcaKH[i].SDT_KH.Contains(SearchText);
+                            bool check = tatcaKH[i].SDT_KH.ToLower().Contains(SearchText.ToLower());
                             if (check) dsKH.Add(tatcaKH[i]);
                         }
                     }

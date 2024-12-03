@@ -5,6 +5,7 @@ using CinemaManagement.Models.DAL;
 using CinemaManagement.Ultis;
 using CinemaManagement.View;
 using CinemaManagement.View.AdminView.SanPhamView;
+using Microsoft.Xaml.Behaviors.Media;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -37,6 +38,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand GetCurrentWindowCM { get; set; }
         public ICommand NameSearchProductCM { get; set; }
         public ICommand TypeSearchProductCM { get; set; }
+        public ICommand SearchData {  get; set; }
         #endregion
         #region thuộc tính lưu dữ liệu
         private int? _masp {  get; set; }
@@ -55,6 +57,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public byte[] HinhAnhSP { get { return _hinhanhsp; } set { _hinhanhsp = value; OnPropertyChanged(); } }
         #endregion
         #region biến khác
+        private string _searchText {  get; set; }
+        public string SearchText { get { return _searchText; } set {_searchText = value; OnPropertyChanged(); } }
         private Window CurrentWindow { get; set; }
         private SanPhamDTO _SPSelected { get; set; }
         public SanPhamDTO SPSelected { get { return _SPSelected; } set { _SPSelected = value; OnPropertyChanged(); } }
@@ -62,6 +66,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ObservableCollection<SanPhamDTO> dsSP { get { return _dsSP; } set { _dsSP = value; OnPropertyChanged(); } }
         private ObservableCollection<SanPhamDTO> _tatcaSP { get; set; }
         public ObservableCollection<SanPhamDTO> tatcaSP { get { return _tatcaSP; } set { _tatcaSP = value; OnPropertyChanged(); } }
+        private ObservableCollection<SanPhamDTO> _SpForSearch { get; set; }
+        public ObservableCollection<SanPhamDTO> SpForSearch { get { return _SpForSearch; } set { _SpForSearch = value; OnPropertyChanged(); } }
         public ObservableCollection<string> dsLoaiSP { get; set; }
         public ObservableCollection<string> dsLoaiSPTimKiem { get; set; }
         public bool IsSaving { get; set; }
@@ -87,6 +93,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     var data = await Task.Run(async () => await SanPhamDAL.Instance.GetAllProduct());
                     tatcaSP = new ObservableCollection<SanPhamDTO>(data);
                     dsSP = new ObservableCollection<SanPhamDTO>(data);
+                    SpForSearch = dsSP;
                     IsLoading = false;
                 }
                 catch (Exception ex)
@@ -103,7 +110,7 @@ namespace CinemaManagement.ViewModel.AdminVM
             {
                 ClearData();
                 ThemSanPham w1 = new ThemSanPham();
-                w1.ShowDialog();
+                 w1.ShowDialog();
             });
             SaveNewProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
@@ -144,6 +151,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                                     break;
                                 }
                             }
+                            SpForSearch = dsSP;
                         }
                         CustomControls.MyMessageBox.Show(message);
                         IsLoading = false;
@@ -211,6 +219,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                             }
                         }
                     }
+                    SpForSearch = dsSP;
                 }
                 catch (System.Data.Entity.Core.EntityException e)
                 {
@@ -224,6 +233,15 @@ namespace CinemaManagement.ViewModel.AdminVM
                 }
 
             });
+            SearchData = new RelayCommand<object>((p) => { return true;}, (p) =>
+          {
+              dsSP = new ObservableCollection<SanPhamDTO>();
+              for(int i = 0;i < SpForSearch.Count; i++)
+              {
+                  bool check = SpForSearch[i].TenSP.ToLower().Contains(SearchText.ToLower());
+                  if(check) dsSP.Add(SpForSearch[i]);
+              }
+          } );
         }
         private void ClearData()
         {
