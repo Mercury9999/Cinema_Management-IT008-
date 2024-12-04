@@ -62,22 +62,6 @@
             </Grid>
 
             <Grid Grid.Column="1">
-
-
-                <StackPanel HorizontalAlignment="Left" Margin="40 200 0 0">
-                    <TextBlock Text="A" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="B" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="C" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="D" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="E" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="G" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="H" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="I" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="J" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                    <TextBlock Text="K" Margin="0 23 0 0" FontSize="20" FontWeight="Bold" Foreground="GhostWhite"/>
-                </StackPanel>
-
-
                 <StackPanel>
                     <TextBlock Margin="0,30,0,0" HorizontalAlignment="Center" FontSize="30" FontWeight="Bold" Foreground="GhostWhite" Text="CHỌN GHẾ - PHÒNG X" FontFamily="Cooper Black"/>
 
@@ -85,402 +69,48 @@
 
                     <TextBlock Foreground="GhostWhite" HorizontalAlignment="Center" Margin="20" Text="Màn hình" FontSize="25"/>
 
+                    <ListBox ItemsSource="{Binding ListSeat1}"
+                             x:Name="SeatListBox1"
+                             Height="450"
+                             HorizontalAlignment="Right"
+                             VerticalAlignment="Top"
+                             Grid.Column="0"
+                             Margin="0 10 0 20"
+                             SelectedItem="{Binding SelectedSeat}">
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem"
+                                   BasedOn="{StaticResource styleListBoxItems1}" />
+                        </ListBox.ItemContainerStyle>
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <UniformGrid Columns="14"
+                                             FlowDirection="RightToLeft" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border   BorderBrush="Green"
+                                          BorderThickness="2"
+                                          CornerRadius="3"
+                                          Width="38"
+                                          Height="38">
+                                    <Label Content="{Binding SeatPosition}"
+                                           Background="Transparent"
+                                           Foreground="black"
+                                           FontSize="11"
+                                           FontWeight="Bold"
+                                           x:Name="lbl1"
+                                           VerticalContentAlignment="Center"
+                                           HorizontalContentAlignment="Center">
+                                    </Label>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
 
 
-                    <StackPanel Orientation="Vertical" Margin="70 10 0 0">
-                        <StackPanel Margin="0 0 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A01" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="A011" Width="35" TextAlignment="Center"/>
-                            </Button>
 
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="B011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C010" Width="35" TextAlignment="Center" />
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="C011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="D011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="E011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="G011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="H011" Width="35" TextAlignment="Center"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="I011" TextAlignment="Center" Width="35"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Left" Text="J07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock TextAlignment="Center" FontSize="10" HorizontalAlignment="Center" Text="J011" Width="35"/>
-                            </Button>
-
-                        </StackPanel>
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K04" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K05" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K06" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K07" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K08" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K09" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="K010" Width="35" TextAlignment="Center"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock TextAlignment="Center" FontSize="10" HorizontalAlignment="Center" Text="K011" Width="33"/>
-                            </Button>
-
-                        </StackPanel>
-
-                        <StackPanel Margin="100 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L04" Width="20"/>
-                            </Button>
-                        </StackPanel>
-
-                        <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green"/>
-                            <TextBlock Text="Ghế đơn" Margin="10" Foreground="GhostWhite" FontWeight="Bold"/>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green"/>
-                            <TextBlock Text="Ghế đôi" Margin="10" Foreground="GhostWhite" FontWeight="Bold"/>
-                            <!-- Ghế chọn BorderBrush = Red && Foreground = Red-->
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Red" Padding="0" Width="40" Background="GhostWhite" Foreground="Red"/>
-                            <TextBlock Text="Ghế chọn" Margin="10" Foreground="GhostWhite" FontWeight="Bold"/>
-                            <!-- Ghế đã đặt Background = Red && Foreground = White-->
-                            <Button Margin="15 0 0 0" BorderThickness="0" BorderBrush="Green" Padding="0" Width="40" Background="Red" Foreground="Green"/>
-                            <TextBlock Text="Ghế đã đặt" Margin="10" Foreground="GhostWhite" FontWeight="Bold"/>
-
-                        </StackPanel>
-                        
-                        
-                    </StackPanel>
-
+                    <!-- Operation Button -->
                     <StackPanel HorizontalAlignment="Right" Margin="0 15 60 0" Orientation="Horizontal">
                         <Button Padding="0" Margin="0 0 30 0" Width="90" BorderThickness="0"  Background="Green">
                             <TextBlock Text="Đặt vé"/>
@@ -494,3 +124,4 @@
         </Grid>
     </Border>
 </Window>
+
