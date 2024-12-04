@@ -403,7 +403,7 @@
                                 <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J06" Width="20"/>
                             </Button>
                             <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J07" Width="20"/>
+                                <TextBlock FontSize="10" HorizontalAlignment="Left" Text="J07" Width="20"/>
                             </Button>
                             <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green">
                                 <TextBlock FontSize="10" HorizontalAlignment="Center" Text="J08" Width="20"/>
