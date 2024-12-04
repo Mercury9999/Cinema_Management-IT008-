@@ -129,140 +129,110 @@
                             <TextBlock Text="Số hóa đơn: " FontSize="20" Margin="20 0 0 0"/>
                             <TextBlock Text="Khách vãng lai" FontWeight="DemiBold" FontSize="20" Margin="20 0 0 0"/>
 
-                            <StackPanel x:Name="filmPanel">
-                                <TextBlock Text="PHIM"
+                            <ListBox x:Name="filmListBox"
+                                     materialDesign:ListBoxItemAssist.ShowSelection="False"
+                                     materialDesign:ListBoxAssist.IsToggle="False"
+                            >
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel>
+                                            <TextBlock Text="PHIM"
+                                                       FontSize="20"
+                                                       Margin="20 20 0 0"
+                                                       FontWeight="DemiBold"/>
+                                            <TextBlock Text="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"
+                                                       Margin="20 0 0 10"/>
+                                            <Grid>
+                                                <TextBlock Text="Phim" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="Tên phim nè" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Ngày chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="25/10/2025" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Giờ chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="21:00-23:00" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Phòng" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Ghế" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="A01, A02, A03" FontSize="19" FontWeight="DemiBold" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Loại chỗ ngồi" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <TextBlock Text="Đơn" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
+                                            </Grid>
+
+                                            <Grid>
+                                                <TextBlock Text="Giá vé" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <TextBlock Text="40000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 0" Width="Auto"/>
+                                                </StackPanel>
+                                            </Grid>
+
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+
+                            <ListBox x:Name="foodListBox"
+                                    materialDesign:ListBoxItemAssist.ShowSelection="False"
+                                    materialDesign:ListBoxAssist.IsToggle="False">
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <StackPanel x:Name="foodPanel">
+                                            <TextBlock Text="ĐỒ ĂN"
                         FontSize="20"
                         Margin="20 20 0 0"
                         FontWeight="DemiBold"/>
-                                <TextBlock Text="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"
-                        Margin="20 0 0 10"/>
-                                <Grid>
-                                    <TextBlock Text="Phim" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="Tên phim nè" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
+                                            <TextBlock Text="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _" Margin="20 0 0 10"/>
+                                            <Grid>
+                                                <TextBlock Text="Bánh mì" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <!-- So luong + "x" + Don gia-->
+                                                    <TextBlock Text="1" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
+                                                    <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
+                                                </StackPanel>
 
-                                <Grid>
-                                    <TextBlock Text="Ngày chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="25/10/2025" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
+                                            </Grid>
 
-                                <Grid>
-                                    <TextBlock Text="Giờ chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="21:00-23:00" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
+                                            <Grid>
+                                                <TextBlock Text="Bánh quy" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <!-- So luong + "x" + Don gia-->
+                                                    <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
+                                                    <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
+                                                </StackPanel>
+                                            </Grid>
 
-                                <Grid>
-                                    <TextBlock Text="Phòng" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Ghế" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="A01, A02, A03" FontSize="19" FontWeight="DemiBold" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Loại chỗ ngồi" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="Đơn" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Giá vé" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <TextBlock Text="40000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 0" Width="Auto"/>
-                                    </StackPanel>
-                                </Grid>
-
-                            </StackPanel>
-                            <StackPanel x:Name="filmPanel2">
-                                <TextBlock Text="PHIM"
-                                           FontSize="20"
-                                           Margin="20 20 0 0"
-                                           FontWeight="DemiBold"/>
-                                <TextBlock Text="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"
-                                           Margin="20 0 0 10"/>
-                                <Grid>
-                                    <TextBlock Text="Phim" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="Tên phim nè" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Ngày chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="25/10/2025" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Giờ chiếu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="21:00-23:00" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Phòng" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Ghế" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="A01, A02, A03" FontSize="19" FontWeight="DemiBold" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Loại chỗ ngồi" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <TextBlock Text="Đơn" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 10" Width="Auto"/>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Giá vé" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <TextBlock Text="40000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Margin="0 0 30 0" Width="Auto"/>
-                                    </StackPanel>
-                                </Grid>
-
-                            </StackPanel>
-
-                            <StackPanel x:Name="foodPanel">
-                                <TextBlock Text="ĐỒ ĂN"
-                        FontSize="20"
-                        Margin="20 20 0 0"
-                        FontWeight="DemiBold"/>
-                                <TextBlock Text="_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _"
-                        Margin="20 0 0 10"/>
-                                <Grid>
-                                    <TextBlock Text="Bánh mì" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <!-- So luong + "x" + Don gia-->
-                                        <TextBlock Text="1" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
-                                        <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
-                                    </StackPanel>
-
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Bánh quy" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <!-- So luong + "x" + Don gia-->
-                                        <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
-                                        <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
-                                    </StackPanel>
-                                </Grid>
-
-                                <Grid>
-                                    <TextBlock Text="Bánh gấu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
-                                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <!-- So luong + "x" + Don gia-->
-                                        <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
-                                        <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
-                                        <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
-                                    </StackPanel>
-                                </Grid>
-                            </StackPanel>
+                                            <Grid>
+                                                <TextBlock Text="Bánh gấu" FontSize="19" HorizontalAlignment="Left" Margin="10 0 0 0"/>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                                    <!-- So luong + "x" + Don gia-->
+                                                    <TextBlock Text="2" FontSize="19" HorizontalAlignment="Right" FontWeight="SemiBold" Width="Auto"/>
+                                                    <TextBlock Text="x" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="30000" FontSize="19" HorizontalAlignment="Right" Width="Auto"/>
+                                                    <TextBlock Text="đ" FontSize="19" HorizontalAlignment="Right" Width="Auto" Margin="0 0 30 10"/>
+                                                </StackPanel>
+                                            </Grid>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
 
                             <StackPanel x:Name="thanhtoanPanel">
                                 <Line X1="0" X2="1" Stretch="Fill" Stroke="Black" StrokeThickness="2" Margin="200,10,10,10"/>

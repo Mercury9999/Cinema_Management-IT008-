@@ -29,18 +29,6 @@ namespace CinemaManagement.View
 
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            var newItem = new MyItem()
-            {
-                Name = "Banh mi",
-                Count = "1000",
-                Price = "40000"
-            };
-
-            items.Add(newItem);
-        }
-
         private void ComboBox_SuggestionChosen(object sender, RoutedPropertyChangedEventArgs<object> e)
         {
 

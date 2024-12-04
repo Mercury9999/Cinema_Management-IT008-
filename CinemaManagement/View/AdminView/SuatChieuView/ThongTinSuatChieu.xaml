@@ -54,14 +54,7 @@
                     <TextBlock Text="Số nè" Margin="23 0 0 0"/>
 
                     <Label FontSize="13" Content="Suất chiếu" FontWeight="Bold" Margin="20 20 0 0"/>
-                    <WrapPanel Margin="15 20 0 0" Orientation="Horizontal">
-                        <Button Padding="0" Width="70" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                        <Button Padding="0" Width="70" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                        <Button Padding="0" Width="70" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                        <Button Padding="0" Width="70" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                        <Button Width="70" Padding="0" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                        <Button Width="70" Padding="0" BorderThickness="0" Margin="10 10 0 0" Background="#FFED0000"/>
-                    </WrapPanel>
+                    <TextBlock Text="Chữ ne" Margin="23 0 0 0"/>
 
                 </StackPanel>
 
