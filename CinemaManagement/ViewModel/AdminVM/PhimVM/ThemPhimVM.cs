@@ -46,6 +46,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     IsLoading = true;
                     var data = await Task.Run(async () => await PhimDAL.Instance.GetAllMovie());
                     dsPhim = new ObservableCollection<PhimDTO>(data);
+                    allFilm = new ObservableCollection<PhimDTO>(data);
                     CurrentWindow.Close();
                     IsLoading = false;
                     return;

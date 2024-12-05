@@ -47,8 +47,13 @@
                         materialDesign:HintAssist.Hint="Tìm kiếm theo tên..."
                         materialDesign:HintAssist.HintOpacity=".26"   
                         Margin="50,30,50,0" VerticalAlignment="Top" Width="208"
-                        Text="{Binding TimTenSP, Mode=TwoWay}"
-                />
+                        Text="{Binding Path = SearchText,UpdateSourceTrigger = PropertyChanged, Mode=TwoWay}">
+                    <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="TextChanged">
+                        <i:InvokeCommandAction Command="{Binding SearchData}"/>
+                    </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </TextBox>
 
                 <Button BorderBrush="DarkGray" Margin="20" Height="60" Width="156" Background="#FFCC2F2F" Command="{Binding AddProductCM}">
                     <StackPanel Orientation="Horizontal">

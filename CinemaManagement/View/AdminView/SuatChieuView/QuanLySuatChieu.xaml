@@ -153,29 +153,9 @@
                         <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Ten}"/>
                         <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding TheLoai}"/>
                         <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiLuong}"/>
-                        <DataGridTemplateColumn Header="Giờ chiếu" IsReadOnly="True" Width="*">
-                            <DataGridTemplateColumn.CellTemplate>
-                                <DataTemplate>
-                                    <StackPanel Orientation="Vertical">
-                                        <StackPanel Orientation="Horizontal">
-                                            <Button Width="60" Background="DarkGray" BorderThickness="0"/>
-                                            <Button Width="60" Margin="5 0 0 0" Background="DarkGray" BorderThickness="0"/>
-                                        </StackPanel>
+                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieu}"/>
 
-                                        <WrapPanel Margin="0 5 0 0" Orientation="Horizontal">
-                                            <Button Width="60" Background="DarkGray" BorderThickness="0"/>
-                                            <Button Width="60" Margin="5 0 0 0" Background="DarkGray" BorderThickness="0"/>
-                                        </WrapPanel>
-                                    </StackPanel>
-                                    
-                                </DataTemplate>
-                                
-                            </DataGridTemplateColumn.CellTemplate>
-                            
-                            
-                        </DataGridTemplateColumn>
-
-                            <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
+                        <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
                         
                         <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>

@@ -12,6 +12,7 @@
      Width="400"
      WindowStyle="None"
      AllowsTransparency="True"
+        WindowStartupLocation="CenterScreen"
      Background="Transparent"
      >
 

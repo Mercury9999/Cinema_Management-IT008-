@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,24 +13,16 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.AccountView
 {
     /// <summary>
-    /// Interaction logic for QuanLySanPham.xaml
+    /// Interaction logic for AccountView.xaml
     /// </summary>
-    /// 
-
-    public partial class QuanLySanPham : Page
+    public partial class AccountView : Page
     {
-        public QuanLySanPham()
+        public AccountView()
         {
             InitializeComponent();
-
-        }
-
-        private void ComboBox_SuggestionChosen(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-
         }
     }
 }

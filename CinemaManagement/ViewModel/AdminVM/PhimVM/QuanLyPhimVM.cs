@@ -31,6 +31,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand SaveFilmCM { get; set; }
         public ICommand GetCurrentWindow { get; set; }
         public ICommand GetQLPPage { get; set; }
+        public ICommand SearchData { get; set; }
         #endregion
         #region Thuộc tính
         //Dùng lưu trữ dữ liệu của Phim
@@ -59,6 +60,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public decimal DoanhThu { get { return _doanhThu; } set { _doanhThu = value; OnPropertyChanged(); } }
 
         //Biến khác
+        private string _searchText {  get; set; }
+        public string SearchText { get { return _searchText; } set { _searchText = value; OnPropertyChanged(); } }
         private DataGrid dataGrid {  get; set; }
         private Window QuanLyPhimPage { get; set; }
         private Window CurrentWindow { get; set; }
@@ -66,6 +69,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public PhimDTO PhimSelected { get { return _phimselected; } set { _phimselected = value; OnPropertyChanged(); } }
         private ObservableCollection<PhimDTO> _dsphim { get; set; }
         public ObservableCollection<PhimDTO> dsPhim { get { return _dsphim; } set { _dsphim = value; OnPropertyChanged(); } }
+        private ObservableCollection<PhimDTO> _allFilm { get; set; }
+        public ObservableCollection<PhimDTO> allFilm { get { return _allFilm; } set { _allFilm = value; OnPropertyChanged(); } }
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
         private ObservableCollection<string> _dstheloai { get; set; }
@@ -88,6 +93,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     IsLoading = true;
                     var data = await Task.Run(async () => await PhimDAL.Instance.GetAllMovie());
                     dsPhim = new ObservableCollection<PhimDTO>(data);
+                    allFilm = new ObservableCollection<PhimDTO>(data);
                     IsLoading = false;
                 }
                 catch (Exception ex)
@@ -135,6 +141,17 @@ namespace CinemaManagement.ViewModel.AdminVM
                             }
                         }
                     }
+                    if (trangthai)
+                    {
+                        for (int i = 0; i < dsPhim.Count; i++)
+                        {
+                            if (allFilm[i].MaPhim == PhimSelected.MaPhim)
+                            {
+                                allFilm.Remove(allFilm[i]);
+                                break;
+                            }
+                        }
+                    }
                     CustomControls.MyMessageBox.Show(message);
                 }
             });
@@ -169,8 +186,25 @@ namespace CinemaManagement.ViewModel.AdminVM
             { 
                 "Kinh dị",
                 "Hành động",
-                "Anime"
+                "Anime",
+                "Giật gân",
+                "Hài hước",
+                "Lãng mạn",
             };
+            SearchData = new RelayCommand<object>((p) => { return true; }, async (p) =>
+            {
+                if (SearchText != null)
+                {
+                    dsPhim = new ObservableCollection<PhimDTO>();
+                    for (int i = 0; i < allFilm.Count; i++)
+                    { 
+                        bool check = allFilm[i].TenPhim.ToLower().Contains(SearchText.ToLower());
+                        if (check)
+                            dsPhim.Add(allFilm[i]);
+                    }
+                }
+            });
+
         }
         private void ClearData()
         {

@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,27 +10,18 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View
+namespace CinemaManagement.View.AdminView.SuatChieuView
 {
     /// <summary>
-    /// Interaction logic for QuanLySanPham.xaml
+    /// Interaction logic for ThongTinSuatChieuBeta.xaml
     /// </summary>
-    /// 
-
-    public partial class QuanLySanPham : Page
+    public partial class ThongTinSuatChieuBeta : Window
     {
-        public QuanLySanPham()
+        public ThongTinSuatChieuBeta()
         {
             InitializeComponent();
-
-        }
-
-        private void ComboBox_SuggestionChosen(object sender, RoutedPropertyChangedEventArgs<object> e)
-        {
-
         }
     }
 }
