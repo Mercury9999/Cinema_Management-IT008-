@@ -27,7 +27,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     var dshoadon = (from hoadon in context.HoaDons
                                     select new HoaDonDTO
@@ -54,7 +54,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     var hoadon = await context.HoaDons.FindAsync(soHD);
 

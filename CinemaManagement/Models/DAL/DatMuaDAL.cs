@@ -32,7 +32,7 @@ namespace CinemaManagement.Models.DAL
             int newBillId = 0;
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     //Tạo hoá đơn mới
                     newBillId = await CreateNewBill(context, hoadon);
@@ -70,7 +70,7 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Giao dịch thành công", newBillId);
         }
-        public async Task<int> CreateNewBill(CinemaManagementEntities1 context, HoaDonDTO hoadon)
+        public async Task<int> CreateNewBill(CinemaManagementEntities context, HoaDonDTO hoadon)
         {
             int maxBillId = await context.HoaDons.MaxAsync(HoaDon => HoaDon.SoHD);
             int newBillId = maxBillId + 1;
@@ -90,7 +90,7 @@ namespace CinemaManagement.Models.DAL
 
             return newBillId;
         }
-        public async Task<string> AddNewTicket(CinemaManagementEntities1 context, List<VeDTO> dsVe, int newBillId)
+        public async Task<string> AddNewTicket(CinemaManagementEntities context, List<VeDTO> dsVe, int newBillId)
         {
             try
             {
@@ -120,7 +120,7 @@ namespace CinemaManagement.Models.DAL
             }
         }
 
-        public async Task<string> AddNewProductBillInfo(CinemaManagementEntities1 context, List<CTHDSanPham> dsSanPham, int newBillId)
+        public async Task<string> AddNewProductBillInfo(CinemaManagementEntities context, List<CTHDSanPham> dsSanPham, int newBillId)
         {
             try
             {
@@ -157,7 +157,7 @@ namespace CinemaManagement.Models.DAL
                 return "Lỗi hệ thống";
             }
         }
-        public async Task<string> UpdateTicketSell(CinemaManagementEntities1 context, List<VeDTO> dsVe)
+        public async Task<string> UpdateTicketSell(CinemaManagementEntities context, List<VeDTO> dsVe)
         {
             try
             {
