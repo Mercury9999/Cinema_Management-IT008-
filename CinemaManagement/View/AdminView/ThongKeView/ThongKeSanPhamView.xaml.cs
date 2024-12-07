@@ -10,19 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View.AdminView
+namespace CinemaManagement.View.AdminView.ThongKeView
 {
     /// <summary>
-    /// Interaction logic for ThongTinNhanVien.xaml
+    /// Interaction logic for ThongKeSanPhamView.xaml
     /// </summary>
-    public partial class ThongTinNhanVien : Window
+    public partial class ThongKeSanPhamView : Page
     {
-        public ThongTinNhanVien()
+        public ThongKeSanPhamView()
         {
             InitializeComponent();
         }
-
     }
 }

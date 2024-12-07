@@ -1,5 +1,6 @@
 ﻿using CinemaManagement.View;
 using CinemaManagement.View.AdminView.AccountView;
+using CinemaManagement.View.AdminView.ThongKeView;
 using CinemaManagement.ViewModel.AdminVM;
 using CinemaManagement.ViewModel.NavigationVM;
 using System;
