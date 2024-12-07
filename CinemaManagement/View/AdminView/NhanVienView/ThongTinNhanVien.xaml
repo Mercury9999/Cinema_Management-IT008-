@@ -4,8 +4,9 @@
      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
      xmlns:local="clr-namespace:CinemaManagement.View"
-     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-     FontFamily="{DynamicResource MaterialDesignFont}"
+     xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLyNhanVienVM}"
+     xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
+        FontFamily="{DynamicResource MaterialDesignFont}"
      mc:Ignorable="d"
      Title="ThemKH" 
      Height="400" 
@@ -14,7 +15,16 @@
      AllowsTransparency="True"
         WindowStartupLocation="CenterScreen"
      Background="Transparent"
+     Name="thongtinNVwindow"
+     DataContext="{StaticResource StaffVM}"
      >
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding GetCurrentWindow}"
+                               CommandParameter="{Binding ElementName=thongtinNVwindow}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
 
     <Border CornerRadius="30" Background="#ffffff">
         <Grid>
@@ -36,7 +46,9 @@
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="39 0 0 0"
                              Padding="0"
-                          />
+                             Text="{Binding TenNV}"
+                          IsReadOnly="True"
+                             />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -45,19 +57,23 @@
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="20 0 0 0"
                              Padding="0"
-                          />
+                             Text="{Binding SDT}"
+                          IsReadOnly="True"
+                             />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Ngày sinh" Margin="10 10 0 0"/>
                     <DatePicker
-                              Width="130"
-                              materialDesign:HintAssist.Hint=""
-                              materialDesign:TextFieldAssist.HasClearButton="True"
-                              Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
-                              Margin="35 0 0 0" Height="26"
-                    Padding="0"
-                        />
+          Width="130"
+          materialDesign:HintAssist.Hint=""
+          materialDesign:TextFieldAssist.HasClearButton="False"
+          Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
+          Margin="35 0 0 0" Height="26"
+          Padding="5"
+          FontSize="15"
+    Text="{Binding NgaySinh}"
+/>
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
@@ -65,7 +81,8 @@
                     <TextBox   materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
                                Margin="45 0 0 0"
-                    Padding="0"
+                    Padding="0" IsReadOnly="True"
+                               Text="{Binding GioiTinh}"
                                />
                 </StackPanel>
 
@@ -75,15 +92,20 @@
                           Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                           Margin="59 0 0 0"
                          Padding="0"
+                             Text="{Binding Email}"
+                             IsReadOnly="True"  
                              />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal">
                     <TextBlock Text="Chức vụ" Margin="10 10 0 0"/>
-                    <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-          Width="253" Height="21"
-          Margin="45 0 0 0"
-          Padding="0"/>
+                    <ComboBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
+                              Width="253" Height="21"
+                              Margin="45 0 0 0"
+                              ItemsSource="{Binding dsChucVu}"
+                              SelectedItem="{Binding ChucVu, Mode=TwoWay}"
+                              Padding="0"
+                              IsReadOnly="True"/>
                 </StackPanel>
 
                 <TextBlock Text="Tài khoản đăng nhập" FontSize="15" Margin="10 20 0 0" FontWeight="DemiBold"/>
@@ -93,7 +115,8 @@
                     <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                     Margin="19 0 0 0"
-                   Padding="0"
+                   Padding="0" IsReadOnly="True"
+                             Text="{Binding AccUsername}"
                              />
                 </StackPanel>
 
@@ -103,15 +126,14 @@
                              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                              Margin="47 0 0 0"
                            Padding="0"
+                             IsReadOnly="True"
+                             Text="{Binding AccPassword}"
                              />
                 </StackPanel>
 
                 <StackPanel Orientation="Horizontal" Margin="250 20 0 0">
-                    <Button BorderThickness="0" Width="57" Padding="0">
-                        <TextBlock Text="Xác nhận" FontSize="10"/>
-                    </Button>
-                    <Button BorderThickness="0" Margin="20 0 0 0" Width="57" Padding="0" Background="#FFD93434">
-                        <TextBlock Text="Hủy bỏ" FontSize="10"/>
+                    <Button BorderThickness="0" Command="{Binding CloseWindowCM}" CommandParameter="{Binding ElementName=thongtinNVwindow}" Width="57" Padding="0">
+                        <TextBlock Text="Xác nhận"  FontSize="10"/>
                     </Button>
                 </StackPanel>
 
