@@ -13,10 +13,10 @@ namespace CinemaManagement.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class CinemaManagementEntities1 : DbContext
+    public partial class CinemaManagementEntities : DbContext
     {
-        public CinemaManagementEntities1()
-            : base("name=CinemaManagementEntities1")
+        public CinemaManagementEntities()
+            : base("name=CinemaManagementEntities")
         {
         }
     

@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using CinemaManagement.View.AdminView.AccountView;
 
 namespace CinemaManagement.ViewModel.NavigationVM
 {
@@ -21,6 +22,7 @@ namespace CinemaManagement.ViewModel.NavigationVM
         public ICommand QuanLyKhachHangCM { get; set; }
         public ICommand QuanLyNhanVienCM { get; set; }
         public ICommand GetNavigationFrameCM {  get; set; }
+        public ICommand AccountCM {  get; set; }
 
         public Frame NavigationFrame { get; set; }
         
@@ -49,6 +51,10 @@ namespace CinemaManagement.ViewModel.NavigationVM
             QuanLyNhanVienCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
                 NavigationFrame.Navigate(new QuanLyNhanVien());
+            });
+            AccountCM = new RelayCommand<object>((p) => { return true; }, (p) =>
+            {
+                NavigationFrame.Navigate(new AccountView());
             });
         }
     }

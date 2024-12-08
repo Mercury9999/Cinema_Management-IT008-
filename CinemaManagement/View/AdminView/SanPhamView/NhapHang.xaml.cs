@@ -12,17 +12,16 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View.AdminView
+namespace CinemaManagement.View.AdminView.SanPhamView
 {
     /// <summary>
-    /// Interaction logic for ThongTinNhanVien.xaml
+    /// Interaction logic for NhapHang.xaml
     /// </summary>
-    public partial class ThongTinNhanVien : Window
+    public partial class NhapHang : Window
     {
-        public ThongTinNhanVien()
+        public NhapHang()
         {
             InitializeComponent();
         }
-
     }
 }

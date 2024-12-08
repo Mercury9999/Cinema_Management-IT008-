@@ -25,7 +25,7 @@ namespace CinemaManagement.Models.DAL
         }
         public async Task<List<HDNhapHangDTO>> GetAllReceipt()
         {
-            using(var context = new CinemaManagementEntities1())
+            using(var context = new CinemaManagementEntities())
             {
                 var dshdnhap = (from hdnhap in context.HDNhapHangs
                                 join sanpham in context.SanPhams

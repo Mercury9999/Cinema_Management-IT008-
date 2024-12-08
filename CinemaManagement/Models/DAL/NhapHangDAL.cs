@@ -23,7 +23,7 @@ namespace CinemaManagement.Models.DAL
             }
             private set => _instace = value;
         }
-        public async Task<int> CreateNewBillReceipt(CinemaManagementEntities1 context, HDNhapHangDTO hdNhap)
+        public async Task<int> CreateNewBillReceipt(CinemaManagementEntities context, HDNhapHangDTO hdNhap)
         {
             int maxBillReceiptId = await context.HDNhapHangs.MaxAsync(HDNhapHang => HDNhapHang.SoHDNhap);
             int newBillReceiptId = maxBillReceiptId + 1;
