@@ -91,6 +91,35 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Thêm suất chiếu thành công", newShowtimeId);
         }
+        public async Task<List<SuatChieuDTO>> GetShowTimeByRoom(int soPhong, DateTime selectedDate)
+        {
+            List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
+            try
+            {
+                using (var context = new CinemaManagementEntities1())
+                {
+                    dsSC = await (from sc in context.SuatChieux
+                                  join p in context.Phims on sc.MaPhim equals p.MaPhim
+                                  where sc.SoPhongChieu == soPhong && sc.BatDau.Date == selectedDate.Date
+                                  select new SuatChieuDTO
+                                  {
+                                      MaSC = sc.MaSC,
+                                      
+                                      BatDau = sc.BatDau,
+                                      KetThuc = sc.KetThuc,
+                                      GiaVe = sc.GiaVe,
+                                      SoPhongChieu = sc.SoPhongChieu
+                                  }).ToListAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw ex;
+            }
+            return dsSC;
+        }
+
 
         //Này cho tính năng tìm kiếm
         //Nhận 1 phim và ngày, trả về danh sách suất chiếu của phim đó trong ngày đó
