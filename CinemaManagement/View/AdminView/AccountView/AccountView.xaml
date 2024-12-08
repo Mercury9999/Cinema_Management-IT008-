@@ -45,7 +45,7 @@
             <!-- Avatar -->
             <Grid Grid.Column="0" Grid.Row="0">
                 <StackPanel>
-                    <TextBlock Text="{Binding CurrentStaff.MaNVStr}" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Margin="0 30 0 10" Foreground="#E5531795" Width="198"/>
+                    <TextBlock Text="{Binding CurrentStaff.MaNVStr}" FontSize="30" HorizontalAlignment="Center" FontWeight="Bold" Margin="70 30 0 10" Foreground="#E5531795" Width="198"/>
                     <Ellipse Margin="0 0 0 10" Width="190" Height="179" Stroke="Black" StrokeThickness="2">
                         <Ellipse.Fill>
                             <ImageBrush Stretch="UniformToFill"/>
@@ -55,7 +55,7 @@
                     <Button Height="40" HorizontalAlignment="Center" Style="{StaticResource ultisButton}">
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
-                            <TextBlock Text="Cập nhật ảnh"/>
+                            <TextBlock Text="Cập nhật ảnh" FontWeight="Bold"/>
                         </StackPanel>
                     </Button>
                 </StackPanel>
@@ -70,7 +70,7 @@
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
               Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
               Padding="0"
-              Margin="39 0 0 0" IsReadOnly="True"
+              Margin="39 10 0 0" IsReadOnly="True"
               Text="{Binding CurrentStaff.TenNV}"/>
                     </StackPanel>
 
@@ -78,7 +78,7 @@
                         <TextBlock Text="Số điện thoại" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
               Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="154" Height="21"
-              Margin="20 0 0 0"
+              Margin="20 20 0 0"
                  Padding="0" IsReadOnly="True"
               Text="{Binding CurrentStaff.SDT_NV}"/>
                     </StackPanel>
@@ -88,11 +88,11 @@
                         <DatePicker
                   Width="130"
                   materialDesign:HintAssist.Hint=""
-                  materialDesign:TextFieldAssist.HasClearButton="True"
+                  materialDesign:TextFieldAssist.HasClearButton="False"
                   Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
-                  Margin="35 0 0 0" Height="26"
+                  Margin="35 20 0 0" Height="26"
                   Padding="5"
-                  FontSize="15" IsEnabled="False"
+                  FontSize="15"
                         Text="{Binding CurrentStaff.NgaySinh}"/>
                     </StackPanel>
 
@@ -100,7 +100,7 @@
                         <TextBlock Text="Giới tính" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
               Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
-              Margin="45 0 0 0"
+              Margin="45 20 0 0"
               Padding="0"
               TextAlignment="Center"
               Text="{Binding CurrentStaff.GioiTinh}" IsReadOnly="True"
@@ -112,7 +112,7 @@
                         <TextBlock Text="Email" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
-                                Margin="59 0 0 0"
+                                Margin="59 20 0 0"
                                 Padding="0" 
                                  Text="{Binding CurrentStaff.email_NV}"
                                  IsReadOnly="True"/>
@@ -120,10 +120,13 @@
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Chức vụ" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
-                        <TextBlock FontSize="15"
-                  Width="140" Height="21"
-                  Margin="45 0 0 0"
-                  Padding="0" Text="{Binding CurrentStaff.ChucVu}"/>
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="150" Height="21"
+                                Margin="35 20 0 0"
+                                Padding="0" 
+                                Text="{Binding CurrentStaff.ChucVu}"
+                                IsReadOnly="True"/>
+
                     </StackPanel>
                 </StackPanel>
             </Grid>
@@ -137,7 +140,7 @@
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                                 Padding="0"
-                                Margin="39 0 0 0" IsReadOnly="True" Text="{Binding CurrentStaff.acc_username}"
+                                Margin="39 10 0 0" IsReadOnly="True" Text="{Binding CurrentStaff.acc_username}"
                                 />
                     </StackPanel>
 
@@ -146,7 +149,7 @@
                         <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
                                 Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
                                 Padding="0"
-                                Margin="90 0 0 0"
+                                Margin="90 10 0 0"
                                  IsReadOnly="True" Text="{Binding CurrentStaff.acc_password}"
                                 />
                     </StackPanel>

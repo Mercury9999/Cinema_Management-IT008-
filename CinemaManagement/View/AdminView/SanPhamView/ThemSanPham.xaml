@@ -57,7 +57,7 @@
                         <StackPanel Orientation="Horizontal">
                             <TextBlock Text="Loại sản phẩm" Margin="10 10 0 0"/>
                             <ComboBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                              Width="84" Height="21"
+                              Width="100" Height="21"
                               Margin="20 0 0 0"
                               Padding="0"
                                       ItemsSource="{Binding dsLoaiSP}"

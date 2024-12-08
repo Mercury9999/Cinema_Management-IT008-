@@ -194,6 +194,8 @@
                                                                 </i:EventTrigger>
                                                             </i:Interaction.Triggers>
                                                         </Border>
+                                                        
+
                                                         <Border BorderBrush="Black"
                                                                 BorderThickness="1"
                                                                 CornerRadius="4"
@@ -217,13 +219,44 @@
                                                                                      Width="30"
                                                                                      Height="30"
                                                                                      Cursor="Hand"/>
+                                                            <i:Interaction.Triggers>
+                                                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                                    <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.DeleteProductCM}"/>
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
                                                         </Border>
-                                                        <i:Interaction.Triggers>
-                                                            <i:EventTrigger EventName="MouseLeftButtonDown">
-                                                                <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.DeleteProductCM}"/>
-                                                            </i:EventTrigger>
-                                                        </i:Interaction.Triggers>
+
+
+
+                                                        <Border BorderBrush="Black"
+                                                                BorderThickness="1"
+                                                                CornerRadius="4"
+                                                                Margin="3"
+                                                                Cursor="Hand"
+                                                                Height="35"
+                                                                Width="35">     
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="IsMouseOver"
+                                                                                 Value="True">
+                                                                            <Setter Property="Background"
+                                                                                    Value="LightGreen" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                            <!--Nhap hang-->
+                                                            <icon:PackIconMaterial Kind="Plus"
+                                                                                   Width="30"
+                                                                                   Height="30"
+                                                                                   Cursor="Hand">   
+                                                            </icon:PackIconMaterial>
+
+                                                        </Border>
                                                     </StackPanel>
+
+                                                    
                                                 </StackPanel>
                                             </Grid>
                                             
