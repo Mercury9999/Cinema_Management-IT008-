@@ -70,44 +70,44 @@ namespace CinemaManagement.ViewModel.AdminVM.ThongKeVM
 
         private async Task LoadBestSellByMonth()
         {
-            try
-            {
-                Top5Movie = await Task.Run(() => ThongKe.Ins.GetTop5BestMovie(int.Parse(SelectedBestSellPeriod), int.Parse(SelectedBestSellTime)));
-            }
-            catch (Exception ex)
-            {
-                CustomControls.MyMessageBox.Show("Lỗi hệ thống");
-                return;
-            }
+            //try
+            //{
+            //    Top5Movie = await Task.Run(() => ThongKe.Ins.GetTop5BestMovie(int.Parse(SelectedBestSellPeriod), int.Parse(SelectedBestSellTime)));
+            //}
+            //catch (Exception ex)
+            //{
+            //    CustomControls.MyMessageBox.Show("Lỗi hệ thống");
+            //    return;
+            //}
         }
 
         private async Task LoadBestSellByYear()
         {
-            try
-            {
-                Top5Movie = await Task.Run(() => ThongKe.Ins.GetTop5BestMovie(int.Parse(SelectedBestSellPeriod), int.Parse(SelectedBestSellTime)));
-            }
-            catch (Exception ex)
-            {
-                CustomControls.MyMessageBox.Show("Lỗi hệ thống");
-                return;
-            }
+            //try
+            //{
+            //    Top5Movie = await Task.Run(() => ThongKe.Ins.GetTop5BestMovie(int.Parse(SelectedBestSellPeriod), int.Parse(SelectedBestSellTime)));
+            //}
+            //catch (Exception ex)
+            //{
+            //    CustomControls.MyMessageBox.Show("Lỗi hệ thống");
+            //    return;
+            //}
 
-            List<decimal> chartData = new List<decimal>();
-            chartData.Add(0);
-            for (int i =0; i < Top5Movie.Count; i++)
-            {
-                chartData.Add(Top5Movie[i].DoanhThu / 1000000);
-            }
+            //List<decimal> chartData = new List<decimal>();
+            //chartData.Add(0);
+            //for (int i = 0; i < Top5Movie.Count; i++)
+            //{
+            //    chartData.Add(Top5Movie[i].DoanhThu / 1000000);
+            //}
 
-            Top5MovieData = new SeriesCollection
-            {
-                new ColumnSeries
-                {
-                    Values = new ChartValues<decimal>(chartData),
-                    Title = "Doanh thu"
-                },
-            };
+            //Top5MovieData = new SeriesCollection
+            //{
+            //    new ColumnSeries
+            //    {
+            //        Values = new ChartValues<decimal>(chartData),
+            //        Title = "Doanh thu"
+            //    },
+            //};
         }
     }
 }
