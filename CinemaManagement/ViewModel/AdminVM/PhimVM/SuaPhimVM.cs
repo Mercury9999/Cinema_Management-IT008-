@@ -43,10 +43,21 @@ namespace CinemaManagement.ViewModel.AdminVM
                     MessageBox.Show(messages);
                     CurrentWindow.Close();
                     IsLoading = true;
-                    var PhimUpdated = dsPhim.FirstOrDefault(s => s.MaPhim == Phim.MaPhim);
-                    if(PhimUpdated != null)
+                    for (int i = 0; i < dsPhim.Count; i++)
                     {
-                        PhimUpdated = Phim;
+                        if (dsPhim[i].MaPhim == Phim.MaPhim)
+                        {
+                            dsPhim[i] = Phim;
+                            break;
+                        }
+                    }
+                    for (int i = 0; i < allFilm.Count; i++)
+                    {
+                        if (allFilm[i].MaPhim == Phim.MaPhim)
+                        {
+                            allFilm[i] = Phim;
+                            break;
+                        }
                     }
                     IsLoading = false;
                     return;

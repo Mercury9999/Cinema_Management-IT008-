@@ -140,7 +140,8 @@ namespace CinemaManagement.Models.DAL
             {
                 using(var context = new CinemaManagementEntities())
                 {
-                    int maxStaffId = await context.NhanViens.MaxAsync(s => s.MaNV);
+                    int maxStaffId = 0;
+                    if(await context.NhanViens.AnyAsync()) maxStaffId = await context.NhanViens.MaxAsync(s => s.MaNV);
                     newStaffId = maxStaffId + 1;
 
                     var nv = new NhanVien();
@@ -203,7 +204,9 @@ namespace CinemaManagement.Models.DAL
                                            NgaySinh = nv.NgaySinh,
                                            GioiTinh = nv.GioiTinh,
                                            ChucVu = nv.ChucVu,
-                                           NgayVaoLam = nv.NgayVaoLam
+                                           NgayVaoLam = nv.NgayVaoLam,
+                                           acc_password = nv.acc_password,
+                                           acc_username = nv.acc_username,
                                        }).FirstOrDefaultAsync();
                     if (staff == null)
                     {

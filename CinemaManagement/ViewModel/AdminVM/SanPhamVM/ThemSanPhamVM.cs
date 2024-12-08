@@ -31,6 +31,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     IsLoading = true;
                     sanPham.MaSP = newid;
                     dsSP.Add(sanPham);
+                    SpForSearch = dsSP;
                     tatcaSP.Add(sanPham);
                     IsLoading = false;
                     CurrentWindow.Close();

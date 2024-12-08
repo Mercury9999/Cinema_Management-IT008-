@@ -1,4 +1,6 @@
 ﻿using CinemaManagement.View;
+using CinemaManagement.View.AdminView.AccountView;
+using CinemaManagement.View.AdminView.ThongKeView;
 using CinemaManagement.ViewModel.AdminVM;
 using CinemaManagement.ViewModel.NavigationVM;
 using System;
@@ -26,7 +28,7 @@ namespace CinemaManagement
         public MainNavigation()
         {
             InitializeComponent();
-            mainFrame.Navigate(new QuanLySanPham());
+            mainFrame.Navigate(new AccountView());
         }
         private void Closebutton_Click(object sender, RoutedEventArgs e)
         {

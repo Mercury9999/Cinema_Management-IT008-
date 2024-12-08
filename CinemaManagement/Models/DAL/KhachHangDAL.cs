@@ -66,6 +66,7 @@ namespace CinemaManagement.Models.DAL
                         return (false, "Khách hàng không tồn tại");
                     }
                     context.KhachHangs.Remove(kh);
+                    await context.SaveChangesAsync();
                     return (true, "Đã xoá khách hàng");
                 }
             }
