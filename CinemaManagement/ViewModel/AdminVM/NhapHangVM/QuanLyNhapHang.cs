@@ -30,8 +30,8 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         private async void LoadDSNhapHang()
         {
-            var data = await NhapHangDAL.GetAllHDNhapHang();
-            dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
+            //var data = await NhapHangDAL.GetAllHDNhapHang();
+            //dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
         }
     }
 }

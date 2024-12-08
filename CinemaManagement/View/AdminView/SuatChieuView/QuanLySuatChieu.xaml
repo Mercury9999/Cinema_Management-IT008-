@@ -6,24 +6,18 @@
       xmlns:local="clr-namespace:CinemaManagement.View" 
       xmlns:icon="http://metro.mahapps.com/winfx/xaml/iconpacks"
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
-      TextElement.Foreground="{DynamicResource MaterialDesignBody}"
       mc:Ignorable="d" 
       d:DesignHeight="810" 
       d:DesignWidth="900"
       Title="QuanLySuatChieu"
       Background="Transparent"
       x:Name="quanlysuatchieuPage"
-      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
-      >
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadDataShowTimeCM}" />
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+      DataContext="{StaticResource ShowtimeVM}"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLySuatChieuVM}">
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
-
+    
     <Page.Triggers>
         <EventTrigger RoutedEvent="Page.Loaded">
             <BeginStoryboard>
@@ -59,7 +53,12 @@
 
              <!--Room Grid-->
             <Grid Grid.Column="0">
-                <ComboBox materialDesign:HintAssist.Hint="          Số phòng"  VerticalAlignment="Top" Margin="0,123,0,0">
+                <ComboBox Text="{Binding SoPhong, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" materialDesign:HintAssist.Hint="          Số phòng"  VerticalAlignment="Top" Margin="0,123,0,0">
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="SelectionChanged">
+                            <i:InvokeCommandAction Command="{Binding ChangeRoomCM}"/>
+                    </i:EventTrigger>
+                    </i:Interaction.Triggers>
                     <ComboBoxItem>1</ComboBoxItem>
                     <ComboBoxItem>2</ComboBoxItem>
                     <ComboBoxItem>3</ComboBoxItem>
@@ -82,7 +81,12 @@
 
                 <StackPanel Margin="0 60 40 0" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
                     <!-- Add button-->
-                    <Button Width="155" Margin="0 0 150 0" >
+                    <Button Width="155" Margin="0 0 150 0">
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="Click">
+                                <i:InvokeCommandAction Command="{Binding AddShowtimeCM}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                             <TextBlock Text="Thêm suất chiếu"/>
@@ -90,17 +94,24 @@
                     </Button>
 
                     <!-- Date box-->
-                    <DatePicker Grid.Row="0" Width="140"
+                    <DatePicker Text="{Binding SelectedDate, Mode=TwoWay}"
+                                Grid.Row="0" Width="140"
                                 materialDesign:HintAssist.Hint="Suất chiếu"
                                 Style="{StaticResource MaterialDesignOutlinedDatePicker}"
                                 Margin="0 0 0 0"
                                 HorizontalAlignment="Right"                   
-                    />
+                    >
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectedDateChanged">
+                                <i:InvokeCommandAction Command="{Binding ChangeDateTimeCM}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </DatePicker>
                 </StackPanel>
 
 
                 <!--Data grid-->
-                <DataGrid
+                <DataGrid ItemsSource="{Binding dsSuatChieu}"
                     Margin="0 20 0 0"
                     Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
                     x:Name="showtimeGrid" 
@@ -115,10 +126,10 @@
                             </DataGridCheckBoxColumn.HeaderTemplate>
                         </DataGridCheckBoxColumn>
 
-                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.Ten}"/>
+                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.TenPhim}"/>
                         <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding Phim.TheLoai}"/>
                         <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding Phim.ThoiLuong}"/>
-                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieu}"/>
+                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieuStr}"/>
 
                         <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
                         

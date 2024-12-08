@@ -21,26 +21,9 @@ namespace CinemaManagement.View
     /// </summary>
     public partial class QuanLySuatChieu : Page
     {
-        public class SuatChieu
-        {
-            public string Ten { get; set; }
-            public string TheLoai { get; set; }
-            public string ThoiLuong { get; set; }
-
-        }
-
-        public ObservableCollection<SuatChieu> testData;
         public QuanLySuatChieu()
         {
             InitializeComponent();
-            testData = new ObservableCollection<SuatChieu>
-            {
-                new SuatChieu { Ten = "Chu meo con", TheLoai = "Hoat hinh", ThoiLuong = "120" },
-                new SuatChieu { Ten = "Hoang ha Dao Chu", TheLoai = "Tien hiep", ThoiLuong = "130" }
-            };
-            DataContext = this;
-            showtimeGrid.ItemsSource = testData;
-
         }
 
     }
