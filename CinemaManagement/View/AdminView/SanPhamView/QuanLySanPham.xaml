@@ -194,7 +194,7 @@
                                                                 </i:EventTrigger>
                                                             </i:Interaction.Triggers>
                                                         </Border>
-                                                        
+
 
                                                         <Border BorderBrush="Black"
                                                                 BorderThickness="1"
@@ -224,7 +224,7 @@
                                                                     <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.DeleteProductCM}"/>
                                                                 </i:EventTrigger>
                                                             </i:Interaction.Triggers>
-                                                            
+
                                                         </Border>
 
 
@@ -235,7 +235,7 @@
                                                                 Margin="3"
                                                                 Cursor="Hand"
                                                                 Height="35"
-                                                                Width="35">     
+                                                                Width="35">
                                                             <Border.Style>
                                                                 <Style TargetType="Border">
                                                                     <Style.Triggers>
@@ -251,7 +251,7 @@
                                                             <icon:PackIconMaterial Kind="Plus"
                                                                                    Width="30"
                                                                                    Height="30"
-                                                                                   Cursor="Hand">   
+                                                                                   Cursor="Hand">
                                                             </icon:PackIconMaterial>
                                                             <i:Interaction.Triggers>
                                                                 <i:EventTrigger EventName="MouseLeftButtonDown">
@@ -259,12 +259,44 @@
                                                                 </i:EventTrigger>
                                                             </i:Interaction.Triggers>
                                                         </Border>
+
+                                                        <Border BorderBrush="Black"
+                                                                BorderThickness="1"
+                                                                CornerRadius="4"
+                                                                Margin="3"
+                                                                Cursor="Hand"
+                                                                Height="35"
+                                                                Width="35">
+                                                            <Border.Style>
+                                                                <Style TargetType="Border">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="IsMouseOver"
+                                                                                 Value="True">
+                                                                            <Setter Property="Background"
+                                                                                    Value="LightGreen" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </Border.Style>
+                                                            <!--Mua hang-->
+                                                            <icon:PackIconMaterial Kind="Shopping"
+                                                                                   Width="30"
+                                                                                   Height="30"
+                                                                                   Cursor="Hand">
+                                                            </icon:PackIconMaterial>
+                                                            <i:Interaction.Triggers>
+                                                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                                    <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.NhapHangCM}"/>
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
+                                                        </Border>
+
                                                     </StackPanel>
 
-                                                    
+
                                                 </StackPanel>
                                             </Grid>
-                                            
+
                                             <!-- Ten sp -->
                                             <TextBlock Grid.Row="1"
                                                        x:Name="productName"
