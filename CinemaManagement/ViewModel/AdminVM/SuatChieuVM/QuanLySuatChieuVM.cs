@@ -6,7 +6,10 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
+using System.Windows;
 using System.Windows.Input;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -24,27 +27,24 @@ namespace CinemaManagement.ViewModel.AdminVM
             get { return _maphim; }
         }
         public int SoPhongChieu { get; set; }
-
-        private int _soPhong;
-
-
-        public int SoPhong
+        public System.DateTime BatDau { get; set; }
+        public System.DateTime KetThuc { get; set; }
+        public decimal GiaVe { get; set; }
+        private int _currentroom { get; set; }
+        public int CurrentRoom
         {
-            get { return _soPhong; }
-            set { _soPhong = value; OnPropertyChanged(); }
+            get { return _currentroom; }
+            set { _currentroom = value; OnPropertyChanged(); }
         }
-        private DateTime _selectedDate;
+        DateTime _selectedDate;
         public DateTime SelectedDate
         {
             get { return _selectedDate; }
             set { _selectedDate = value; OnPropertyChanged(); }
         }
-        public System.DateTime BatDau { get; set; }
-        public System.DateTime KetThuc { get; set; }
-        public decimal GiaVe { get; set; }
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
-        public ICommand LoadDataShowTimeCM { get; set; }
+        public ICommand DoiPhongChieuCM {  get; set; }
         private ObservableCollection<SuatChieuDTO> _dsSuatChieu;
         public ObservableCollection<SuatChieuDTO> dsSuatChieu
         {
@@ -55,24 +55,9 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public QuanLySuatChieuVM()
         {
-            LoadDataShowTimeCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
+            DoiPhongChieuCM = new RelayCommand<object>((p) => true, (p) =>
             {
-                try
-                {
-                    IsLoading = true;
-
-                    var data = await SuatChieuDAL.Instance.GetShowTimeByRoom(SoPhong, SelectedDate);
-                    dsSuatChieu = new ObservableCollection<SuatChieuDTO>(data);
-
-                    IsLoading = false;
-                }
-                catch (Exception ex)
-                {
-
-                    CustomControls.MyMessageBox.Show("Lỗi hệ thống");
-
-                    Console.WriteLine($"Error: {ex.Message}");
-                }
+                MessageBox.Show("Done");
             });
         }
     }

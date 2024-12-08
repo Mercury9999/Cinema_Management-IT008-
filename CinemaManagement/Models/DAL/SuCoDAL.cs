@@ -27,7 +27,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     List<SuCoDTO> dsSC = await (from sc in context.SuCoes
                                                 select new SuCoDTO
@@ -53,7 +53,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     var maxId = await context.SuCoes.MaxAsync(s => s.MaSuCo);
                     SuCo SC = new SuCo()
@@ -85,7 +85,7 @@ namespace CinemaManagement.Models.DAL
         {
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
 
                     var SC = await context.SuCoes.FindAsync(UpdatedSC.MaSuCo);

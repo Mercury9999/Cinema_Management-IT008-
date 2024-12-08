@@ -13,17 +13,17 @@
       Title="QuanLySuatChieu"
       Background="Transparent"
       x:Name="quanlysuatchieuPage"
-      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
-      >
-    <i:Interaction.Triggers>
-        <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding LoadDataShowTimeCM}" />
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+      DataContext="{StaticResource ShowtimeVM}"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLySuatChieuVM}">
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
-
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding DoiPhongChieuCM}"
+       CommandParameter="3"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Page.Triggers>
         <EventTrigger RoutedEvent="Page.Loaded">
             <BeginStoryboard>
@@ -45,7 +45,7 @@
                 <ColumnDefinition Width="130"/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-
+            
              <!--Search TextBox-->
             <Grid Grid.ColumnSpan="2" Width="300" Margin="50 70 0 0" VerticalAlignment="Top" HorizontalAlignment="Left">
                 <TextBlock Margin="20 0 0 0" VerticalAlignment="Center" Foreground="#b0b9c6" IsHitTestVisible="True" Text="Tìm tên phim"
@@ -60,45 +60,53 @@
              <!--Room Grid-->
             <Grid Grid.Column="0">
                 <StackPanel Margin="0 200 0 0">
+                    <Button 
+                        Cursor="Hand"
+                        Style="{StaticResource pagingButton}">
+                        <TextBlock Text="DS phòng"
+                                   FontSize="15"
+                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
+                    </Button>
+                    <Button 
+                        Cursor="Hand"
+                        Style="{StaticResource pagingButton}"
+                        Command="{Binding DoiPhongChieuCM}"
+                        CommandParameter="1">
+                        <TextBlock Text="Phòng 1"
+                                   FontSize="15"
+                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
+                    </Button>
+                    <Button 
+                        Cursor="Hand"
+                        Style="{StaticResource pagingButton}"
+                        Command="{Binding DoiPhongChieuCM}"
+                        CommandParameter="2">
+                        <TextBlock Text="Phòng 2"
+                                   FontSize="15"
+                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
+                    </Button>
                     <Button
                         Cursor="Hand"
                         Style="{StaticResource pagingButton}">
-                        <TextBlock Text="DS phong"
+                        <TextBlock Text="Phòng 3"
                                    FontSize="15"
                                    Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
                     </Button>
                     <Button 
                         Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 1"
+                        Style="{StaticResource pagingButton}"
+                        Command="{Binding DoiPhongChieuCM}"
+                        CommandParameter="4">
+                        <TextBlock Text="Phòng 4"
                                    FontSize="15"
                                    Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
                     </Button>
-                    <Button 
+                    <Button
                         Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 2"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 3"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 4"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 5"
+                        Style="{StaticResource pagingButton}"
+                        Command="{Binding DoiPhongChieuCM}"
+                        CommandParameter="5">
+                        <TextBlock Text="Phòng 5"
                                    FontSize="15"
                                    Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
                     </Button>
@@ -126,6 +134,11 @@
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                             <TextBlock Text="Thêm suất chiếu"/>
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="Click">
+                                    <i:InvokeCommandAction Command="{Binding AddShowTimeCM}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
                         </StackPanel>
                     </Button>
 
@@ -143,6 +156,7 @@
                 <DataGrid
                     Margin="0 20 0 0"
                     Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
+                    ItemsSource="{Binding dsSuatChieu}"
                     x:Name="showtimeGrid" 
                     AutoGenerateColumns="False" IsReadOnly="True"
                     Grid.Row="1">
@@ -155,13 +169,13 @@
                             </DataGridCheckBoxColumn.HeaderTemplate>
                         </DataGridCheckBoxColumn>
 
-                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.Ten}"/>
+                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.TenPhim}"/>
                         <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding Phim.TheLoai}"/>
-                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding Phim.ThoiLuong}"/>
-                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieu}"/>
+                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiGianStr}"/>
+                        <DataGridTextColumn Header="Giá vé" IsReadOnly="True" Width="*" Binding="{Binding GiaVeStr }"/>
 
                         <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
-                        
+
                         <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>
                                 <DataTemplate>
@@ -181,4 +195,5 @@
             </Grid>
         </Grid>
     </Border>
+    
 </Page>

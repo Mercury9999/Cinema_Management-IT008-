@@ -31,7 +31,7 @@ namespace CinemaManagement.Models.DAL
             int newShowtimeId = -1;
             try
             {
-                using(var context = new CinemaManagementEntities1())
+                using(var context = new CinemaManagementEntities())
                 {
                     var p = await context.Phims.FindAsync(suatchieu.MaPhim);
                     if(p == null) return (false, "Phim không tồn tại", newShowtimeId);
@@ -96,7 +96,7 @@ namespace CinemaManagement.Models.DAL
             List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     dsSC = await (from sc in context.SuatChieux
                                   join p in context.Phims on sc.MaPhim equals p.MaPhim
@@ -128,7 +128,7 @@ namespace CinemaManagement.Models.DAL
             List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     dsSC = await (from s in context.SuatChieux
                                     where s.MaPhim == MaPhim && s.BatDau.Date == dt.Date
