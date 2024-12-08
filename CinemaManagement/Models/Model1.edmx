@@ -751,7 +751,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="CinemaManagementEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="CinemaManagementEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="BanVes" EntityType="Self.BanVe" />
           <EntitySet Name="CTHDSanPhams" EntityType="Self.CTHDSanPham" />
           <EntitySet Name="Ghes" EntityType="Self.Ghe" />
@@ -827,7 +827,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="CinemaManagementModelStoreContainer" CdmEntityContainer="CinemaManagementEntities">
+        <EntityContainerMapping StorageEntityContainer="CinemaManagementModelStoreContainer" CdmEntityContainer="CinemaManagementEntities1">
           <EntitySetMapping Name="BanVes">
             <EntityTypeMapping TypeName="CinemaManagementModel.BanVe">
               <MappingFragment StoreEntitySet="BanVe">
