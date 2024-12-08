@@ -13,8 +13,13 @@
       Title="QuanLySuatChieu"
       Background="Transparent"
       x:Name="quanlysuatchieuPage"
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" 
       >
-
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding LoadDataShowTimeCM}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
@@ -150,9 +155,9 @@
                             </DataGridCheckBoxColumn.HeaderTemplate>
                         </DataGridCheckBoxColumn>
 
-                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Ten}"/>
-                        <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding TheLoai}"/>
-                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiLuong}"/>
+                        <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.Ten}"/>
+                        <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding Phim.TheLoai}"/>
+                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding Phim.ThoiLuong}"/>
                         <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieu}"/>
 
                         <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
