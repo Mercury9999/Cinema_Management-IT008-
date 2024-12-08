@@ -224,6 +224,7 @@
                                                                     <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.DeleteProductCM}"/>
                                                                 </i:EventTrigger>
                                                             </i:Interaction.Triggers>
+                                                            
                                                         </Border>
 
 
@@ -252,7 +253,11 @@
                                                                                    Height="30"
                                                                                    Cursor="Hand">   
                                                             </icon:PackIconMaterial>
-
+                                                            <i:Interaction.Triggers>
+                                                                <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                                    <i:InvokeCommandAction Command="{Binding ElementName=sanphamlistBox, Path=DataContext.NhapHangCM}"/>
+                                                                </i:EventTrigger>
+                                                            </i:Interaction.Triggers>
                                                         </Border>
                                                     </StackPanel>
 
