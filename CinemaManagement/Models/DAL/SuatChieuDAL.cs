@@ -96,7 +96,7 @@ namespace CinemaManagement.Models.DAL
             List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
             try
             {
-                using (var context = new CinemaManagementEntities1())
+                using (var context = new CinemaManagementEntities())
                 {
                     dsSC = await (from sc in context.SuatChieux
                                   join p in context.Phims on sc.MaPhim equals p.MaPhim

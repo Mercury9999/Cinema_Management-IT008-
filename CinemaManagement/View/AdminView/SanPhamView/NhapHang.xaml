@@ -79,11 +79,7 @@
                     </StackPanel>
 
                     <!-- Anh san pham-->
-                    <Rectangle Grid.Column="1" x:Name="ImageRectangle" Stroke="Black" StrokeThickness="2" Margin="10,19,82,10">
-                        <Rectangle.Fill>
-                            <ImageBrush ImageSource="{Binding HinhAnhSP}"/>
-                        </Rectangle.Fill>
-                    </Rectangle>
+                    
 
                 </Grid>
 

@@ -1,4 +1,5 @@
 ﻿using CinemaManagement.DTOs;
+using CinemaManagement.ViewModel.AdminVM.ThanhToanVM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,6 +37,7 @@ namespace CinemaManagement.ViewModel.AdminVM.AccountVM
                 OnPropertyChanged();
             }
         }
+
     }
 
 }
