@@ -59,53 +59,13 @@
 
              <!--Room Grid-->
             <Grid Grid.Column="0">
-                <StackPanel Margin="0 200 0 0">
-                    <Button
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="DS phong"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 1"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 2"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 3"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 4"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phong 5"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                </StackPanel>
-                
-                
-                
+                <ComboBox materialDesign:HintAssist.Hint="          Số phòng"  VerticalAlignment="Top" Margin="0,123,0,0">
+                    <ComboBoxItem>1</ComboBoxItem>
+                    <ComboBoxItem>2</ComboBoxItem>
+                    <ComboBoxItem>3</ComboBoxItem>
+                    <ComboBoxItem>4</ComboBoxItem>
+                    <ComboBoxItem>5</ComboBoxItem>
+                </ComboBox>
             </Grid>
             
             
