@@ -28,10 +28,10 @@ namespace CinemaManagement.ViewModel.AdminVM
             //LoadDSNhapHang();
         }
 
-        //private async void LoadDSNhapHang()
-        //{
-        //    var data = await NhapHangDAL.GetAllHDNhapHang();
-        //    dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
-        //}
+        private async void LoadDSNhapHang()
+        {
+            //var data = await NhapHangDAL.GetAllHDNhapHang();
+            //dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
+        }
     }
 }

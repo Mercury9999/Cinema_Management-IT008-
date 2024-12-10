@@ -156,5 +156,36 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Thêm phim thành công", newMovieId);
         }
+        public PhimDTO GetMovieById(int Id)
+        {
+            try
+            {
+                using (var context = new CinemaManagementEntities())
+                {
+                    PhimDTO phim = (from p in context.Phims
+                                where p.MaPhim == Id
+                                select new PhimDTO 
+                                {
+                                    MaPhim = p.MaPhim,
+                                    TenPhim = p.TenPhim,
+                                    TheLoai = p.TheLoai,
+                                    ThoiLuong = p.ThoiLuong,
+                                    NuocSX = p.NuocSX,
+                                    NgayPH = p.NgayPH,
+                                    DaoDien = p.DaoDien,
+                                    NoiDung = p.NoiDung,
+                                    GioiHanTuoi = p.GioiHanTuoi,
+                                    Poster = p.Poster,
+                                    DoanhThu = p.DoanhThu
+                                }).FirstOrDefault();
+                    return phim;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex);
+                throw ex;
+            }
+        }
     }
 }

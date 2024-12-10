@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 namespace CinemaManagement.ViewModel.AdminVM.AccountVM
-{
+{ 
     public class AccountVM : BaseViewModel
     {
 

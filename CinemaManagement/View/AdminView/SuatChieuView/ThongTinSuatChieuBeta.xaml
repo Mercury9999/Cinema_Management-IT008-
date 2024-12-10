@@ -449,20 +449,7 @@
 
                         </StackPanel>
 
-                        <StackPanel Margin="100 15 0 0" Orientation="Horizontal">
-                            <Button BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L01" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L02" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L03" Width="20"/>
-                            </Button>
-                            <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="80" Background="GhostWhite" Foreground="Green">
-                                <TextBlock FontSize="10" HorizontalAlignment="Center" Text="L04" Width="20"/>
-                            </Button>
-                        </StackPanel>
+                        <StackPanel Margin="100 15 0 0" Orientation="Horizontal"/>
 
                         <StackPanel Margin="0 15 0 0" Orientation="Horizontal">
                             <Button Margin="15 0 0 0" BorderThickness="1" BorderBrush="Green" Padding="0" Width="40" Background="GhostWhite" Foreground="Green"/>
