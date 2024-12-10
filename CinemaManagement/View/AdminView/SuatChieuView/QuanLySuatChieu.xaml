@@ -67,7 +67,7 @@
 
                 <StackPanel Margin="0 60 40 0" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
                     <!-- Add button-->                    
-                    <Button Width="155" Margin="0 0 150 0">
+                    <Button Width="155" Margin="0 0 30 0">
                         <i:Interaction.Triggers>
                             <i:EventTrigger EventName="Click">
                                 <i:InvokeCommandAction Command="{Binding AddShowtimeCM}"/>
