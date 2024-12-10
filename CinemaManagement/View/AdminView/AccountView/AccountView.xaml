@@ -52,7 +52,7 @@
                         </Ellipse.Fill>
                     </Ellipse>
 
-                    <Button Height="40" HorizontalAlignment="Center" Style="{StaticResource ultisButton}">
+                    <Button Height="40" HorizontalAlignment="Center" Cursor="Hand" Style="{StaticResource ultisButton}">
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                             <TextBlock Text="Cập nhật ảnh" FontWeight="Bold"/>
@@ -67,17 +67,17 @@
                     <!-- Thông tin nhân viên -->
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Họ tên" FontWeight="Bold" FontSize="20" Margin="10 10 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
-              Padding="0"
-              Margin="39 10 0 0" IsReadOnly="True"
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="26"
+              Padding="0 -5 0 0"
+              Margin="79 10 0 0" IsReadOnly="True"
               Text="{Binding CurrentStaff.TenNV}"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Số điện thoại" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="154" Height="21"
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="228" Height="26"
               Margin="20 20 0 0"
                  Padding="0" IsReadOnly="True"
               Text="{Binding CurrentStaff.SDT_NV}"/>
@@ -86,23 +86,23 @@
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Ngày sinh" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
                         <DatePicker
-                  Width="130"
+                  Width="166"
                   materialDesign:HintAssist.Hint=""
                   materialDesign:TextFieldAssist.HasClearButton="False"
                   Style="{StaticResource MaterialDesignFloatingHintDatePicker}"
-                  Margin="35 20 0 0" Height="26"
-                  Padding="5"
-                  FontSize="15"
+                  Margin="47 20 0 0" Height="26"
+                  Padding="0 0 -5 0"
+                  FontSize="20"
                         Text="{Binding CurrentStaff.NgaySinh}"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Giới tính" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="60" Height="21"
-              Margin="45 20 0 0"
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+              Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="129" Height="26"
+              Margin="60 20 0 0"
               Padding="0"
-              TextAlignment="Center"
+              
               Text="{Binding CurrentStaff.GioiTinh}" IsReadOnly="True"
          />
                     </StackPanel>
@@ -110,20 +110,20 @@
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Email" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
-                                Margin="59 20 0 0"
-                                Padding="0" 
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="26"
+                                Margin="85 20 0 0"
+                                Padding="0 -5 0 0" 
                                  Text="{Binding CurrentStaff.email_NV}"
                                  IsReadOnly="True"/>
                     </StackPanel>
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Chức vụ" FontWeight="Bold" FontSize="20" Margin="10 20 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="150" Height="21"
-                                Margin="35 20 0 0"
-                                Padding="0" 
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="174" Height="26"
+                                Margin="60 20 0 0"
+                                Padding="0 -5 0 0" 
                                 Text="{Binding CurrentStaff.ChucVu}"
                                 IsReadOnly="True"/>
 
@@ -137,8 +137,8 @@
                     <TextBlock Text="Thông tin tài khoản" FontSize="30" FontWeight="Bold" Margin="30 20 0 30"/>
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Tên đăng nhập" FontWeight="Bold" FontSize="20" Margin="10 10 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="26"
                                 Padding="0"
                                 Margin="39 10 0 0" IsReadOnly="True" Text="{Binding CurrentStaff.acc_username}"
                                 />
@@ -146,8 +146,8 @@
 
                     <StackPanel Orientation="Horizontal">
                         <TextBlock Text="Mật khẩu" FontWeight="Bold" FontSize="20" Margin="10 10 0 0"/>
-                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="21"
+                        <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="253" Height="26"
                                 Padding="0"
                                 Margin="90 10 0 0"
                                  IsReadOnly="True" Text="{Binding CurrentStaff.acc_password}"
@@ -156,10 +156,10 @@
                 </StackPanel>
 
                 <StackPanel Margin="200 160 0 0" Orientation="Horizontal" HorizontalAlignment="Center">
-                    <Button HorizontalAlignment="Center" Background="#21203b" Height="50" Style="{StaticResource ultisButton}" Width="187">
+                    <Button HorizontalAlignment="Center" Cursor="Hand" Height="50" Style="{StaticResource ultisButton}" Width="187">
                         <TextBlock Text="Đổi mật khẩu" HorizontalAlignment="Center" FontSize="20"/>
                     </Button>
-                    <Button HorizontalAlignment="Center" Background="#21203b" Margin="10 20 0 0" Height="50" Style="{StaticResource ultisButton}" Width="187">
+                    <Button HorizontalAlignment="Center" Cursor="Hand" Margin="10 20 0 0" Height="50" Style="{StaticResource ultisButton}" Width="187">
                         <TextBlock Text="Đăng xuất" HorizontalAlignment="Center" FontSize="20"/>
                     </Button>
                 </StackPanel>

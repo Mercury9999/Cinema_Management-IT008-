@@ -8,7 +8,7 @@
         xmlns:i="http://schemas.microsoft.com/xaml/behaviors"
         FontFamily="{DynamicResource MaterialDesignFont}"
         mc:Ignorable="d"
-        Height="280" 
+        Height="350" 
         Width="400"
         Background="Transparent"
         AllowsTransparency="True"
@@ -21,11 +21,11 @@
                                    CommandParameter="{Binding ElementName=themsanphamWindow}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
-    <Border CornerRadius="30" Background="#ffffff">
+    <Border CornerRadius="30" BorderThickness="2" BorderBrush="Black" Background="#ffffff">
         <Grid>
             <StackPanel>
                 <TextBox materialDesign:HintAssist.FloatingScale="0.50" materialDesign:TextFieldAssist.TextBoxViewMargin="20 0 1 0"
-             FontSize="20"
+             FontSize="25"
              Style="{StaticResource MaterialDesignFloatingHintTextBox}"
              Text="Thêm sản phẩm"
              IsReadOnly="True"
@@ -34,42 +34,42 @@
 
                 <Grid>
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition/>
+                        <ColumnDefinition Width="Auto"/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
 
                     <!-- Thông tin sp -->
                     <StackPanel Grid.Column="0">
 
-                        <TextBlock Text="Thông tin sản phẩm" FontSize="15" Margin="10" FontWeight="DemiBold"/>
+                        <TextBlock Text="Thông tin sản phẩm" FontSize="20" Margin="10" FontWeight="DemiBold"/>
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Tên" Margin="10 10 0 0"/>
-                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="106" Height="21"
-                                     Margin="20 0 0 0"
+                            <TextBlock Text="Tên" Margin="10 10 0 0" FontSize="20"/>
+                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="144" Height="26"
+                                     Margin="70 0 0 0"
                                      Padding="0"
                                      Text="{Binding TenSP}"
-                 />
+                            />
                         </StackPanel>
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Số lượng" Margin="10 10 0 0"/>
-                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="77" Height="21"
+                            <TextBlock Text="Số lượng" Margin="10 10 0 0" FontSize="20"/>
+                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="149" Height="26"
                                      Margin="20 0 0 0"
                                      Padding="0"
-                                     Text="{Binding TenSP}"
+                                     Text="{Binding SoLuong}"
                              />
 
                         </StackPanel>
 
 
                         <StackPanel Orientation="Horizontal">
-                            <TextBlock Text="Giá nhập" Margin="10 10 0 0"/>
-                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="15"
-                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="78" Height="21"
-                                     Margin="20 0 0 0"
+                            <TextBlock Text="Giá nhập" Margin="10 10 0 0" FontSize="20"/>
+                            <TextBox materialDesign:TextFieldAssist.TextBoxViewMargin="0 0 10 0" FontSize="20"
+                                     Style="{StaticResource MaterialDesignFloatingHintTextBox}" Width="147" Height="26"
+                                     Margin="23 0 0 0"
                                      Padding="0"
                                      Text="{Binding GiaSP}"
 />
@@ -84,13 +84,13 @@
                 </Grid>
 
 
-                <StackPanel Orientation="Horizontal" Margin="250 30 0 0">
-                    <Button BorderThickness="0" Width="57" Padding="0" Command="{Binding SaveNewProductCM}">
-                        <TextBlock Text="Xác nhận" FontSize="10"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="50">
+                    <Button BorderThickness="0" Width="80" Padding="0" Command="{Binding SaveNewProductCM}" Height="44">
+                        <TextBlock Text="Xác nhận" FontSize="15"/>
                     </Button>
-                    <Button BorderThickness="0" Margin="20 0 0 0" Width="57" Padding="0" Background="#FFD93434"
-                            Command="{Binding CloseCM}" CommandParameter="{Binding ElementName=themsanphamWindow}">
-                        <TextBlock Text="Hủy bỏ" FontSize="10"/>
+                    <Button BorderThickness="0" Margin="20 0 0 0" Width="80" Padding="0" Background="#FFD93434"
+                            Command="{Binding CloseCM}" CommandParameter="{Binding ElementName=themsanphamWindow}" Height="44">
+                        <TextBlock Text="Hủy bỏ" FontSize="15"/>
                     </Button>
                 </StackPanel>
 

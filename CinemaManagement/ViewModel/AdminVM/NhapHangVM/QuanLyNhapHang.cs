@@ -25,13 +25,13 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public QuanLyNhapHangVM()
         {
-            LoadDSNhapHang();
+            //LoadDSNhapHang();
         }
 
-        private async void LoadDSNhapHang()
-        {
-            var data = await NhapHangDAL.GetAllHDNhapHang();
-            dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
-        }
+        //private async void LoadDSNhapHang()
+        //{
+        //    var data = await NhapHangDAL.GetAllHDNhapHang();
+        //    dsNhapHang = new ObservableCollection<HDNhapHangDTO>(data);
+        //}
     }
 }

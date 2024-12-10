@@ -94,6 +94,7 @@
                                           CornerRadius="3"
                                           Width="38"
                                           Height="38">
+                                    <!-- List ghế -->
                                     <Label Content="{Binding SeatPosition}"
                                            Background="Transparent"
                                            Foreground="black"

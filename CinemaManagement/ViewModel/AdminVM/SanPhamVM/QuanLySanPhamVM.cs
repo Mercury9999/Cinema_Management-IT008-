@@ -199,7 +199,7 @@ namespace CinemaManagement.ViewModel.AdminVM
                     // Lấy sản phẩm đã chọn (giả sử SelectedSP là sản phẩm hiện tại bạn đã chọn)
                     if (SPSelected != null && SoLuong > 0)
                     {
-                        using (var dbContext = new CinemaManagementEntities2())
+                        using (var dbContext = new CinemaManagementEntities())
                         {
                             var product = await dbContext.SanPhams.FindAsync(SPSelected.MaSP);
                             if (product != null)

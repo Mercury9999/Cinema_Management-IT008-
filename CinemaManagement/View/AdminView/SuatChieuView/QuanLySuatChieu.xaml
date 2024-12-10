@@ -58,18 +58,10 @@
             </Grid>
 
              <!--Room Grid-->
-            <Grid Grid.Column="0">
-                <ComboBox materialDesign:HintAssist.Hint="          Số phòng"  VerticalAlignment="Top" Margin="0,123,0,0">
-                    <ComboBoxItem>1</ComboBoxItem>
-                    <ComboBoxItem>2</ComboBoxItem>
-                    <ComboBoxItem>3</ComboBoxItem>
-                    <ComboBoxItem>4</ComboBoxItem>
-                    <ComboBoxItem>5</ComboBoxItem>
-                </ComboBox>
-            </Grid>
+            <Button Content="Thêm phòng" Padding="0" Margin="10 0 10 0"/>
             
             
-             <!--Date Picker--> 
+            <!--Date Picker--> 
           
             
             
@@ -82,12 +74,21 @@
 
                 <StackPanel Margin="0 60 40 0" HorizontalAlignment="Right" Orientation="Horizontal" Grid.Row="0">
                     <!-- Add button-->
-                    <Button Width="155" Margin="0 0 150 0" >
+                    <Button Width="155" Margin="0 0 20 0" >
                         <StackPanel Orientation="Horizontal">
                             <icon:PackIconMaterial Kind="Plus" VerticalAlignment="Center" Width="11" Height="11" Margin="0 1 8 0"/>
                             <TextBlock Text="Thêm suất chiếu"/>
                         </StackPanel>
                     </Button>
+
+                    <!-- Room Change-->
+                    <ComboBox materialDesign:HintAssist.Hint="Phòng" Width="106" Margin="10 0 60 0">
+                        <ComboBoxItem>1</ComboBoxItem>
+                        <ComboBoxItem>2</ComboBoxItem>
+                        <ComboBoxItem>3</ComboBoxItem>
+                        <ComboBoxItem>4</ComboBoxItem>
+                        <ComboBoxItem>5</ComboBoxItem>
+                    </ComboBox>
 
                     <!-- Date box-->
                     <DatePicker Grid.Row="0" Width="140"
