@@ -128,8 +128,8 @@
 
                         <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.TenPhim}"/>
                         <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding Phim.TheLoai}"/>
-                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding Phim.ThoiLuong}"/>
                         <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieuStr}"/>
+                        <DataGridTextColumn Header="Giá vé" IsReadOnly="True" Width="*" Binding="{Binding GiaVe}"/>
 
                         <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
                         
