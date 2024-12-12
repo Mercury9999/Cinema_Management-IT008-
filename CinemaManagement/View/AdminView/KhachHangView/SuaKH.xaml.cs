@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View.AdminView.SuatChieuView
+namespace CinemaManagement.View.AdminView.KhachHangView
 {
     /// <summary>
-    /// Interaction logic for ThongTinSuatChieuBeta.xaml
+    /// Interaction logic for SuaKH.xaml
     /// </summary>
-    public partial class ThongTinSuatChieuBeta : Window
+    public partial class SuaKH : Window
     {
-        public ThongTinSuatChieuBeta()
+        public SuaKH()
         {
             InitializeComponent();
         }
