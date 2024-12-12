@@ -6,13 +6,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Input;
+<<<<<<< Updated upstream
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
+=======
 using System.Windows.Media.Media3D;
 using CinemaManagement.View;
 using System.Reflection;
 using CinemaManagement.Models;
 using System.Runtime.Remoting.Messaging;
+using CinemaManagement.CustomControls;
+>>>>>>> Stashed changes
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -24,39 +30,87 @@ namespace CinemaManagement.ViewModel.AdminVM
             get { return _masc; }
             set { _masc = value; OnPropertyChanged(); }
         }
-        private int _maphim {  get; set; }
+        private int _maphim;
         public int MaPhim
         {
             get { return _maphim; }
-            set { _maphim = value; OnPropertyChanged() ; }
         }
+<<<<<<< Updated upstream
         public int SoPhongChieu { get; set; }
-
+        public System.DateTime BatDau { get; set; }
+        public System.DateTime KetThuc { get; set; }
+        public decimal GiaVe { get; set; }
+        private int _currentroom { get; set; }
+        public int CurrentRoom
+=======
         private int _soPhong {  get; set; }
         public int SoPhong
+>>>>>>> Stashed changes
         {
-            get { return _soPhong; }
-            set { _soPhong = value; OnPropertyChanged(); }
+            get { return _currentroom; }
+            set { _currentroom = value; OnPropertyChanged(); }
         }
-        private DateTime _selectedDate { get; set; }
+        DateTime _selectedDate;
         public DateTime SelectedDate
         {
             get { return _selectedDate; }
             set { _selectedDate = value; OnPropertyChanged(); }
         }
+<<<<<<< Updated upstream
+        public bool IsSaving { get; set; }
+        public bool IsLoading { get; set; }
+        public ICommand DoiPhongChieuCM {  get; set; }
+        private ObservableCollection<SuatChieuDTO> _dsSuatChieu;
+=======
+        private int _selectedRoom { get; set; }
+        public int SelectedRoom
+        {
+            get { return _selectedRoom; }
+            set { _selectedRoom = value; OnPropertyChanged(); }
+        }
+        private SuatChieuDTO _selectedShowtime {  get; set; }
+        public SuatChieuDTO SelectedShowtime
+        {
+            get { return _selectedShowtime; }
+            set { _selectedShowtime = value; OnPropertyChanged(); }
+        }
+        public PhimDTO Phim { get; set; }
         public System.DateTime BatDau { get; set; }
         public System.DateTime KetThuc { get; set; }
         public string BatDauStr { get; set; }
         public string KetThucStr { get; set; }
+        public string NgayChieu { get; set; }
         public decimal GiaVe { get; set; }
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
-        private ObservableCollection<SuatChieuDTO> _dsSuatChieu;
+        private ObservableCollection<SuatChieuDTO> _dsSuatChieu = new ObservableCollection<SuatChieuDTO>();
+>>>>>>> Stashed changes
         public ObservableCollection<SuatChieuDTO> dsSuatChieu
         {
 
             get { return _dsSuatChieu; }
             set { _dsSuatChieu = value; OnPropertyChanged(); }
+        }
+<<<<<<< Updated upstream
+
+        public QuanLySuatChieuVM()
+        {
+<<<<<<< Updated upstream
+            DoiPhongChieuCM = new RelayCommand<object>((p) => true, (p) =>
+=======
+        private ObservableCollection<PhongChieuDTO> _dsPhong = new ObservableCollection<PhongChieuDTO>();
+        public ObservableCollection<PhongChieuDTO> dsPhong
+        {
+
+            get { return _dsPhong; }
+            set { _dsPhong = value; OnPropertyChanged(); }
+        }
+        private ObservableCollection<BanVeDTO> _dsBanVe = new ObservableCollection<BanVeDTO>();
+        public ObservableCollection<BanVeDTO> dsBanVe
+        {
+
+            get { return _dsBanVe; }
+            set { _dsBanVe = value; OnPropertyChanged(); }
         }
         public ICommand LoadDataShowTimeCM { get; set; }
         public ICommand ChangeRoomCM { get; set; }
@@ -64,21 +118,59 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand AddShowtimeCM {  get; set; }
         public ICommand CloseWindowCM {  get; set; }
         public ICommand AddNewShowtimeCM { get; set; }
+        public ICommand AddNewRoomCM {  get; set; }
+        public ICommand GetRoomListCM {  get; set; }
+        public ICommand ChangeInfoCM { get; set; }
+        public ICommand ViewShowtimeCM { get; set; }
         public QuanLySuatChieuVM()
         {
-            PhongChieuDAL.Instance.GenerateChair();
             SelectedDate = DateTime.Now;
             CloseWindowCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+>>>>>>> Stashed changes
+=======
+            DoiPhongChieuCM = new RelayCommand<string>((p) => true, (p) =>
+>>>>>>> Stashed changes
             {
-                p.Close();
+                MessageBox.Show("Done");
             });
-            ChangeRoomCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
+<<<<<<< Updated upstream
+=======
+            GetRoomListCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
-                GetShowTimeData();
+                try
+                {
+                    IsLoading = true;
+                    var data = await Task.Run(async () => await PhongChieuDAL.Instance.GetAllRoom());
+                    dsPhong = new ObservableCollection<PhongChieuDTO>(data);
+                    IsLoading = false;
+                }
+                catch (Exception ex)
+                {
+                    MyMessageBox.Show("Lỗi hệ thống: " + ex.Message);
+                }
             });
-            ChangeDateTimeCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
+            AddNewRoomCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
-                GetShowTimeData();
+                PhongChieuDTO Phong = new PhongChieuDTO();
+                (bool trangthai, string message, Phong) = await PhongChieuDAL.Instance.AddNewRoom();
+                if (trangthai == true)
+                {
+                    dsPhong.Add(new PhongChieuDTO
+                    {
+                        SoPhong = Phong.SoPhong,
+                        SLGhe = Phong.SLGhe,
+                        Ghe = Phong.Ghe,
+                    });
+                    MyMessageBox.Show("Thêm phòng thành công");
+                }
+                else
+                {
+                    MyMessageBox.Show(message);
+                }
+            });
+            ChangeInfoCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
+            {
+                await GetNewData();
             });
             AddShowtimeCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
             {
@@ -105,16 +197,16 @@ namespace CinemaManagement.ViewModel.AdminVM
                         BatDau = BatDau,
                         KetThuc = KetThuc,
                         GiaVe = GiaVe,
-                        SoPhongChieu = SoPhongChieu,
+                        SoPhongChieu = SelectedRoom,
                         Phim = tmpphim
                     };
                     (bool trangthai, string messages, int newId) = await SuatChieuDAL.Instance.AddShowTime(suatChieu);
                     if (trangthai)
                     {
-                        MessageBox.Show(messages);
                         IsLoading = true;
                         suatChieu.MaSC = newId;
                         dsSuatChieu.Add(suatChieu);
+                        MessageBox.Show(messages);
                         p.Close();
                         IsLoading = false;
                         return;
@@ -131,19 +223,36 @@ namespace CinemaManagement.ViewModel.AdminVM
                     return;
                 }
             });
+            ViewShowtimeCM = new RelayCommand<object>((p) => { return true; }, async (p) =>
+            {
+                ClearData();
+                if (SelectedShowtime != null)
+                {
+                    GetShowtimeData();
+                    Window w1 = new ThongTinSuatChieu();
+                    w1.ShowDialog();
+                }
+            });
         }
-        public async Task GetShowTimeData()
+        public async Task GetNewData()
         {
-            try
-            {
-                SelectedDate.CompareTo(DateTime.Now);
-                var data = await SuatChieuDAL.Instance.GetShowTimeByRoom(SoPhong, SelectedDate);
-                dsSuatChieu = new ObservableCollection<SuatChieuDTO>(data);
-                IsLoading = false;
-            }
-            catch (Exception ex)
-            {
-                CustomControls.MyMessageBox.Show("Lỗi hệ thống: " + ex.Message );
+            if (!string.IsNullOrEmpty(SelectedRoom.ToString()))
+            { 
+                IsLoading = true; 
+                dsSuatChieu.Clear(); 
+                var data = await SuatChieuDAL.Instance.GetShowTimeByRoom(SelectedRoom, SelectedDate);
+                for (int i = 0; i < data.Count; i++) 
+                { 
+                    dsSuatChieu.Add(new SuatChieuDTO()
+                    { 
+                        MaSC = data[i].MaSC,
+                        Phim = data[i].Phim,
+                        BatDau = data[i].BatDau,
+                        KetThuc = data[i].KetThuc,
+                        GiaVe = data[i].GiaVe, 
+                    }); 
+                } 
+                IsLoading = false; 
             }
         }
         public bool CheckNonEmpty()
@@ -155,7 +264,7 @@ namespace CinemaManagement.ViewModel.AdminVM
         {
             MaSC = 0;
             MaPhim = 0;
-            SoPhongChieu = SoPhong;
+            SoPhong = SelectedRoom;
             BatDau = DateTime.Now;
             KetThuc = DateTime.Now;
             BatDauStr = null;
@@ -170,6 +279,17 @@ namespace CinemaManagement.ViewModel.AdminVM
             int minutes = int.Parse(timeParts[1]);
             DateTime combinedDateTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.Day, hours, minutes, 0);
             return combinedDateTime;
+>>>>>>> Stashed changes
+        }
+        public async void GetShowtimeData()
+        {
+            MaSC = SelectedShowtime.MaSC;
+            Phim = SelectedShowtime.Phim;
+            GiaVe = SelectedShowtime.GiaVe;
+            NgayChieu = SelectedShowtime.GioChieuStr;
+            SoPhong = SelectedRoom;
+            var data = await BanVeDAL.Instance.GetTicketSell(MaSC);
+            dsBanVe = new ObservableCollection<BanVeDTO>(data);
         }
     }
 }

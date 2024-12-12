@@ -1,14 +1,16 @@
-﻿using CinemaManagement.DTOs;
-using System.Data.Entity;
-using System.Data.Entity.Infrastructure;
-using System.Reflection;
-using System.Windows;
-using System.Windows.Input;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CinemaManagement.Models.DAL
 {
     public class PhongChieuDAL
     {
+<<<<<<< Updated upstream
+
+=======
         private static PhongChieuDAL _instance;
         public static PhongChieuDAL Instance
         {
@@ -22,34 +24,87 @@ namespace CinemaManagement.Models.DAL
             }
             private set => _instance = value;
         }
-        public async Task GenerateChair()
+        public async Task<List<PhongChieuDTO>> GetAllRoom()
         {
-            using (var context = new CinemaManagementEntities())
+            try
             {
-                for (int i = 1; i <= 5; i++)
+                using (var context = new CinemaManagementEntities())
                 {
-                    PhongChieu phongChieu = new PhongChieu
-                    {
-                        SoPhong = i,
-                        SLGhe = 110,
-                        Ghes = new List<Ghe>()
-                    };
-
-                    for (int j = 1; j <= 110; j++)
-                    {
-                        Ghe ghe = new Ghe
-                        {
-                            MaGhe = (i-1)*110+j,
-                            SoGhe = j,
-                            SoPhong = i,
-                        };
-                        context.Ghes.Add(ghe);
-                    }
-
-                    context.PhongChieux.Add(phongChieu);
+                    var dsPhongChieu = (from pc in context.PhongChieux
+                                         select new PhongChieuDTO
+                                         {
+                                             SoPhong = pc.SoPhong,
+                                             SLGhe = pc.SLGhe,
+                                         }).ToListAsync();
+                return await dsPhongChieu;
                 }
-                await context.SaveChangesAsync();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi: " + ex.ToString());
+                return null;
             }
         }
+        public async Task<(bool, string, PhongChieuDTO)> AddNewRoom()
+        {
+            PhongChieuDTO pc = new PhongChieuDTO()
+            {
+                SoPhong = -1,
+                SLGhe = 0,
+            };
+            try
+            {
+                using (var context = new CinemaManagementEntities())
+                {
+                    int maxRoom;
+                    if (await context.PhongChieux.AnyAsync()) maxRoom = await context.PhongChieux.MaxAsync(s => s.SoPhong);
+                    else maxRoom = 0;
+                    pc = new PhongChieuDTO()
+                    {
+                        SoPhong = maxRoom + 1,
+                        SLGhe = 110,
+                        Ghe = new List<GheDTO>()
+                    };
+                    PhongChieu phongChieu = new PhongChieu
+                    {
+                        SoPhong = pc.SoPhong,
+                        SLGhe = pc.SLGhe,
+                    };
+                    context.PhongChieux.Add(phongChieu);
+                    await context.SaveChangesAsync();
+                    for (int j = 1; j <= pc.SLGhe; j++)
+                    {
+                        int newSeatId;
+                        if (await context.Ghes.AnyAsync()) newSeatId = await context.Ghes.MaxAsync(s => s.MaGhe) + 1;
+                        else newSeatId = 1;
+                        Ghe ghe = new Ghe
+                        {
+                            MaGhe = newSeatId,
+                            SoGhe = j,
+                            SoPhong = phongChieu.SoPhong
+                        };
+                        context.Ghes.Add(ghe);
+                        GheDTO gheDTO = new GheDTO
+                        {
+                            MaGhe = ghe.MaGhe, 
+                            SoGhe = ghe.SoGhe, 
+                            SoPhong = ghe.SoPhong
+                        };
+                        pc.Ghe.Add(gheDTO);
+                        await context.SaveChangesAsync();
+                    }
+                }
+            }
+            catch (DbUpdateException ex)
+            {
+                return (false, "Lỗi CSDL: " + ex.ToString(), pc);
+            }
+            catch (Exception ex)
+            {
+                return (false, ex.ToString(), pc);
+            }
+            return (true, "Đã thêm phòng chiếu", pc);
+        }
+>>>>>>> Stashed changes
     }
 }

@@ -72,7 +72,7 @@ namespace CinemaManagement.Models.DAL
             }
             catch (DbUpdateException ex)
             {
-                return (false, "Lỗi CSDL");
+                return (false, "Lỗi CSDL: " + ex.ToString());
             }
             catch (Exception ex)
             {

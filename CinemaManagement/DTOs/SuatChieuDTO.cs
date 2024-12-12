@@ -22,6 +22,13 @@ namespace CinemaManagement.DTOs
                 return MoneyFormat.FormatToVND(GiaVe);
             }
         }
+        public string ThoiGianStr
+        {
+            get
+            {
+                return $"{BatDau:dd/MM/yyyy HH:mm} -> {KetThuc:dd/MM/yyyy HH:mm}";
+            }
+        }
         public PhimDTO Phim { get; set; }
         public IList<VeDTO> Ves { get; set; }
         public PhongChieuDTO PhongChieu { get; set; }
