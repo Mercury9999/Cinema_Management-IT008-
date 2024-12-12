@@ -71,7 +71,7 @@ namespace CinemaManagement.Models.DAL
                                  select ghe.MaGhe
                                 ).ToListAsync();
                     List<BanVe> banve = new List<BanVe>();
-                    foreach( var maghe in dsghe  )
+                    foreach(var maghe in dsghe)
                     {
                         banve.Add(new BanVe
                         {
@@ -91,13 +91,13 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Thêm suất chiếu thành công", newShowtimeId);
         }
-        public async Task<List<SuatChieuDTO>> GetShowTimeByRoom(int soPhong, DateTime selectedDate)
+        public async Task<List<SuatChieuDTO>> GetShowTimeByRoom(int selectedRoom, DateTime selectedDate)
         {
-            List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
             try
             {
                 using (var context = new CinemaManagementEntities())
                 {
+<<<<<<< Updated upstream
                     dsSC = await (from sc in context.SuatChieux
                                   join p in context.Phims on sc.MaPhim equals p.MaPhim
                                   where sc.SoPhongChieu == soPhong && sc.BatDau.Date == selectedDate.Date
@@ -110,14 +110,37 @@ namespace CinemaManagement.Models.DAL
                                       GiaVe = sc.GiaVe,
                                       SoPhongChieu = sc.SoPhongChieu
                                   }).ToListAsync();
+=======
+                    List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
+                    dsSC = await (from sc in context.SuatChieux
+                                  where sc.SoPhongChieu == selectedRoom && sc.BatDau.Day == selectedDate.Day && sc.BatDau.Month == selectedDate.Month
+                                  select new SuatChieuDTO
+                                  {
+                                      MaSC = sc.MaSC,
+                                      BatDau = sc.BatDau,
+                                      KetThuc = sc.KetThuc,
+                                      GiaVe = sc.GiaVe,
+                                      SoPhongChieu = sc.SoPhongChieu,
+                                      MaPhim = sc.MaPhim,
+                                  }).ToListAsync();
+                    for(int i = 0;i<dsSC.Count;i++)
+                    {
+                        dsSC[i].Phim = PhimDAL.Instance.GetMovieById(dsSC[i].MaPhim);
+                    }
+                    return dsSC;
+>>>>>>> Stashed changes
                 }
             }
             catch (Exception ex)
             {
+<<<<<<< Updated upstream
                 Console.WriteLine(ex.Message);
                 throw ex;
+=======
+                CustomControls.MyMessageBox.Show("Lỗi hệ thống: " + ex.Message);
+                return null;
+>>>>>>> Stashed changes
             }
-            return dsSC;
         }
 
 

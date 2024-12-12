@@ -4,7 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
+<<<<<<< Updated upstream
       <Diagram DiagramId="9de7409b3a1a43cb9dd878a741105ea1" Name="Diagram1">
+=======
+      <Diagram DiagramId="d95afc5bfec74b63bb01c469d0abbbfa" Name="Diagram1" ZoomLevel="84">
+>>>>>>> Stashed changes
         <EntityTypeShape EntityType="CinemaManagementModel.BanVe" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaManagementModel.CTHDSanPham" Width="1.5" PointX="11" PointY="11.75" IsExpanded="true" />
         <EntityTypeShape EntityType="CinemaManagementModel.Ghe" Width="1.5" PointX="3" PointY="5.125" IsExpanded="true" />
