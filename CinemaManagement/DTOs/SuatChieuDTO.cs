@@ -25,7 +25,7 @@ namespace CinemaManagement.DTOs
         {
             get
             {
-                return $"{BatDau:dd/MM/yyyy HH:mm} -> {KetThuc:dd/MM/yyyy HH:mm}";
+                return $"{BatDau:HH:mm} -> {KetThuc:HH:mm}";
             }
         }
         public PhimDTO Phim { get; set; }
