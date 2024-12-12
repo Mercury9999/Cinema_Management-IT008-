@@ -92,12 +92,7 @@
                                           CornerRadius="3"
                                           Width="38"
                                           Height="38">
-<<<<<<< Updated upstream
-                                    <Label Content="{Binding SeatPosition}"
-=======
-                                    <!-- List ghế -->
                                     <Label Content="{Binding SoGheStr}"
->>>>>>> Stashed changes
                                            Background="Transparent"
                                            Foreground="black"
                                            FontSize="11"

@@ -97,20 +97,6 @@ namespace CinemaManagement.Models.DAL
             {
                 using (var context = new CinemaManagementEntities())
                 {
-<<<<<<< Updated upstream
-                    dsSC = await (from sc in context.SuatChieux
-                                  join p in context.Phims on sc.MaPhim equals p.MaPhim
-                                  where sc.SoPhongChieu == soPhong && sc.BatDau.Date == selectedDate.Date
-                                  select new SuatChieuDTO
-                                  {
-                                      MaSC = sc.MaSC,
-                                      
-                                      BatDau = sc.BatDau,
-                                      KetThuc = sc.KetThuc,
-                                      GiaVe = sc.GiaVe,
-                                      SoPhongChieu = sc.SoPhongChieu
-                                  }).ToListAsync();
-=======
                     List<SuatChieuDTO> dsSC = new List<SuatChieuDTO>();
                     dsSC = await (from sc in context.SuatChieux
                                   where sc.SoPhongChieu == selectedRoom && sc.BatDau.Day == selectedDate.Day && sc.BatDau.Month == selectedDate.Month
@@ -128,18 +114,12 @@ namespace CinemaManagement.Models.DAL
                         dsSC[i].Phim = PhimDAL.Instance.GetMovieById(dsSC[i].MaPhim);
                     }
                     return dsSC;
->>>>>>> Stashed changes
                 }
             }
             catch (Exception ex)
             {
-<<<<<<< Updated upstream
-                Console.WriteLine(ex.Message);
-                throw ex;
-=======
                 CustomControls.MyMessageBox.Show("Lỗi hệ thống: " + ex.Message);
                 return null;
->>>>>>> Stashed changes
             }
         }
 

@@ -1,6 +1,14 @@
-﻿using System;
+﻿using CinemaManagement.CustomControls;
+using CinemaManagement.DTOs;
+using Microsoft.EntityFrameworkCore.Update.Internal;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
+using System.Drawing.Printing;
 using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -8,9 +16,6 @@ namespace CinemaManagement.Models.DAL
 {
     public class PhongChieuDAL
     {
-<<<<<<< Updated upstream
-
-=======
         private static PhongChieuDAL _instance;
         public static PhongChieuDAL Instance
         {
@@ -41,7 +46,7 @@ namespace CinemaManagement.Models.DAL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.ToString());
+                MyMessageBox.Show("Lỗi: " + ex.ToString());
                 return null;
             }
         }
@@ -105,6 +110,5 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã thêm phòng chiếu", pc);
         }
->>>>>>> Stashed changes
     }
 }

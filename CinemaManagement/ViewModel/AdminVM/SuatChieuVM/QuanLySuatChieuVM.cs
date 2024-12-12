@@ -9,16 +9,12 @@ using System.Threading.Tasks;
 using System.Web.UI.WebControls;
 using System.Windows;
 using System.Windows.Input;
-<<<<<<< Updated upstream
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
-=======
 using System.Windows.Media.Media3D;
 using CinemaManagement.View;
 using System.Reflection;
 using CinemaManagement.Models;
 using System.Runtime.Remoting.Messaging;
 using CinemaManagement.CustomControls;
->>>>>>> Stashed changes
 
 namespace CinemaManagement.ViewModel.AdminVM
 {
@@ -34,21 +30,13 @@ namespace CinemaManagement.ViewModel.AdminVM
         public int MaPhim
         {
             get { return _maphim; }
+            set { _maphim = value; OnPropertyChanged(); }
         }
-<<<<<<< Updated upstream
-        public int SoPhongChieu { get; set; }
-        public System.DateTime BatDau { get; set; }
-        public System.DateTime KetThuc { get; set; }
-        public decimal GiaVe { get; set; }
-        private int _currentroom { get; set; }
-        public int CurrentRoom
-=======
         private int _soPhong {  get; set; }
         public int SoPhong
->>>>>>> Stashed changes
         {
-            get { return _currentroom; }
-            set { _currentroom = value; OnPropertyChanged(); }
+            get { return _soPhong; }
+            set { _soPhong = value; OnPropertyChanged(); }
         }
         DateTime _selectedDate;
         public DateTime SelectedDate
@@ -56,12 +44,6 @@ namespace CinemaManagement.ViewModel.AdminVM
             get { return _selectedDate; }
             set { _selectedDate = value; OnPropertyChanged(); }
         }
-<<<<<<< Updated upstream
-        public bool IsSaving { get; set; }
-        public bool IsLoading { get; set; }
-        public ICommand DoiPhongChieuCM {  get; set; }
-        private ObservableCollection<SuatChieuDTO> _dsSuatChieu;
-=======
         private int _selectedRoom { get; set; }
         public int SelectedRoom
         {
@@ -84,20 +66,12 @@ namespace CinemaManagement.ViewModel.AdminVM
         public bool IsSaving { get; set; }
         public bool IsLoading { get; set; }
         private ObservableCollection<SuatChieuDTO> _dsSuatChieu = new ObservableCollection<SuatChieuDTO>();
->>>>>>> Stashed changes
         public ObservableCollection<SuatChieuDTO> dsSuatChieu
         {
 
             get { return _dsSuatChieu; }
             set { _dsSuatChieu = value; OnPropertyChanged(); }
         }
-<<<<<<< Updated upstream
-
-        public QuanLySuatChieuVM()
-        {
-<<<<<<< Updated upstream
-            DoiPhongChieuCM = new RelayCommand<object>((p) => true, (p) =>
-=======
         private ObservableCollection<PhongChieuDTO> _dsPhong = new ObservableCollection<PhongChieuDTO>();
         public ObservableCollection<PhongChieuDTO> dsPhong
         {
@@ -126,15 +100,9 @@ namespace CinemaManagement.ViewModel.AdminVM
         {
             SelectedDate = DateTime.Now;
             CloseWindowCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
->>>>>>> Stashed changes
-=======
-            DoiPhongChieuCM = new RelayCommand<string>((p) => true, (p) =>
->>>>>>> Stashed changes
             {
-                MessageBox.Show("Done");
+                p.Close();
             });
-<<<<<<< Updated upstream
-=======
             GetRoomListCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
                 try
@@ -279,7 +247,6 @@ namespace CinemaManagement.ViewModel.AdminVM
             int minutes = int.Parse(timeParts[1]);
             DateTime combinedDateTime = new DateTime(currentDate.Year, currentDate.Month, currentDate.Day, hours, minutes, 0);
             return combinedDateTime;
->>>>>>> Stashed changes
         }
         public async void GetShowtimeData()
         {
