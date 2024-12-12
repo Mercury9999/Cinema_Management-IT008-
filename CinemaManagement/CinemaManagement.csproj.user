@@ -10,9 +10,6 @@
     <Compile Update="CustomControls\W_MessageBox.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="DTOs\Y_MessageBox.xaml.cs">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Update="MainNavigation.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
