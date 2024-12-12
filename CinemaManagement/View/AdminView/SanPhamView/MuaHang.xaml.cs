@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace CinemaManagement.View.AdminView.KhachHangView
+namespace CinemaManagement.View.AdminView.SanPhamView
 {
     /// <summary>
-    /// Interaction logic for SuaKH.xaml
+    /// Interaction logic for MuaHang.xaml
     /// </summary>
-    public partial class SuaKH : Window
+    public partial class MuaHang : Window
     {
-        public SuaKH()
+        public MuaHang()
         {
             InitializeComponent();
         }
