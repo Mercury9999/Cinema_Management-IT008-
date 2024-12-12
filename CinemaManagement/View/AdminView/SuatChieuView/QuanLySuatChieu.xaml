@@ -14,7 +14,7 @@
       Background="Transparent"
       x:Name="quanlysuatchieuPage"
       DataContext="{StaticResource ShowtimeVM}"
-      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM">
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLySuatChieuVM}">
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
@@ -55,83 +55,8 @@
                 <icon:PackIconMaterial Kind="Magnify"  Width="15" Height="15" VerticalAlignment="Center"
                                        Margin="0 0 15 0" Foreground="#b0b9c6" HorizontalAlignment="Right"/>
             </Grid>
-
-             <!--Room Grid-->
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-            <Grid Grid.Column="0">
-                <StackPanel Margin="0 200 0 0">
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="DS phòng"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}"
-                        Command="{Binding DoiPhongChieuCM}"
-                        CommandParameter="1">
-                        <TextBlock Text="Phòng 1"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}"
-                        Command="{Binding DoiPhongChieuCM}"
-                        CommandParameter="2">
-                        <TextBlock Text="Phòng 2"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}">
-                        <TextBlock Text="Phòng 3"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button 
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}"
-                        Command="{Binding DoiPhongChieuCM}"
-                        CommandParameter="4">
-                        <TextBlock Text="Phòng 4"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                    <Button
-                        Cursor="Hand"
-                        Style="{StaticResource pagingButton}"
-                        Command="{Binding DoiPhongChieuCM}"
-                        CommandParameter="5">
-                        <TextBlock Text="Phòng 5"
-                                   FontSize="15"
-                                   Style="{DynamicResource MaterialDesignHeadline6TextBlock}"/>
-                    </Button>
-                </StackPanel>
-                
-                
-                
-            </Grid>
-=======
             <Button Content="Thêm phòng" Padding="0" Margin="10 0 10 0" Command="{Binding AddNewRoomCM}"/>
->>>>>>> Stashed changes
-            
-            
-             <!--Date Picker--> 
-=======
-            <Grid Grid.Column="0"/>
-
-
-            <!--Date Picker--> 
->>>>>>> Stashed changes
-          
-            
-            
-             <!--Film Grid-->
+            <!--Film Grid-->
             <Grid Grid.Column="1">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto"/>
@@ -146,24 +71,12 @@
                             <TextBlock Text="Thêm suất chiếu"/>
                             <i:Interaction.Triggers>
                                 <i:EventTrigger EventName="Click">
-                                    <i:InvokeCommandAction Command="{Binding AddShowTimeCM}"/>
+                                    <i:InvokeCommandAction Command="{Binding AddNewShowtimeCM}"/>
                                 </i:EventTrigger>
                             </i:Interaction.Triggers>
                         </StackPanel>
                     </Button>
-<<<<<<< Updated upstream
-
-<<<<<<< Updated upstream
-=======
->>>>>>> Stashed changes
                     <!-- Date box-->
-                    <DatePicker Grid.Row="0" Width="140"
-                                materialDesign:HintAssist.Hint="Suất chiếu"
-                                Style="{StaticResource MaterialDesignOutlinedDatePicker}"
-                                Margin="0 0 0 0"
-                                HorizontalAlignment="Right"                   
-                    />
-=======
                     <!-- Room Change-->
                     <ComboBox materialDesign:HintAssist.Hint="Phòng" ItemsSource="{Binding dsPhong}" DisplayMemberPath="SoPhong" SelectedValuePath="SoPhong" Text="{Binding SelectedRoom, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" Width="106" Margin="10 0 60 0">
                         <i:Interaction.Triggers>
@@ -177,31 +90,25 @@
                     </ComboBox>
 
                     <!-- Date box-->
-                    <DatePicker Text="{Binding SelectedDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                        <DatePicker Text="{Binding SelectedDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
                                 Grid.Row="0" Width="140"
                                 materialDesign:HintAssist.Hint="Suất chiếu"
                                 Style="{StaticResource MaterialDesignOutlinedDatePicker}"
                                 Margin="0 0 0 0"
                                 HorizontalAlignment="Right">
-                        <i:Interaction.Triggers>
-                            <i:EventTrigger EventName="SelectedDateChanged">
-                                <i:InvokeCommandAction Command="{Binding ChangeInfoCM}"/>
-                            </i:EventTrigger>
-                        </i:Interaction.Triggers>
-                    </DatePicker>
->>>>>>> Stashed changes
+                            <i:Interaction.Triggers>
+                                <i:EventTrigger EventName="SelectedDateChanged">
+                                    <i:InvokeCommandAction Command="{Binding ChangeInfoCM}"/>
+                                </i:EventTrigger>
+                            </i:Interaction.Triggers>
+                        </DatePicker>
                 </StackPanel>
 
 
                 <!--Data grid-->
-<<<<<<< Updated upstream
-                <DataGrid
-=======
                 <DataGrid ItemsSource="{Binding dsSuatChieu}" SelectedItem="{Binding SelectedShowtime, Mode=TwoWay}"
->>>>>>> Stashed changes
                     Margin="0 20 0 0"
                     Style="{DynamicResource DataGridStyle1}" CellStyle="{DynamicResource DataGridCellStyle1}" ColumnHeaderStyle="{DynamicResource DataGridColumnHeaderStyle1}" RowStyle="{DynamicResource DataGridRowStyle1}"
-                    ItemsSource="{Binding dsSuatChieu}"
                     x:Name="showtimeGrid" 
                     AutoGenerateColumns="False" IsReadOnly="True"
                     Grid.Row="1">
@@ -216,15 +123,10 @@
 
                         <DataGridTextColumn Header="Tên Phim" IsReadOnly="True" Width="*" Binding="{Binding Phim.TenPhim}"/>
                         <DataGridTextColumn Header="Thể loại" IsReadOnly="True" Width="*" Binding="{Binding Phim.TheLoai}"/>
-<<<<<<< Updated upstream
-                        <DataGridTextColumn Header="Thời lượng" IsReadOnly="True" Width="*" Binding="{Binding ThoiGianStr}"/>
-                        <DataGridTextColumn Header="Giá vé" IsReadOnly="True" Width="*" Binding="{Binding GiaVeStr }"/>
-=======
-                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieuStr}"/>
                         <DataGridTextColumn Header="Giá vé" IsReadOnly="True" Width="*" Binding="{Binding GiaVeStr}"/>
->>>>>>> Stashed changes
+                        <DataGridTextColumn Header="Giờ chiếu" IsReadOnly="True" Width="*" Binding="{Binding GioChieuStr}"/>
 
-                        <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
+                            <!-- Thông tin ngày suất chiếu / giờ chiếu hiện trong Chi tiết suất chiếu khi nhấn đúp chuột vào row -->
 
                         <DataGridTemplateColumn Header="" IsReadOnly="True" Width="Auto">
                             <DataGridTemplateColumn.CellTemplate>

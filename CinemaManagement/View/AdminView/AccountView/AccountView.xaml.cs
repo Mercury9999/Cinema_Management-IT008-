@@ -22,7 +22,7 @@ namespace CinemaManagement.View.AdminView.AccountView
     {
         public AccountView()
         {
-            InitializeComponent();
+            //InitializeComponent();
         }
     }
 }

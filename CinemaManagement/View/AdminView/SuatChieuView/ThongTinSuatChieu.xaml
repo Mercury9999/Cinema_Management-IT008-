@@ -92,12 +92,8 @@
                                           CornerRadius="3"
                                           Width="38"
                                           Height="38">
-<<<<<<< Updated upstream
-                                    <Label Content="{Binding SeatPosition}"
-=======
                                     <!-- List ghế -->
                                     <Label Content="{Binding SoGheStr}"
->>>>>>> Stashed changes
                                            Background="Transparent"
                                            Foreground="black"
                                            FontSize="11"
@@ -110,9 +106,6 @@
                             </DataTemplate>
                         </ListBox.ItemTemplate>
                     </ListBox>
-
-
-
                     <!-- Operation Button -->
                     <StackPanel HorizontalAlignment="Right" Margin="0 15 60 0" Orientation="Horizontal">
                         <Button Padding="0" Margin="0 0 30 0" Width="90" BorderThickness="0"  Background="Green">

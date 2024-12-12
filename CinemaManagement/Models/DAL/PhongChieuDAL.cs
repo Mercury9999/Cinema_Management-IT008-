@@ -3,14 +3,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CinemaManagement.DTOs;
+using Microsoft.EntityFrameworkCore;
+using System.Windows;
+using CinemaManagement.CustomControls;
 
 namespace CinemaManagement.Models.DAL
 {
     public class PhongChieuDAL
     {
-<<<<<<< Updated upstream
-
-=======
         private static PhongChieuDAL _instance;
         public static PhongChieuDAL Instance
         {
@@ -41,7 +42,7 @@ namespace CinemaManagement.Models.DAL
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi: " + ex.ToString());
+                MyMessageBox.Show("Lỗi: " + ex.ToString());
                 return null;
             }
         }
@@ -105,6 +106,5 @@ namespace CinemaManagement.Models.DAL
             }
             return (true, "Đã thêm phòng chiếu", pc);
         }
->>>>>>> Stashed changes
     }
 }

@@ -32,22 +32,22 @@ namespace CinemaManagement.ViewModel.AdminVM.ThongKeVM
 
             ThongKePhimCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                NavigationFrame.Navigate(new ThongKePhimView());
+                //NavigationFrame.Navigate(new ThongKePhimView());
             });
 
             ThongKeSanPhamCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                NavigationFrame.Navigate(new ThongKeSanPhamView());
+                //NavigationFrame.Navigate(new ThongKeSanPhamView());
             });
 
             ThongKeDoanhThuCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                NavigationFrame.Navigate(new ThongKeDoanhThuView());
+                //NavigationFrame.Navigate(new ThongKeDoanhThuView());
             });
 
             ThongKeKHCM = new RelayCommand<object>((p) => { return true; }, (p) =>
             {
-                NavigationFrame.Navigate(new ThongKeKHView());
+                //NavigationFrame.Navigate(new ThongKeKHView());
             });
 
         }
