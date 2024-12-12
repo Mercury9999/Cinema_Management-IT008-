@@ -14,14 +14,13 @@
       Background="Transparent"
       x:Name="quanlysuatchieuPage"
       DataContext="{StaticResource ShowtimeVM}"
-      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM" d:DataContext="{d:DesignInstance Type=adminvm:QuanLySuatChieuVM}">
+      xmlns:i="http://schemas.microsoft.com/xaml/behaviors" xmlns:adminvm="clr-namespace:CinemaManagement.ViewModel.AdminVM">
     <Page.Resources>
         <BooleanToVisibilityConverter x:Key="BooltoVis"/>
     </Page.Resources>
     <i:Interaction.Triggers>
         <i:EventTrigger EventName="Loaded">
-            <i:InvokeCommandAction Command="{Binding DoiPhongChieuCM}"
-       CommandParameter="3"/>
+            <i:InvokeCommandAction Command="{Binding ElementName=quanlysuatchieuPage, Path=DataContext.DoiPhongChieuCM}"/>
         </i:EventTrigger>
     </i:Interaction.Triggers>
     <Page.Triggers>
@@ -58,6 +57,7 @@
             </Grid>
 
              <!--Room Grid-->
+<<<<<<< Updated upstream
 <<<<<<< Updated upstream
             <Grid Grid.Column="0">
                 <StackPanel Margin="0 200 0 0">
@@ -122,6 +122,12 @@
             
             
              <!--Date Picker--> 
+=======
+            <Grid Grid.Column="0"/>
+
+
+            <!--Date Picker--> 
+>>>>>>> Stashed changes
           
             
             
@@ -145,8 +151,11 @@
                             </i:Interaction.Triggers>
                         </StackPanel>
                     </Button>
+<<<<<<< Updated upstream
 
 <<<<<<< Updated upstream
+=======
+>>>>>>> Stashed changes
                     <!-- Date box-->
                     <DatePicker Grid.Row="0" Width="140"
                                 materialDesign:HintAssist.Hint="Suất chiếu"

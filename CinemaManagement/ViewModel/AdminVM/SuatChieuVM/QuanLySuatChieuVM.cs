@@ -95,6 +95,7 @@ namespace CinemaManagement.ViewModel.AdminVM
 
         public QuanLySuatChieuVM()
         {
+<<<<<<< Updated upstream
             DoiPhongChieuCM = new RelayCommand<object>((p) => true, (p) =>
 =======
         private ObservableCollection<PhongChieuDTO> _dsPhong = new ObservableCollection<PhongChieuDTO>();
@@ -125,6 +126,9 @@ namespace CinemaManagement.ViewModel.AdminVM
         {
             SelectedDate = DateTime.Now;
             CloseWindowCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+>>>>>>> Stashed changes
+=======
+            DoiPhongChieuCM = new RelayCommand<string>((p) => true, (p) =>
 >>>>>>> Stashed changes
             {
                 MessageBox.Show("Done");
