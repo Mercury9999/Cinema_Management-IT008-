@@ -38,6 +38,8 @@ namespace CinemaManagement.ViewModel.AdminVM
         public ICommand UploadImageCM { get; set; }
         public ICommand SaveNewProductCM { get; set; }
         public ICommand SaveProductCM { get; set; }
+        public ICommand SaveImportProductCM { get; set; }
+
         public ICommand GetCurrentWindowCM { get; set; }
         public ICommand NameSearchProductCM { get; set; }
         public ICommand TypeSearchProductCM { get; set; }
@@ -54,10 +56,14 @@ namespace CinemaManagement.ViewModel.AdminVM
         public string TenSP { get { return _tensp; } set { _tensp = value; OnPropertyChanged(); } }
         private int _soluong { get; set; }
         public int SoLuong { get { return _soluong; } set { _soluong = value; OnPropertyChanged(); } }
+        private int _soluongnhap { get; set; }
+        public int SoLuongNhap { get { return _soluongnhap; } set { _soluongnhap = value; OnPropertyChanged(); } }
         private decimal? _giasp { get; set; }
         public decimal? GiaSP { get { return _giasp; } set { _giasp = value; OnPropertyChanged(); } }
         private byte[] _hinhanhsp { get; set; }
         public byte[] HinhAnhSP { get { return _hinhanhsp; } set { _hinhanhsp = value; OnPropertyChanged(); } }
+        private decimal _gianhap { get; set; }
+        public decimal GiaNhap { get { return _gianhap; } set { _gianhap = value; OnPropertyChanged(); } }
         #endregion
         #region biến khác
         private string _searchText {  get; set; }
@@ -120,6 +126,12 @@ namespace CinemaManagement.ViewModel.AdminVM
             {
                 IsSaving = true;
                 await SaveNewProduct(p);
+                IsSaving = false;
+            });
+            SaveImportProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
+            {
+                IsSaving = true;
+                await ImportProduct(p);
                 IsSaving = false;
             });
             DeleteProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
@@ -185,54 +197,13 @@ namespace CinemaManagement.ViewModel.AdminVM
             });
             NhapHangCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
-                IsLoading = true;
+                
+                MaSP = SPSelected.MaSP;
                 NhapHang w1 = new NhapHang();
                 w1.ShowDialog();
-                IsLoading = false;
+                
             });
-            SaveNhapHang = new RelayCommand<Window>((p) => { return true; }, async (p) =>
-            {
-                IsSaving = true;
-
-                try
-                {
-                    // Lấy sản phẩm đã chọn (giả sử SelectedSP là sản phẩm hiện tại bạn đã chọn)
-                    if (SPSelected != null && SoLuong > 0)
-                    {
-                        using (var dbContext = new CinemaManagementEntities())
-                        {
-                            var product = await dbContext.SanPhams.FindAsync(SPSelected.MaSP);
-                            if (product != null)
-                            {
-                                product.SoLuong += SoLuong;
-
-                                await dbContext.SaveChangesAsync();
-
-                                MyMessageBox.Show("Cập nhật số lượng thành công.");
-                            }
-                            else
-                            {
-                                MyMessageBox.Show("Không tìm thấy sản phẩm.");
-                            }
-                        }
-                    }
-                    else
-                    {
-                        MyMessageBox.Show("Vui lòng chọn sản phẩm và nhập số lượng hợp lệ.");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    // Xử lý lỗi
-                    MyMessageBox.Show("Có lỗi xảy ra: " + ex.Message);
-                }
-                finally
-                {
-                    IsSaving = false;
-                }
-
-
-            });
+            
             SaveProductCM = new RelayCommand<Window>((p) => { return true; }, async (p) =>
             {
                 IsSaving = true;
